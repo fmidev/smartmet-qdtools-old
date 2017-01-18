@@ -92,6 +92,7 @@ The list of parameters known by newbase is:
 544	ClusterTemperature4
 545	ClusterTemperature5
 546	ClusterTemperature6
+4900	COConcentration
 192	COContents
 122	ColumnNumber
 85	Conductivity1
@@ -433,7 +434,9 @@ The list of parameters known by newbase is:
 615	MugwortPollenConcentration
 617	MugwortPollenRemainingRatio
 614	MugwortPollenTemperatureSum
+4902	NO2Concentration
 191	NO2Contents
+4901	NOConcentration
 204	NOContents
 793	NormalGroundMinTemperature
 794	NormalGroundMinTemperatureF02
@@ -468,6 +471,7 @@ The list of parameters known by newbase is:
 827	NormalMinTemperatureF88
 828	NormalMinTemperatureF98
 1150	NorthwardIceVelocity
+4903	O3Concentration
 205	O3Contents
 1203	OceanIcing
 418	OldVisibility
@@ -481,7 +485,9 @@ The list of parameters known by newbase is:
 410	PastWeather2
 661	PedestrianIndex
 476	PhaseOfFlight
+4904	PM10Concentration
 206	PM10Contents
+4905	PM25Concentration
 207	PM25Contents
 787	PollenIndexAlder
 788	PollenIndexBirch
@@ -874,6 +880,7 @@ The list of parameters known by newbase is:
 489	SnowPercentage
 220	SnowWarning
 268	SnowWaterRatio
+4906	SO2Concentration
 193	SO2Contents
 286	SoilMoistureContent
 285	SoilTemperature
@@ -1191,4 +1198,4 @@ The list of parameters known by newbase is:
 291	Year
 125	ZResolution
 
-There are 1190 known parameters in total
+There are 1197 known parameters in total

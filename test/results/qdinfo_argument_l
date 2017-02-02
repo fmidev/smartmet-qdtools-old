@@ -27,10 +27,12 @@ The list of parameters known by newbase is:
 1228	AreaOfRisk
 1106	AshConcentration
 1109	AshOnOff
+1238	AvailableEnsembleMemberPercentage
 692	AverageHumidity
 702	AveragePressure
 682	AverageTemperature
 672	AverageWindDirection
+1234	AverageWindSpeedMS
 521	AviationWeather1
 522	AviationWeather2
 523	AviationWeather3
@@ -77,6 +79,7 @@ The list of parameters known by newbase is:
 1199	CloudIce
 328	CloudSymbol
 1174	CloudTop
+1233	CloudTop2
 364	CloudTopBrightnessTemperature
 276	CloudWater
 368	CloudWaterReflectivity
@@ -310,6 +313,7 @@ The list of parameters known by newbase is:
 345	Humidity2M
 690	HumidityCode
 695	HumidityDeviation
+1236	HumidityRelativeToIce
 691	HumidityVoltage
 384	IceConcentration
 96	IceContent
@@ -501,6 +505,7 @@ The list of parameters known by newbase is:
 830	PoP18
 829	PoP24h
 1226	PotentialPrecipitationForm
+1235	PotentialPrecipitationType
 8	PotentialTemperature
 47	PrecipitableWater
 147	PrecipitableWater2
@@ -681,6 +686,10 @@ The list of parameters known by newbase is:
 577	ProbabilityOfPrecLimit7
 578	ProbabilityOfPrecLimit8
 579	ProbabilityOfPrecLimit9
+1240	ProbabilityOfSigWaveHeightLimit1
+1241	ProbabilityOfSigWaveHeightLimit2
+1242	ProbabilityOfSigWaveHeightLimit3
+1243	ProbabilityOfSigWaveHeightLimit4
 1091	ProbabilityOfSn24Limit1
 1092	ProbabilityOfSn24Limit2
 1093	ProbabilityOfSn24Limit3
@@ -872,7 +881,8 @@ The list of parameters known by newbase is:
 4574	SnowDepthF50
 4573	SnowDepthF87.5
 4572	SnowDepthF95
-4570	SnowDepthF97.5
+4571	SnowDepthF97.5
+4570	SnowDepthF99
 264	SnowfallRate
 850	SnowLoad
 856	SnowLoadType
@@ -1142,6 +1152,7 @@ The list of parameters known by newbase is:
 675	WindDirectionDeviation
 671	WindDirectionVoltage
 417	WindGust
+1239	WindGust2
 1123	WindGustF0
 4535	WindGustF1
 1122	WindGustF10
@@ -1198,4 +1209,4 @@ The list of parameters known by newbase is:
 291	Year
 125	ZResolution
 
-There are 1197 known parameters in total
+There are 1208 known parameters in total

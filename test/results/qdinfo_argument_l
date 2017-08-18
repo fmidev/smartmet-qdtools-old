@@ -27,7 +27,7 @@ The list of parameters known by newbase is:
 1228	AreaOfRisk
 1106	AshConcentration
 1109	AshOnOff
-1238	AvailableEnsembleMemberPercentage
+1238	AvailableEnsembleMemberCount
 692	AverageHumidity
 702	AveragePressure
 682	AverageTemperature
@@ -146,6 +146,8 @@ The list of parameters known by newbase is:
 4539	DewPointF95
 4538	DewPointF97.5
 4537	DewPointF99
+1302	DifferentialPhase
+1300	DifferentialReflectivity
 242	DivergenceAbsolute
 244	DivergenceRelative
 256	DragCoefficient
@@ -225,6 +227,7 @@ The list of parameters known by newbase is:
 333	FrontSymbol
 1231	FrostLayerBottom
 1230	FrostLayerTop
+1237	FrostPoint
 372	FrostProbability
 634	FrostSum
 855	FrozenSnowLoad
@@ -279,6 +282,7 @@ The list of parameters known by newbase is:
 1143	GrowthPeriodPrecipitationSum
 1144	GrowthPeriodPrecipitationSumDeviationInPrcnt
 1107	GrowthPeriodStarted
+1176	HakeMessageType
 499	HaKeTaskCode
 28	HeightMinus20C
 67	Helicity
@@ -618,6 +622,13 @@ The list of parameters known by newbase is:
 1032	ProbabilityOfColdLimit2
 1033	ProbabilityOfColdLimit3
 1034	ProbabilityOfColdLimit4
+1251	ProbabilityOfColdLimit5
+1244	ProbabilityOfConvectivePrecipitationLimit1
+1245	ProbabilityOfConvectivePrecipitationLimit2
+1246	ProbabilityOfConvectivePrecipitationLimit3
+1247	ProbabilityOfConvectivePrecipitationLimit4
+1248	ProbabilityOfConvectivePrecipitationLimit5
+1249	ProbabilityOfConvectivePrecipitationLimit6
 583	ProbabilityOfGustLimit1
 584	ProbabilityOfGustLimit2
 585	ProbabilityOfGustLimit3
@@ -645,6 +656,7 @@ The list of parameters known by newbase is:
 1221	ProbabilityOfPrecFormSleet
 1222	ProbabilityOfPrecFormSnow
 948	ProbabilityOfPrecipitation3h01mm
+1250	ProbabilityOfPrecipitation3h03mm
 949	ProbabilityOfPrecipitation3h05mm
 947	ProbabilityOfPrecipitation3h0mm
 975	ProbabilityOfPrecipitation3h100mm
@@ -686,6 +698,10 @@ The list of parameters known by newbase is:
 577	ProbabilityOfPrecLimit7
 578	ProbabilityOfPrecLimit8
 579	ProbabilityOfPrecLimit9
+1305	ProbabilityOfSeaLevelLimit1
+1306	ProbabilityOfSeaLevelLimit2
+1307	ProbabilityOfSeaLevelLimit3
+1308	ProbabilityOfSeaLevelLimit4
 1240	ProbabilityOfSigWaveHeightLimit1
 1241	ProbabilityOfSigWaveHeightLimit2
 1242	ProbabilityOfSigWaveHeightLimit3
@@ -763,6 +779,7 @@ The list of parameters known by newbase is:
 1201	RainWaterMixingRatio
 129	RawRadarData
 1103	Reflectivity
+1304	ReflectivityCorrelation
 1153	RidgeIceConcentration
 641	RoadCondition
 657	RoadConditionAlternative
@@ -819,7 +836,16 @@ The list of parameters known by newbase is:
 1194	SeaDepth
 60	SeaLevel
 160	SeaLevelAnomaly
+1316	SeaLevelDeviation
+1314	SeaLevelF10
+1313	SeaLevelF25
+1315	SeaLevelF5
+1312	SeaLevelF50
+1311	SeaLevelF75
+1310	SeaLevelF90
+1309	SeaLevelF95
 65	SeaLevelMaximum
+1317	SeaLevelMean
 64	SeaLevelMinimum
 488	SeaPercentage
 1197	SeasonalWaterLevelIndex
@@ -835,6 +861,7 @@ The list of parameters known by newbase is:
 373	SevereFrostProbability
 348	ShipDirection
 349	ShipSpeed
+1303	SignalQualityIndex
 165	SigWaveHeight
 172	SigWaveHeightBandB
 175	SigWaveHeightBandC
@@ -855,6 +882,7 @@ The list of parameters known by newbase is:
 335	SmogSymbol
 1158	Snow1h
 265	SnowAccumulation
+5000	SnowAccumulation5cmDays
 4645	SnowAccumulationF0
 4644	SnowAccumulationF1
 4635	SnowAccumulationF100
@@ -942,6 +970,7 @@ The list of parameters known by newbase is:
 4755	SoundingTotalTotalsIndex
 4754	SoundingVerticalTotalsIndex
 4774	SoundingWindSpeed1500m
+1301	SpecificDifferentialPhase
 12	SpecificHumidity
 4667	SpecificHumidityF0
 4666	SpecificHumidityF1
@@ -1166,7 +1195,7 @@ The list of parameters known by newbase is:
 4531	WindGustF87.5
 1118	WindGustF90
 4530	WindGustF95
-4529	WindGustF97_5
+4529	WindGustF97.5
 4528	WindGustF99
 514	WindGustKT
 25	WindGustU
@@ -1209,4 +1238,4 @@ The list of parameters known by newbase is:
 291	Year
 125	ZResolution
 
-There are 1208 known parameters in total
+There are 1237 known parameters in total

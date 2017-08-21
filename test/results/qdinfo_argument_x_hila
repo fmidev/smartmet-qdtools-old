@@ -6,7 +6,8 @@ top left lonlat		= 14.4949,71.3286
 top right lonlat	= 40,71
 bottom left lonlat	= 19,58
 bottom right lonlat	= 33.6359,57.8201
-center lonlat	= 26.7099,64.8021
+center lonlat		= 26.7099,64.8021
+bbox			= [-356345.4 514923.746 -3390400.01 -1921721.58]
 
 fmiarea	= stereographic,25,90,60:19,58,40,71
 wktarea	= PROJCS["FMI_Polar_Stereographic",GEOGCS["FMI_Sphere",DATUM["FMI_2007",SPHEROID["FMI_Sphere",6371220,0]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199433]],PROJECTION["Polar_Stereographic"],PARAMETER["latitude_of_origin",60],PARAMETER["central_meridian",25],UNIT["Metre",1.0]]

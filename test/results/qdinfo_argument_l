@@ -943,10 +943,16 @@ The list of parameters known by newbase is:
 4745	SoundingCINMostUnstable
 4725	SoundingCINSurface
 4753	SoundingCrossTotalsIndex
+4738	SoundingELHeight500m
+4779	SoundingELHeightLast500m
+4781	SoundingELHeightLastMostUnstable
+4777	SoundingELHeightLastSurface
 4748	SoundingELHeightMostUnstable
-4738	SoundingELHeightS500m
 4728	SoundingELHeightSurface
 4732	SoundingELPressure500m
+4778	SoundingELPressureLast500m
+4780	SoundingELPressureLastMostUnstable
+4776	SoundingELPressureLastSurface
 4742	SoundingELPressureMostUnstable
 4722	SoundingELPressureSurface
 4752	SoundingKIndex
@@ -1238,4 +1244,4 @@ The list of parameters known by newbase is:
 291	Year
 125	ZResolution
 
-There are 1237 known parameters in total
+There are 1243 known parameters in total

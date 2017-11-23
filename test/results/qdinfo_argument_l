@@ -2093,6 +2093,10 @@ The list of parameters known by newbase is:
 11421	ocean_y_overturning_mass_streamfunction_due_to_bolus_advection
 1203	OceanIcing
 418	OldVisibility
+624	OlivePollenAvailable
+623	OlivePollenConcentration
+625	OlivePollenRemainingRatio
+622	OlivePollenTemperatureSum
 12877	omega
 11422	omnidirectional_photosynthetic_spherical_irradiance_in_sea_water
 13079	omnidirectional_spectral_spherical_irradiance_in_sea_water
@@ -2316,6 +2320,8 @@ The list of parameters known by newbase is:
 1073	ProbabilityOfPr24Limit3
 1074	ProbabilityOfPr24Limit4
 1075	ProbabilityOfPr24Limit5
+1076	ProbabilityOfPr24Limit6
+1077	ProbabilityOfPr24Limit7
 1061	ProbabilityOfPr6Limit1
 1062	ProbabilityOfPr6Limit2
 1063	ProbabilityOfPr6Limit3
@@ -2496,6 +2502,7 @@ The list of parameters known by newbase is:
 153	RadiationOutSW2
 318	RadiationReflected
 316	RadiationSW
+1381	RadiationSWAccumulation
 11488	radius_of_tropical_cyclone_central_dense_overcast_region
 11489	radius_of_tropical_cyclone_eye
 11490	radius_of_tropical_cyclone_maximum_sustained_wind_speed
@@ -4587,4 +4594,4 @@ The list of parameters known by newbase is:
 12874	zenith_angle
 125	ZResolution
 
-There are 4586 known parameters in total
+There are 4593 known parameters in total

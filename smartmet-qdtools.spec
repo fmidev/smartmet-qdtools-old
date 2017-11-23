@@ -3,7 +3,7 @@
 Summary: Command line tools for handling querydata
 Name: %{RPMNAME}
 Version: 17.11.23
-Release: 1%{?dist}.fmi
+Release: 7%{?dist}.fmi
 License: MIT
 Group: Development/Tools
 URL: https://github.com/fmidev/smartmet-qdtools
@@ -26,6 +26,7 @@ BuildRequires: smartmet-library-imagine-devel >= 17.9.22
 BuildRequires: smartmet-library-macgyver-devel >= 17.8.28
 BuildRequires: smartmet-library-newbase-devel >= 17.11.16
 BuildRequires: smartmet-library-smarttools-devel >= 17.8.28
+BuildRequires: smartmet-library-spine-devel
 BuildRequires: mdsplib >= 16.4.8
 BuildRequires: netcdf-devel >= 4.3.3.1
 BuildRequires: zlib-devel
@@ -40,6 +41,7 @@ Requires: smartmet-library-imagine >= 17.9.22
 Requires: smartmet-library-macgyver >= 17.8.28
 Requires: smartmet-library-newbase >= 17.11.16
 Requires: smartmet-library-smarttools >= 17.8.28
+Requires: smartmet-library-spine
 Requires: eccodes
 Requires: hdf5 >= 1.8.12
 Requires: jasper-libs >= 1.900.1

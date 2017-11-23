@@ -3,7 +3,7 @@
 Summary: Command line tools for handling querydata
 Name: %{RPMNAME}
 Version: 17.12.19
-Release: 2%{?dist}.fmi
+Release: 1%{?dist}.fmi
 License: MIT
 Group: Development/Tools
 URL: https://github.com/fmidev/smartmet-qdtools
@@ -187,6 +187,7 @@ make test
 %{_datadir}/smartmet/stations.csv
 
 %changelog
+<<<<<<< HEAD
 * Tue Dec 19 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.12.19-2.fmi
 - qddifference now detects different grids in the input files
 
@@ -201,6 +202,8 @@ make test
 * Thu Dec  7 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.12.7-1.fmi
 - qdtogrib now produces a missing value bitmap if the data contains missing values
 
+=======
+>>>>>>> New release: nctoqd is now able to handle more models
 * Thu Nov 23 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.11.23-1.fmi
 - nctoqd is now able to handle more model data
 

@@ -8,6 +8,9 @@
 
 #include "nctools.h"
 
+#include <macgyver/CsvReader.h>
+#include <macgyver/StringConversion.h>
+#include <macgyver/TimeParser.h>
 #include <newbase/NFmiAreaFactory.h>
 #include <newbase/NFmiEnumConverter.h>
 #include <newbase/NFmiFastQueryInfo.h>
@@ -20,10 +23,7 @@
 #include <newbase/NFmiTimeDescriptor.h>
 #include <newbase/NFmiTimeList.h>
 #include <newbase/NFmiVPlaceDescriptor.h>
-
-#include <macgyver/CsvReader.h>
-#include <macgyver/StringConversion.h>
-#include <macgyver/TimeParser.h>
+#include <spine/Exception.h>
 
 #include <netcdfcpp.h>
 
@@ -56,14 +56,17 @@ nctools::Options options;
 void require_conventions(const NcFile& ncfile, const std::string& reference, int sz)
 {
   NcAtt* att = ncfile.get_att("Conventions");
-  if (att == 0) throw std::runtime_error("The NetCDF file is missing the Conventions attribute");
+  if (att == 0)
+    throw SmartMet::Spine::Exception(BCP, "The NetCDF file is missing the Conventions attribute");
 
-  if (att->type() != ncChar) throw std::runtime_error("The Conventions attribute must be a string");
+  if (att->type() != ncChar)
+    throw SmartMet::Spine::Exception(BCP, "The Conventions attribute must be a string");
 
   std::string ref = att->values()->as_string(0);
 
   if (ref.substr(0, sz) != reference.substr(0, sz))
-    throw std::runtime_error("The file must conform to " + reference + ", not to " + ref);
+    throw SmartMet::Spine::Exception(BCP,
+                                     "The file must conform to " + reference + ", not to " + ref);
 
   // We do not test the version numerically at all, since it is
   // possible the version will some day be of the form x.y.z
@@ -114,7 +117,7 @@ NcVar* find_x_axis(const NcFile& ncfile)
   if (x == 0) x = find_axis(ncfile, "100  km");
   if (x == 0) x = find_axis(ncfile, "m");
   if (x == 0) x = find_axis(ncfile, "projection_x_coordinate");
-  if (x == 0) throw std::runtime_error("X-axis type unsupported");
+  if (x == 0) throw SmartMet::Spine::Exception(BCP, "X-axis type unsupported");
 
   return x;
 }
@@ -136,7 +139,7 @@ NcVar* find_y_axis(const NcFile& ncfile)
   if (y == 0) y = find_axis(ncfile, "100  km");
   if (y == 0) y = find_axis(ncfile, "m");
   if (y == 0) y = find_axis(ncfile, "projection_y_coordinate");
-  if (y == 0) throw std::runtime_error("Y-axis type unsupported");
+  if (y == 0) throw SmartMet::Spine::Exception(BCP, "Y-axis type unsupported");
 
   return y;
 }
@@ -157,7 +160,7 @@ int find_dimension(const NcFile& ncfile, const std::string& varname)
     boost::algorithm::to_lower(name);
     if (name == dimname) return dim->size();
   }
-  throw std::runtime_error(std::string("Could not find dimension of axis ") + varname);
+  throw SmartMet::Spine::Exception(BCP, std::string("Could not find dimension of axis ") + varname);
 }
 
 // ----------------------------------------------------------------------
@@ -179,9 +182,11 @@ void find_axis_bounds(NcVar* var, int n, double* x1, double* x2, const char* nam
   for (int i = 1; i < var->num_vals(); i++)
   {
     if (desc == false && values->as_double(i) <= values->as_double(i - 1))
-      throw std::runtime_error(std::string(name) + "-axis is not monotonously increasing");
+      throw SmartMet::Spine::Exception(BCP,
+                                       std::string(name) + "-axis is not monotonously increasing");
     if (desc == true && values->as_double(i) >= values->as_double(i - 1))
-      throw std::runtime_error(std::string(name) + "-axis is not monotonously decreasing");
+      throw SmartMet::Spine::Exception(BCP,
+                                       std::string(name) + "-axis is not monotonously decreasing");
   }
 
   // Min&max is now easy
@@ -211,7 +216,8 @@ void find_axis_bounds(NcVar* var, int n, double* x1, double* x2, const char* nam
       s = values->as_double(i - 1) - values->as_double(i);
 
     if (std::abs(s - step) > tolerance * step)
-      throw std::runtime_error(std::string(name) + "-axis is not regular with tolerance 1e-3");
+      throw SmartMet::Spine::Exception(
+          BCP, std::string(name) + "-axis is not regular with tolerance 1e-3");
   }
 }
 
@@ -254,7 +260,7 @@ void find_lonlat_bounds(
 void check_xaxis_units(NcVar* var)
 {
   NcAtt* att = var->get_att("units");
-  if (att == 0) throw std::runtime_error("X-axis has no units attribute");
+  if (att == 0) throw SmartMet::Spine::Exception(BCP, "X-axis has no units attribute");
 
   std::string units = att->values()->as_string(0);
 
@@ -269,7 +275,7 @@ void check_xaxis_units(NcVar* var)
   if (units == "m") return;
   if (units == "km") return;
 
-  throw std::runtime_error("X-axis has unknown units: " + units);
+  throw SmartMet::Spine::Exception(BCP, "X-axis has unknown units: " + units);
 }
 
 // ----------------------------------------------------------------------
@@ -281,7 +287,7 @@ void check_xaxis_units(NcVar* var)
 void check_yaxis_units(NcVar* var)
 {
   NcAtt* att = var->get_att("units");
-  if (att == 0) throw std::runtime_error("Y-axis has no units attribute");
+  if (att == 0) throw SmartMet::Spine::Exception(BCP, "Y-axis has no units attribute");
 
   std::string units = att->values()->as_string(0);
 
@@ -296,7 +302,7 @@ void check_yaxis_units(NcVar* var)
   if (units == "m") return;
   if (units == "km") return;
 
-  throw std::runtime_error("Y-axis has unknown units: " + units);
+  throw SmartMet::Spine::Exception(BCP, "Y-axis has unknown units: " + units);
 }
 
 // ----------------------------------------------------------------------
@@ -328,7 +334,7 @@ NFmiHPlaceDescriptor create_hdesc(double x1,
   if (grid_mapping == POLAR_STEREOGRAPHIC)
     area = new NFmiStereographicArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2), centralLongitude);
   else if (grid_mapping == LAMBERT_CONFORMAL_CONIC)
-    throw std::runtime_error("Lambert conformal conic projection not supported");
+    throw SmartMet::Spine::Exception(BCP, "Lambert conformal conic projection not supported");
   else
     area = new NFmiLatLonArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2));
 
@@ -363,8 +369,9 @@ NFmiVPlaceDescriptor create_vdesc(const NcFile& /* ncfile */,
 void parse_time_units(NcVar* t, boost::posix_time::ptime* origintime, long* timeunit)
 {
   NcAtt* att = t->get_att("units");
-  if (att == 0) throw std::runtime_error("Time axis has no defined units");
-  if (att->type() != ncChar) throw std::runtime_error("Time axis units must be a string");
+  if (att == 0) throw SmartMet::Spine::Exception(BCP, "Time axis has no defined units");
+  if (att->type() != ncChar)
+    throw SmartMet::Spine::Exception(BCP, "Time axis units must be a string");
 
   // "units since date [time] [tz]"
 
@@ -374,7 +381,7 @@ void parse_time_units(NcVar* t, boost::posix_time::ptime* origintime, long* time
   boost::algorithm::split(parts, units, boost::algorithm::is_any_of(" "));
 
   if (parts.size() < 3 || parts.size() > 5)
-    throw std::runtime_error("Invalid time units string: '" + units + "'");
+    throw SmartMet::Spine::Exception(BCP, "Invalid time units string: '" + units + "'");
 
   std::string unit = boost::algorithm::to_lower_copy(parts[0]);
 
@@ -387,10 +394,10 @@ void parse_time_units(NcVar* t, boost::posix_time::ptime* origintime, long* time
   else if (unit == "day" || unit == "days" || unit == "d")
     *timeunit = 24 * 60 * 60;
   else
-    throw std::runtime_error("Unknown unit in time axis: '" + unit + "'");
+    throw SmartMet::Spine::Exception(BCP, "Unknown unit in time axis: '" + unit + "'");
 
   if (boost::algorithm::to_lower_copy(parts[1]) != "since")
-    throw std::runtime_error("Invalid time units string: '" + units + "'");
+    throw SmartMet::Spine::Exception(BCP, "Invalid time units string: '" + units + "'");
 
   std::string datestr = parts[2];
   std::string timestr = (parts.size() >= 4 ? parts[3] : "00:00:00");
@@ -431,7 +438,7 @@ unsigned long get_units_in_seconds(std::string unit_str)
     return 1;
   else
   {
-    throw std::runtime_error("Invalid time unit used: " + unit_str);
+    throw SmartMet::Spine::Exception(BCP, "Invalid time unit used: " + unit_str);
   }
 }
 
@@ -614,7 +621,8 @@ NFmiParamDescriptor create_pdesc(const NcFile& ncfile, const nctools::ParamConve
   }
 
   if (known_variables == 0)
-    throw std::runtime_error(
+    throw SmartMet::Spine::Exception(
+        BCP,
         "input does not contain any convertable variables. Do you need to define some conversion "
         "in config?");
 
@@ -629,109 +637,119 @@ NFmiParamDescriptor create_pdesc(const NcFile& ncfile, const nctools::ParamConve
 
 int run(int argc, char* argv[])
 {
-  if (!parse_options(argc, argv, options)) return 0;
+  try
+  {
+    if (!parse_options(argc, argv, options)) return 0;
 
-  // Default is to exit in some non fatal situations
-  NcError errormode(NcError::silent_nonfatal);
-  NcFile ncfile(options.infile.c_str(), NcFile::ReadOnly);
+    // Default is to exit in some non fatal situations
+    NcError errormode(NcError::silent_nonfatal);
+    NcFile ncfile(options.infile.c_str(), NcFile::ReadOnly);
 
-  if (!ncfile.is_valid())
-    throw std::runtime_error("File '" + options.infile + "' does not contain valid NetCDF");
+    if (!ncfile.is_valid())
+      throw SmartMet::Spine::Exception(
+          BCP, "File '" + options.infile + "' does not contain valid NetCDF", NULL);
 
-  // Parameter conversions
+    // Parameter conversions
 
-  nctools::ParamConversions paramconvs = nctools::read_netcdf_config(options);
+    nctools::ParamConversions paramconvs = nctools::read_netcdf_config(options);
 
 #if DEBUG_PRINT
-  debug_output(ncfile);
+    debug_output(ncfile);
 #endif
 
-  require_conventions(ncfile, "CF-1.0", 3);
-  double centralLongitude(0);
-  std::string grid_mapping(find_projection(ncfile, centralLongitude));
-  bool isStereographicProjection = (grid_mapping == POLAR_STEREOGRAPHIC);
+    require_conventions(ncfile, "CF-1.0", 3);
+    double centralLongitude(0);
+    std::string grid_mapping(find_projection(ncfile, centralLongitude));
+    bool isStereographicProjection = (grid_mapping == POLAR_STEREOGRAPHIC);
 
-  NcVar* x = find_x_axis(ncfile);
-  NcVar* y = find_y_axis(ncfile);
+    NcVar* x = find_x_axis(ncfile);
+    NcVar* y = find_y_axis(ncfile);
 
-  NcVar* z = find_axis(ncfile, "z");
-  NcVar* t = (isStereographicProjection ? 0 : find_axis(ncfile, "T"));
+    NcVar* z = find_axis(ncfile, "z");
+    NcVar* t = (isStereographicProjection ? 0 : find_axis(ncfile, "T"));
 
-  // Alternate names
-  if (z == 0) z = find_axis(ncfile, "projection_z_coordinate");
-  if (t == 0) t = find_axis(ncfile, "time");
+    // Alternate names
+    if (z == 0) z = find_axis(ncfile, "projection_z_coordinate");
+    if (t == 0) t = find_axis(ncfile, "time");
 
-  if (x == 0) throw std::runtime_error("Failed to find X-axis variable");
-  if (y == 0) throw std::runtime_error("Failed to find Y-axis variable");
-  // if (z == 0) throw std::runtime_error("Failed to find Z-axis variable");
-  if (!isStereographicProjection && t == 0)
-    throw std::runtime_error("Failed to find T-axis variable");
+    if (x == 0) throw SmartMet::Spine::Exception(BCP, "Failed to find X-axis variable");
+    if (y == 0) throw SmartMet::Spine::Exception(BCP, "Failed to find Y-axis variable");
+    // if (z == 0) throw SmartMet::Spine::Exception(BCP,"Failed to find Z-axis variable");
+    if (!isStereographicProjection && t == 0)
+      throw SmartMet::Spine::Exception(BCP, "Failed to find T-axis variable");
 
-  if (x->num_vals() < 1) throw std::runtime_error("X-axis has no values");
-  if (y->num_vals() < 1) throw std::runtime_error("Y-axis has no values");
-  if (z != NULL && z->num_vals() < 1) throw std::runtime_error("Z-axis has no values");
-  if (!isStereographicProjection && t->num_vals() < 1)
-    throw std::runtime_error("T-axis has no values");
+    if (x->num_vals() < 1) throw SmartMet::Spine::Exception(BCP, "X-axis has no values");
+    if (y->num_vals() < 1) throw SmartMet::Spine::Exception(BCP, "Y-axis has no values");
+    if (z != NULL && z->num_vals() < 1)
+      throw SmartMet::Spine::Exception(BCP, "Z-axis has no values");
+    if (!isStereographicProjection && t->num_vals() < 1)
+      throw SmartMet::Spine::Exception(BCP, "T-axis has no values");
 
-  check_xaxis_units(x);
-  check_yaxis_units(y);
+    check_xaxis_units(x);
+    check_yaxis_units(y);
 
-  int nx = find_dimension(ncfile, x->name());
-  int ny = find_dimension(ncfile, y->name());
-  int nz = (z == NULL ? 1 : find_dimension(ncfile, z->name()));
-  int nt = (isStereographicProjection ? 0 : find_dimension(ncfile, t->name()));
+    int nx = find_dimension(ncfile, x->name());
+    int ny = find_dimension(ncfile, y->name());
+    int nz = (z == NULL ? 1 : find_dimension(ncfile, z->name()));
+    int nt = (isStereographicProjection ? 0 : find_dimension(ncfile, t->name()));
 
-  if (nx == 0) throw std::runtime_error("X-dimension is of size zero");
-  if (ny == 0) throw std::runtime_error("Y-dimension is of size zero");
-  if (nz == 0) throw std::runtime_error("Z-dimension is of size zero");
-  if (!isStereographicProjection && nt == 0)
-    throw std::runtime_error("T-dimension is of size zero");
+    if (nx == 0) throw SmartMet::Spine::Exception(BCP, "X-dimension is of size zero");
+    if (ny == 0) throw SmartMet::Spine::Exception(BCP, "Y-dimension is of size zero");
+    if (nz == 0) throw SmartMet::Spine::Exception(BCP, "Z-dimension is of size zero");
+    if (!isStereographicProjection && nt == 0)
+      throw SmartMet::Spine::Exception(BCP, "T-dimension is of size zero");
 
-  if (nz != 1)
-    throw std::runtime_error(
-        "Z-dimension <> 1 is not supported (yet), sample file is needed first");
+    if (nz != 1)
+      throw SmartMet::Spine::Exception(
+          BCP, "Z-dimension <> 1 is not supported (yet), sample file is needed first");
 
-  double x1 = 0, x2 = 0, y1 = 0, y2 = 0, z1 = 0, z2 = 0;
-  if (isStereographicProjection)
-  {
-    find_lonlat_bounds(ncfile, x1, y1, x2, y2);
+    double x1 = 0, x2 = 0, y1 = 0, y2 = 0, z1 = 0, z2 = 0;
+    if (isStereographicProjection)
+    {
+      find_lonlat_bounds(ncfile, x1, y1, x2, y2);
+    }
+    else
+    {
+      find_axis_bounds(x, nx, &x1, &x2, "x");
+      find_axis_bounds(y, ny, &y1, &y2, "y");
+    }
+    find_axis_bounds(z, nz, &z1, &z2, "z");
+
+    NFmiHPlaceDescriptor hdesc =
+        create_hdesc(x1, y1, x2, y2, nx, ny, centralLongitude, grid_mapping);
+    NFmiVPlaceDescriptor vdesc = create_vdesc(ncfile, z1, z2, nz);
+    NFmiTimeDescriptor tdesc =
+        (isStereographicProjection ? create_tdesc(ncfile) : create_tdesc(ncfile, t));
+    NFmiParamDescriptor pdesc = create_pdesc(ncfile, paramconvs);
+
+    NFmiFastQueryInfo qi(pdesc, tdesc, hdesc, vdesc);
+    std::unique_ptr<NFmiQueryData> data;
+    if (options.memorymap)
+    {
+      data.reset(NFmiQueryDataUtil::CreateEmptyData(qi, options.outfile, true));
+    }
+    else
+    {
+      data.reset(NFmiQueryDataUtil::CreateEmptyData(qi));
+    }
+
+    NFmiFastQueryInfo info(data.get());
+
+    info.SetProducer(NFmiProducer(options.producernumber, options.producername));
+
+    nctools::copy_values(options, ncfile, info, paramconvs);
+
+    // TODO: Handle unit conversions too!
+
+    if (options.outfile == "-")
+      data->Write();
+    else if (!options.memorymap)
+      data->Write(options.outfile);
   }
-  else
+  catch (...)
   {
-    find_axis_bounds(x, nx, &x1, &x2, "x");
-    find_axis_bounds(y, ny, &y1, &y2, "y");
+    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
-  find_axis_bounds(z, nz, &z1, &z2, "z");
-
-  NFmiHPlaceDescriptor hdesc = create_hdesc(x1, y1, x2, y2, nx, ny, centralLongitude, grid_mapping);
-  NFmiVPlaceDescriptor vdesc = create_vdesc(ncfile, z1, z2, nz);
-  NFmiTimeDescriptor tdesc =
-      (isStereographicProjection ? create_tdesc(ncfile) : create_tdesc(ncfile, t));
-  NFmiParamDescriptor pdesc = create_pdesc(ncfile, paramconvs);
-
-  NFmiFastQueryInfo qi(pdesc, tdesc, hdesc, vdesc);
-  std::unique_ptr<NFmiQueryData> data;
-  if (options.memorymap)
-  {
-    data.reset(NFmiQueryDataUtil::CreateEmptyData(qi, options.outfile, true));
-  }
-  else
-  {
-    data.reset(NFmiQueryDataUtil::CreateEmptyData(qi));
-  }
-
-  NFmiFastQueryInfo info(data.get());
-
-  info.SetProducer(NFmiProducer(options.producernumber, options.producername));
-
-  nctools::copy_values(options, ncfile, info, paramconvs);
-
-  // TODO: Handle unit conversions too!
-
-  if (options.outfile == "-")
-    data->Write();
-  else if (!options.memorymap)
-    data->Write(options.outfile);
 
   return 0;
 }
@@ -748,14 +766,10 @@ int main(int argc, char* argv[])
   {
     return run(argc, argv);
   }
-  catch (std::exception& e)
-  {
-    std::cerr << "Error: " << e.what() << std::endl;
-    return 1;
-  }
   catch (...)
   {
-    std::cerr << "Error: Caught an unknown exception" << std::endl;
+    SmartMet::Spine::Exception e(BCP, "Operation failed!", NULL);
+    e.printError();
     return 1;
   }
 }

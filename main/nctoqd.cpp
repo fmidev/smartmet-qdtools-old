@@ -15,6 +15,7 @@
 #include <newbase/NFmiEnumConverter.h>
 #include <newbase/NFmiFastQueryInfo.h>
 #include <newbase/NFmiHPlaceDescriptor.h>
+#include <newbase/NFmiLambertEqualArea.h>
 #include <newbase/NFmiLatLonArea.h>
 #include <newbase/NFmiParamDescriptor.h>
 #include <newbase/NFmiQueryData.h>
@@ -335,8 +336,13 @@ NFmiHPlaceDescriptor create_hdesc(double x1,
     area = new NFmiStereographicArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2), centralLongitude);
   else if (grid_mapping == LAMBERT_CONFORMAL_CONIC)
     throw SmartMet::Spine::Exception(BCP, "Lambert conformal conic projection not supported");
-  else
+  else if (grid_mapping == LAMBERT_AZIMUTHAL)
+    area = new NFmiLambertEqualArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2));
+  else if (grid_mapping == LATITUDE_LONGITUDE || grid_mapping.length() == 0)
+    // Map zero length (no projection) to latlon as that's the default for NetCDF
     area = new NFmiLatLonArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2));
+  else
+    throw SmartMet::Spine::Exception(BCP, "Projection " + grid_mapping + " is not supported");
 
   NFmiGrid grid(area, nx, ny);
   NFmiHPlaceDescriptor hdesc(grid);

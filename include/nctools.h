@@ -2,14 +2,16 @@
 #pragma once
 
 #include <macgyver/CsvReader.h>
-#include <netcdfcpp.h>
+#include <newbase/NFmiEnumConverter.h>
 #include <list>
 #include <map>
-#include <newbase/NFmiEnumConverter.h>
+#include <netcdfcpp.h>
 
 #define DEBUG_PRINT 0
 #define POLAR_STEREOGRAPHIC "polar_stereographic"
 #define LAMBERT_CONFORMAL_CONIC "lambert_conformal_conic"
+#define LATITUDE_LONGITUDE "latitude_longitude"
+#define LAMBERT_AZIMUTHAL "lambert_azimuthal_equal_area"
 
 class NFmiFastQueryInfo;
 
@@ -39,7 +41,7 @@ struct Options
   std::list<std::string> ignoreUnitChangeParams;  // -u name1,name2,...
   std::list<std::string> excludeParams;           // -x name1,name2,...
   std::string projection;  // -P // data konvertoidaan haluttuun projektioon ja alueeseen
-  attributesMap cmdLineGlobalAttributes;  // -a optiolla voidaan antaa dataan liittyviä globaali
+  attributesMap cmdLineGlobalAttributes;  // -a optiolla voidaan antaa dataan liittyviï¿½ globaali
                                           // attribuutteja (esim. -a DX=1356.3;DY=1265.3)
 };
 
@@ -60,8 +62,8 @@ struct CsvParams
   void add(const Fmi::CsvReader::row_type &row);
 
  private:
-  CsvParams &operator=(const CsvParams &);  // estetään sijoitus opereraattori, estää varoituksen
-                                            // VC++ 2012 kääntäjässä
+  CsvParams &operator=(const CsvParams &);  // estetï¿½ï¿½n sijoitus opereraattori, estï¿½ï¿½ varoituksen
+                                            // VC++ 2012 kï¿½ï¿½ntï¿½jï¿½ssï¿½
 };
 
 // ----------------------------------------------------------------------

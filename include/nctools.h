@@ -38,6 +38,7 @@ struct Options
   bool memorymap;            // --mmap
   bool fixstaggered;  // -s (muuttaa staggered datat perusdatan muotoon, interpoloi datan perus
                       // hilaan)
+  bool experimental;  // -x enable features which are known to be not work in all situations
   std::list<std::string> ignoreUnitChangeParams;  // -u name1,name2,...
   std::list<std::string> excludeParams;           // -x name1,name2,...
   std::string projection;  // -P // data konvertoidaan haluttuun projektioon ja alueeseen

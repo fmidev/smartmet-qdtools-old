@@ -337,7 +337,14 @@ NFmiHPlaceDescriptor create_hdesc(double x1,
   else if (grid_mapping == LAMBERT_CONFORMAL_CONIC)
     throw SmartMet::Spine::Exception(BCP, "Lambert conformal conic projection not supported");
   else if (grid_mapping == LAMBERT_AZIMUTHAL)
+  {
+    if (!options.experimental)
+      throw SmartMet::Spine::Exception(
+          BCP,
+          "Projection " + grid_mapping +
+              " is buggy in newbase library.\nReally want it? Try with -x (experimental) flag\n");
     area = new NFmiLambertEqualArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2));
+  }
   else if (grid_mapping == LATITUDE_LONGITUDE || grid_mapping.length() == 0)
     // Map zero length (no projection) to latlon as that's the default for NetCDF
     area = new NFmiLatLonArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2));

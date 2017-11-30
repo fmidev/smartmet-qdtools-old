@@ -77,6 +77,7 @@ bool parse_options(int argc, char *argv[], Options &options)
 
   po::options_description desc("Allowed options");
   desc.add_options()("help,h", "print out help message")(
+      "debug,d", po::bool_switch(&options.experimental), "enable debugging output")(
       "verbose,v", po::bool_switch(&options.verbose), "set verbose mode on")(
       "version,V", "display version number")(
       "experimental,x", po::bool_switch(&options.experimental), "enable experimental features")(

@@ -650,7 +650,7 @@ NcFileExtended::NcFileExtended(
 
 std::string NcFileExtended::grid_mapping()
 {
-  if (projectionName != nullptr) return projectionName;  // Do not rescan projection unnecessarily
+  if (projectionName != nullptr) return *projectionName;  // Do not rescan projection unnecessarily
 
   std::string projection_var_name;
 
@@ -676,7 +676,8 @@ std::string NcFileExtended::grid_mapping()
       if (var->name() == projection_var_name)
       {
         NcAtt *name_att = var->get_att("grid_mapping_name");
-        if (name_att != 0) projectionName = name_att->values()->as_string(0);
+        if (name_att != 0)
+          projectionName = std::make_shared<std::string>(name_att->values()->as_string(0));
 
         NcAtt *lon_att = var->get_att("longitude_of_projection_origin");
         if (lon_att != 0) longitudeOfProjectionOrigin = lon_att->values()->as_double(0);
@@ -685,7 +686,7 @@ std::string NcFileExtended::grid_mapping()
     }
   }
 
-  return projectionName;
+  return *projectionName;
 }
 
 #if DEBUG_PRINT

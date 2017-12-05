@@ -615,105 +615,113 @@ int run(int argc, char* argv[])
   try
   {
     if (!parse_options(argc, argv, options)) return 0;
+    std::unique_ptr<NFmiQueryData> data;
+    std::string infile = options.infile;
 
-    // Default is to exit in some non fatal situations
-    NcError errormode(NcError::silent_nonfatal);
-    nctools::NcFileExtended ncfile(options.infile.c_str(), NcFile::ReadOnly);
+    try
+    {
+      // Default is to exit in some non fatal situations
+      NcError errormode(NcError::silent_nonfatal);
+      nctools::NcFileExtended ncfile(options.infile.c_str(), NcFile::ReadOnly);
 
-    if (!ncfile.is_valid())
-      throw SmartMet::Spine::Exception(
-          BCP, "File '" + options.infile + "' does not contain valid NetCDF", NULL);
+      if (!ncfile.is_valid())
+        throw SmartMet::Spine::Exception(
+            BCP, "File '" + options.infile + "' does not contain valid NetCDF", NULL);
 
-    // Parameter conversions
+      // Parameter conversions
 
-    nctools::ParamConversions paramconvs = nctools::read_netcdf_config(options);
+      nctools::ParamConversions paramconvs = nctools::read_netcdf_config(options);
 
 #if DEBUG_PRINT
-    debug_output(ncfile);
+      debug_output(ncfile);
 #endif
 
-    require_conventions(ncfile, "CF-1.0", 3);
-    std::string grid_mapping(ncfile.grid_mapping());
-    bool isStereographicProjection = (grid_mapping == POLAR_STEREOGRAPHIC);
+      require_conventions(ncfile, "CF-1.0", 3);
+      std::string grid_mapping(ncfile.grid_mapping());
+      bool isStereographicProjection = (grid_mapping == POLAR_STEREOGRAPHIC);
 
-    NcVar* x = find_x_axis(ncfile);
-    NcVar* y = find_y_axis(ncfile);
+      NcVar* x = find_x_axis(ncfile);
+      NcVar* y = find_y_axis(ncfile);
 
-    NcVar* z = find_axis(ncfile, "z");
-    NcVar* t = (isStereographicProjection ? 0 : find_axis(ncfile, "T"));
+      NcVar* z = find_axis(ncfile, "z");
+      NcVar* t = (isStereographicProjection ? 0 : find_axis(ncfile, "T"));
 
-    // Alternate names
-    if (z == 0) z = find_axis(ncfile, "projection_z_coordinate");
-    if (t == 0) t = find_axis(ncfile, "time");
+      // Alternate names
+      if (z == 0) z = find_axis(ncfile, "projection_z_coordinate");
+      if (t == 0) t = find_axis(ncfile, "time");
 
-    if (x == 0) throw SmartMet::Spine::Exception(BCP, "Failed to find X-axis variable");
-    if (y == 0) throw SmartMet::Spine::Exception(BCP, "Failed to find Y-axis variable");
-    // if (z == 0) throw SmartMet::Spine::Exception(BCP,"Failed to find Z-axis variable");
-    if (!isStereographicProjection && t == 0)
-      throw SmartMet::Spine::Exception(BCP, "Failed to find T-axis variable");
+      if (x == 0) throw SmartMet::Spine::Exception(BCP, "Failed to find X-axis variable");
+      if (y == 0) throw SmartMet::Spine::Exception(BCP, "Failed to find Y-axis variable");
+      // if (z == 0) throw SmartMet::Spine::Exception(BCP,"Failed to find Z-axis variable");
+      if (!isStereographicProjection && t == 0)
+        throw SmartMet::Spine::Exception(BCP, "Failed to find T-axis variable");
 
-    if (x->num_vals() < 1) throw SmartMet::Spine::Exception(BCP, "X-axis has no values");
-    if (y->num_vals() < 1) throw SmartMet::Spine::Exception(BCP, "Y-axis has no values");
-    if (z != NULL && z->num_vals() < 1)
-      throw SmartMet::Spine::Exception(BCP, "Z-axis has no values");
-    if (!isStereographicProjection && t->num_vals() < 1)
-      throw SmartMet::Spine::Exception(BCP, "T-axis has no values");
+      if (x->num_vals() < 1) throw SmartMet::Spine::Exception(BCP, "X-axis has no values");
+      if (y->num_vals() < 1) throw SmartMet::Spine::Exception(BCP, "Y-axis has no values");
+      if (z != NULL && z->num_vals() < 1)
+        throw SmartMet::Spine::Exception(BCP, "Z-axis has no values");
+      if (!isStereographicProjection && t->num_vals() < 1)
+        throw SmartMet::Spine::Exception(BCP, "T-axis has no values");
 
-    check_xaxis_units(x);
-    check_yaxis_units(y);
+      check_xaxis_units(x);
+      check_yaxis_units(y);
 
-    int nx = find_dimension(ncfile, x->name());
-    int ny = find_dimension(ncfile, y->name());
-    int nz = (z == NULL ? 1 : find_dimension(ncfile, z->name()));
-    int nt = (isStereographicProjection ? 0 : find_dimension(ncfile, t->name()));
+      int nx = find_dimension(ncfile, x->name());
+      int ny = find_dimension(ncfile, y->name());
+      int nz = (z == NULL ? 1 : find_dimension(ncfile, z->name()));
+      int nt = (isStereographicProjection ? 0 : find_dimension(ncfile, t->name()));
 
-    if (nx == 0) throw SmartMet::Spine::Exception(BCP, "X-dimension is of size zero");
-    if (ny == 0) throw SmartMet::Spine::Exception(BCP, "Y-dimension is of size zero");
-    if (nz == 0) throw SmartMet::Spine::Exception(BCP, "Z-dimension is of size zero");
-    if (!isStereographicProjection && nt == 0)
-      throw SmartMet::Spine::Exception(BCP, "T-dimension is of size zero");
+      if (nx == 0) throw SmartMet::Spine::Exception(BCP, "X-dimension is of size zero");
+      if (ny == 0) throw SmartMet::Spine::Exception(BCP, "Y-dimension is of size zero");
+      if (nz == 0) throw SmartMet::Spine::Exception(BCP, "Z-dimension is of size zero");
+      if (!isStereographicProjection && nt == 0)
+        throw SmartMet::Spine::Exception(BCP, "T-dimension is of size zero");
 
-    if (nz != 1)
-      throw SmartMet::Spine::Exception(
-          BCP, "Z-dimension <> 1 is not supported (yet), sample file is needed first");
+      if (nz != 1)
+        throw SmartMet::Spine::Exception(
+            BCP, "Z-dimension <> 1 is not supported (yet), sample file is needed first");
 
-    double x1 = 0, x2 = 0, y1 = 0, y2 = 0, z1 = 0, z2 = 0;
-    if (isStereographicProjection)
-    {
-      find_lonlat_bounds(ncfile, x1, y1, x2, y2);
+      double x1 = 0, x2 = 0, y1 = 0, y2 = 0, z1 = 0, z2 = 0;
+      if (isStereographicProjection)
+      {
+        find_lonlat_bounds(ncfile, x1, y1, x2, y2);
+      }
+      else
+      {
+        find_axis_bounds(x, nx, &x1, &x2, "x");
+        find_axis_bounds(y, ny, &y1, &y2, "y");
+      }
+      find_axis_bounds(z, nz, &z1, &z2, "z");
+
+      NFmiHPlaceDescriptor hdesc =
+          create_hdesc(x1, y1, x2, y2, nx, ny, ncfile.longitudeOfProjectionOrigin, grid_mapping);
+      NFmiVPlaceDescriptor vdesc = create_vdesc(ncfile, z1, z2, nz);
+      NFmiTimeDescriptor tdesc =
+          (isStereographicProjection ? create_tdesc(ncfile) : create_tdesc(ncfile, t));
+      NFmiParamDescriptor pdesc = create_pdesc(ncfile, paramconvs);
+
+      NFmiFastQueryInfo qi(pdesc, tdesc, hdesc, vdesc);
+      if (options.memorymap)
+      {
+        data.reset(NFmiQueryDataUtil::CreateEmptyData(qi, options.outfile, true));
+      }
+      else
+      {
+        data.reset(NFmiQueryDataUtil::CreateEmptyData(qi));
+      }
+
+      NFmiFastQueryInfo info(data.get());
+
+      info.SetProducer(NFmiProducer(options.producernumber, options.producername));
+
+      nctools::copy_values(options, ncfile, info, paramconvs);
+
+      // TODO: Handle unit conversions too!
     }
-    else
+    catch (...)
     {
-      find_axis_bounds(x, nx, &x1, &x2, "x");
-      find_axis_bounds(y, ny, &y1, &y2, "y");
+      throw SmartMet::Spine::Exception(BCP, "Operation failed on input " + infile, NULL);
     }
-    find_axis_bounds(z, nz, &z1, &z2, "z");
-
-    NFmiHPlaceDescriptor hdesc =
-        create_hdesc(x1, y1, x2, y2, nx, ny, ncfile.longitudeOfProjectionOrigin, grid_mapping);
-    NFmiVPlaceDescriptor vdesc = create_vdesc(ncfile, z1, z2, nz);
-    NFmiTimeDescriptor tdesc =
-        (isStereographicProjection ? create_tdesc(ncfile) : create_tdesc(ncfile, t));
-    NFmiParamDescriptor pdesc = create_pdesc(ncfile, paramconvs);
-
-    NFmiFastQueryInfo qi(pdesc, tdesc, hdesc, vdesc);
-    std::unique_ptr<NFmiQueryData> data;
-    if (options.memorymap)
-    {
-      data.reset(NFmiQueryDataUtil::CreateEmptyData(qi, options.outfile, true));
-    }
-    else
-    {
-      data.reset(NFmiQueryDataUtil::CreateEmptyData(qi));
-    }
-
-    NFmiFastQueryInfo info(data.get());
-
-    info.SetProducer(NFmiProducer(options.producernumber, options.producername));
-
-    nctools::copy_values(options, ncfile, info, paramconvs);
-
-    // TODO: Handle unit conversions too!
 
     if (options.outfile == "-")
       data->Write();

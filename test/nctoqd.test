@@ -5,6 +5,10 @@ $results = "results";
 
 %usednames = ();
 
+my $dir = $0;
+$dir =~ s%[^/]*$%% ;
+if ($dir) { chdir "$dir" or die "Unable to change to $dir: $!" } ;
+	
 # Keep temporaries: useful to produce new result files
 $keeptmp = "";
 if ( scalar @ARGV > 0 && $ARGV[0] eq "keeptmp" ) {

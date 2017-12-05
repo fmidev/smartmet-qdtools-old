@@ -195,11 +195,13 @@ void find_axis_bounds(NcVar* var, int n, double* x1, double* x2, const char* nam
   {
     *x1 = values->as_double(0);
     *x2 = values->as_double(var->num_vals() - 1);
+    if (options.debug) std::cerr << std::string(name) + "-axis is increasing\n";
   }
   else
   {
     *x2 = values->as_double(0);
     *x1 = values->as_double(var->num_vals() - 1);
+    if (options.debug) std::cerr << std::string(name) + "-axis is decreasing\n";
   }
 
   // Verify stepsize is even
@@ -544,46 +546,6 @@ NFmiTimeDescriptor create_tdesc(const NcFile& /* ncfile */, NcVar* t)
   return NFmiTimeDescriptor(tlist.FirstTime(), tlist);
 }
 
-std::string find_projection(const NcFile& ncfile, double& longitudeOfProjectionOrigin)
-{
-  std::string projection_var_name;
-
-  for (int i = 0; i < ncfile.num_vars(); i++)
-  {
-    NcVar* var = ncfile.get_var(i);
-    if (var == 0) continue;
-
-    NcAtt* att = var->get_att("grid_mapping");
-    if (att == 0) continue;
-
-    projection_var_name = att->values()->as_string(0);
-    break;
-  }
-
-  std::string projection_name;
-
-  if (!projection_var_name.empty())
-  {
-    for (int i = 0; i < ncfile.num_vars(); i++)
-    {
-      NcVar* var = ncfile.get_var(i);
-      if (var == 0) continue;
-
-      if (var->name() == projection_var_name)
-      {
-        NcAtt* name_att = var->get_att("grid_mapping_name");
-        if (name_att != 0) projection_name = name_att->values()->as_string(0);
-
-        NcAtt* lon_att = var->get_att("longitude_of_projection_origin");
-        if (lon_att != 0) longitudeOfProjectionOrigin = lon_att->values()->as_double(0);
-        break;
-      }
-    }
-  }
-
-  return projection_name;
-}
-
 // ----------------------------------------------------------------------
 /*!
  * Create parameter descriptor
@@ -656,7 +618,7 @@ int run(int argc, char* argv[])
 
     // Default is to exit in some non fatal situations
     NcError errormode(NcError::silent_nonfatal);
-    NcFile ncfile(options.infile.c_str(), NcFile::ReadOnly);
+    nctools::NcFileExtended ncfile(options.infile.c_str(), NcFile::ReadOnly);
 
     if (!ncfile.is_valid())
       throw SmartMet::Spine::Exception(
@@ -671,8 +633,7 @@ int run(int argc, char* argv[])
 #endif
 
     require_conventions(ncfile, "CF-1.0", 3);
-    double centralLongitude(0);
-    std::string grid_mapping(find_projection(ncfile, centralLongitude));
+    std::string grid_mapping(ncfile.grid_mapping());
     bool isStereographicProjection = (grid_mapping == POLAR_STEREOGRAPHIC);
 
     NcVar* x = find_x_axis(ncfile);
@@ -729,7 +690,7 @@ int run(int argc, char* argv[])
     find_axis_bounds(z, nz, &z1, &z2, "z");
 
     NFmiHPlaceDescriptor hdesc =
-        create_hdesc(x1, y1, x2, y2, nx, ny, centralLongitude, grid_mapping);
+        create_hdesc(x1, y1, x2, y2, nx, ny, ncfile.longitudeOfProjectionOrigin, grid_mapping);
     NFmiVPlaceDescriptor vdesc = create_vdesc(ncfile, z1, z2, nz);
     NFmiTimeDescriptor tdesc =
         (isStereographicProjection ? create_tdesc(ncfile) : create_tdesc(ncfile, t));

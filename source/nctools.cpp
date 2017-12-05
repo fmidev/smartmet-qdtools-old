@@ -51,6 +51,8 @@ Options::Options()
       projection(),
       cmdLineGlobalAttributes()
 {
+  debug = false;
+  experimental = false;
 }
 
 NFmiEnumConverter &get_enumconverter(void) { return converter; }
@@ -77,7 +79,7 @@ bool parse_options(int argc, char *argv[], Options &options)
 
   po::options_description desc("Allowed options");
   desc.add_options()("help,h", "print out help message")(
-      "debug,d", po::bool_switch(&options.experimental), "enable debugging output")(
+      "debug,d", po::bool_switch(&options.debug), "enable debugging output")(
       "verbose,v", po::bool_switch(&options.verbose), "set verbose mode on")(
       "version,V", "display version number")(
       "experimental,x", po::bool_switch(&options.experimental), "enable experimental features")(
@@ -509,6 +511,12 @@ void copy_values(const Options &options, NcVar *var, NFmiFastQueryInfo &info)
   {
     // must delete
     NcValues *vals = var->get_rec(timeindex);
+    long total_elems = vals->num();
+    long rows = var->get_dim(timeindex)->size();
+
+    if (options.debug)
+      std::cerr << "debug: " + std::string(var->name()) + " total_elems " +
+                       std::to_string(total_elems) + " rows " + std::to_string(rows) + "\n";
 
     long counter = 0;
     for (info.ResetLevel(); info.NextLevel();)
@@ -534,7 +542,10 @@ void copy_values(const Options &options, NcVar *var, NFmiFastQueryInfo &info)
  */
 // ----------------------------------------------------------------------
 
-void copy_values(const NcFile &ncfile, NFmiFastQueryInfo &info, const ParamInfo &pinfo)
+void copy_values(const NcFile &ncfile,
+                 NFmiFastQueryInfo &info,
+                 const ParamInfo &pinfo,
+                 const nctools::Options *options)
 {
   const float pi = 3.14159265358979326f;
 
@@ -558,11 +569,18 @@ void copy_values(const NcFile &ncfile, NFmiFastQueryInfo &info, const ParamInfo 
     // must delete
     NcValues *xvals = xvar->get_rec(timeindex);
     NcValues *yvals = yvar->get_rec(timeindex);
-
+    if (options != nullptr && options->debug)
+    {
+      std::cerr << (std::string) "debug: x-component has " + std::to_string(xvals->num()) +
+                       " elements\n";
+      std::cerr << (std::string) "debug: y-component has " + std::to_string(yvals->num()) +
+                       " elements\n";
+    }
     long counter = 0;
     for (info.ResetLevel(); info.NextLevel();)
       for (info.ResetLocation(); info.NextLocation();)
       {
+        // FIXME: Must get coordinates in reverse if they are reversed in NetCDF source
         float x = xvals->as_float(counter);
         float y = yvals->as_float(counter);
         if (x != xmissingvalue && y != ymissingvalue)
@@ -579,6 +597,8 @@ void copy_values(const NcFile &ncfile, NFmiFastQueryInfo &info, const ParamInfo 
         }
         ++counter;
       }
+    if (options != nullptr && options->debug)
+      std::cerr << "debug: counter went through " + std::to_string(counter) + " elements\n";
 
     delete xvals;
     delete yvals;
@@ -615,9 +635,57 @@ void copy_values(const Options &options,
       if (pinfo.isregular)
         copy_values(options, var, info);
       else
-        copy_values(ncfile, info, pinfo);
+        copy_values(ncfile, info, pinfo, &options);
     }
   }
+}
+
+NcFileExtended::NcFileExtended(
+    const char *path, FileMode fm, size_t *bufrsizeptr, size_t initialsize, FileFormat ff)
+    : NcFile(path, fm, bufrsizeptr, initialsize, ff),
+      longitudeOfProjectionOrigin(0),
+      projectionName(nullptr)
+{
+}
+
+std::string NcFileExtended::grid_mapping()
+{
+  if (projectionName != nullptr) return projectionName;  // Do not rescan projection unnecessarily
+
+  std::string projection_var_name;
+
+  for (int i = 0; i < num_vars(); i++)
+  {
+    NcVar *var = get_var(i);
+    if (var == 0) continue;
+
+    NcAtt *att = var->get_att("grid_mapping");
+    if (att == 0) continue;
+
+    projection_var_name = att->values()->as_string(0);
+    break;
+  }
+
+  if (!projection_var_name.empty())
+  {
+    for (int i = 0; i < num_vars(); i++)
+    {
+      NcVar *var = get_var(i);
+      if (var == 0) continue;
+
+      if (var->name() == projection_var_name)
+      {
+        NcAtt *name_att = var->get_att("grid_mapping_name");
+        if (name_att != 0) projectionName = name_att->values()->as_string(0);
+
+        NcAtt *lon_att = var->get_att("longitude_of_projection_origin");
+        if (lon_att != 0) longitudeOfProjectionOrigin = lon_att->values()->as_double(0);
+        break;
+      }
+    }
+  }
+
+  return projectionName;
 }
 
 #if DEBUG_PRINT

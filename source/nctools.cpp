@@ -2,6 +2,8 @@
 #include "nctools.h"
 
 #include <newbase/NFmiFastQueryInfo.h>
+#include <newbase/NFmiStringTools.h>
+#include <spine/Exception.h>
 
 #include <boost/algorithm/string.hpp>
 #include <boost/algorithm/string/split.hpp>
@@ -511,12 +513,14 @@ void copy_values(const Options &options, NcVar *var, NFmiFastQueryInfo &info)
   {
     // must delete
     NcValues *vals = var->get_rec(timeindex);
-    long total_elems = vals->num();
-    long rows = var->get_dim(timeindex)->size();
+    // This block caused segfaults ...
+    // long total_elems = vals->num();
+    // long rows = var->get_dim(timeindex)->size(); // This value is not correct
 
-    if (options.debug)
+    /* if (options.debug)
       std::cerr << "debug: " + std::string(var->name()) + " total_elems " +
                        std::to_string(total_elems) + " rows " + std::to_string(rows) + "\n";
+*/
 
     long counter = 0;
     for (info.ResetLevel(); info.NextLevel();)
@@ -685,6 +689,8 @@ std::string NcFileExtended::grid_mapping()
       }
     }
   }
+
+  if (projectionName == nullptr) projectionName = std::make_shared<std::string>(LATITUDE_LONGITUDE);
 
   return *projectionName;
 }

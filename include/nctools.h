@@ -140,7 +140,7 @@ class NcFileExtended : public NcFile
   double longitudeOfProjectionOrigin;
 
  private:
-  std::string projectionName;
+  std::shared_ptr<std::string> projectionName;
 };
 
 #if DEBUG_PRINT

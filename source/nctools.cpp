@@ -650,7 +650,9 @@ NcFileExtended::NcFileExtended(
       longitudeOfProjectionOrigin(0),
       projectionName(nullptr),
       x(nullptr),
-      y(nullptr)
+      y(nullptr),
+      z(nullptr),
+      t(nullptr)
 {
 }
 
@@ -774,6 +776,27 @@ NcVar *NcFileExtended::y_axis()
 
   return y;
 }
+
+// ----------------------------------------------------------------------
+/*!
+ * Try various names to find z axis
+ */
+// ----------------------------------------------------------------------
+NcVar *NcFileExtended::z_axis()
+{
+  if (z != nullptr) return z;
+  z = axis("z");
+  if (z == nullptr) z = axis("projection_z_coordinate");
+  return z;
+}
+
+bool NcFileExtended::isStereographic()
+{
+  if (grid_mapping() == POLAR_STEREOGRAPHIC) return true;
+  return false;
+}
+
+// namespace nctools
 
 #if DEBUG_PRINT
 void print_att(const NcAtt &att)

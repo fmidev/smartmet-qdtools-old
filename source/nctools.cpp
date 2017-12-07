@@ -741,8 +741,9 @@ NcVar *NcFileExtended::x_axis()
   if (x == nullptr) x = axis("degrees_E");
   if (x == nullptr) x = axis("degreeE");
   if (x == nullptr) x = axis("degreesE");
+  /* Really? I think these are units ... pernu 2017-12-07
   if (x == nullptr) x = axis("100  km");
-  if (x == nullptr) x = axis("m");
+  if (x == nullptr) x = axis("m"); */
   if (x == nullptr) x = axis("projection_x_coordinate");
   if (x == nullptr) throw SmartMet::Spine::Exception(BCP, "X-axis type unsupported");
 
@@ -765,8 +766,9 @@ NcVar *NcFileExtended::y_axis()
   if (y == nullptr) y = axis("degrees_N");
   if (y == nullptr) y = axis("degreeN");
   if (y == nullptr) y = axis("degreesN");
+  /* Really? I think these are units ... pernu 2017-12-07
   if (y == nullptr) y = axis("100  km");
-  if (y == nullptr) y = axis("m");
+  if (y == nullptr) y = axis("m"); */
   if (y == nullptr) y = axis("projection_y_coordinate");
   if (y == nullptr) throw SmartMet::Spine::Exception(BCP, "Y-axis type unsupported");
 

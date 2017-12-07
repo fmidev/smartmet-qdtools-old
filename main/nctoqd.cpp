@@ -566,29 +566,27 @@ int run(int argc, char* argv[])
 
       require_conventions(ncfile, "CF-1.0", 3);
       std::string grid_mapping(ncfile.grid_mapping());
-      bool isStereographicProjection = (grid_mapping == POLAR_STEREOGRAPHIC);
 
       NcVar* x = ncfile.x_axis();
       NcVar* y = ncfile.y_axis();
 
-      NcVar* z = ncfile.axis("z");
-      NcVar* t = (isStereographicProjection ? nullptr : ncfile.axis("T"));
+      NcVar* z = ncfile.z_axis();
+      NcVar* t = (ncfile.isStereographic() ? nullptr : ncfile.axis("T"));
 
       // Alternate names
-      if (z == nullptr) z = ncfile.axis("projection_z_coordinate");
       if (t == nullptr) t = ncfile.axis("time");
 
-      if (x == 0) throw SmartMet::Spine::Exception(BCP, "Failed to find X-axis variable");
-      if (y == 0) throw SmartMet::Spine::Exception(BCP, "Failed to find Y-axis variable");
+      if (x == nullptr) throw SmartMet::Spine::Exception(BCP, "Failed to find X-axis variable");
+      if (y == nullptr) throw SmartMet::Spine::Exception(BCP, "Failed to find Y-axis variable");
       // if (z == 0) throw SmartMet::Spine::Exception(BCP,"Failed to find Z-axis variable");
-      if (!isStereographicProjection && t == 0)
+      if (!ncfile.isStereographic() && t == 0)
         throw SmartMet::Spine::Exception(BCP, "Failed to find T-axis variable");
 
       if (x->num_vals() < 1) throw SmartMet::Spine::Exception(BCP, "X-axis has no values");
       if (y->num_vals() < 1) throw SmartMet::Spine::Exception(BCP, "Y-axis has no values");
-      if (z != NULL && z->num_vals() < 1)
+      if (z != nullptr && z->num_vals() < 1)
         throw SmartMet::Spine::Exception(BCP, "Z-axis has no values");
-      if (!isStereographicProjection && t->num_vals() < 1)
+      if (!ncfile.isStereographic() && t->num_vals() < 1)
         throw SmartMet::Spine::Exception(BCP, "T-axis has no values");
 
       check_xaxis_units(x);
@@ -597,12 +595,12 @@ int run(int argc, char* argv[])
       int nx = find_dimension(ncfile, x->name());
       int ny = find_dimension(ncfile, y->name());
       int nz = (z == NULL ? 1 : find_dimension(ncfile, z->name()));
-      int nt = (isStereographicProjection ? 0 : find_dimension(ncfile, t->name()));
+      int nt = (ncfile.isStereographic() ? 0 : find_dimension(ncfile, t->name()));
 
       if (nx == 0) throw SmartMet::Spine::Exception(BCP, "X-dimension is of size zero");
       if (ny == 0) throw SmartMet::Spine::Exception(BCP, "Y-dimension is of size zero");
       if (nz == 0) throw SmartMet::Spine::Exception(BCP, "Z-dimension is of size zero");
-      if (!isStereographicProjection && nt == 0)
+      if (!ncfile.isStereographic() && nt == 0)
         throw SmartMet::Spine::Exception(BCP, "T-dimension is of size zero");
 
       if (nz != 1)
@@ -610,7 +608,7 @@ int run(int argc, char* argv[])
             BCP, "Z-dimension <> 1 is not supported (yet), sample file is needed first");
 
       double x1 = 0, x2 = 0, y1 = 0, y2 = 0, z1 = 0, z2 = 0;
-      if (isStereographicProjection)
+      if (ncfile.isStereographic())
       {
         find_lonlat_bounds(ncfile, x1, y1, x2, y2);
       }
@@ -625,7 +623,7 @@ int run(int argc, char* argv[])
           create_hdesc(x1, y1, x2, y2, nx, ny, ncfile.longitudeOfProjectionOrigin, grid_mapping);
       NFmiVPlaceDescriptor vdesc = create_vdesc(ncfile, z1, z2, nz);
       NFmiTimeDescriptor tdesc =
-          (isStereographicProjection ? create_tdesc(ncfile) : create_tdesc(ncfile, t));
+          (ncfile.isStereographic() ? create_tdesc(ncfile) : create_tdesc(ncfile, t));
       NFmiParamDescriptor pdesc = create_pdesc(ncfile, paramconvs);
 
       NFmiFastQueryInfo qi(pdesc, tdesc, hdesc, vdesc);

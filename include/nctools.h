@@ -135,16 +135,21 @@ class NcFileExtended : public NcFile
   std::string grid_mapping();
   unsigned long xsize();
   unsigned long ysize();
-  bool xinverted();  // True, if x axis is descending
-  bool yinverted();  // True, if y axis is descending
+  bool xinverted();        // True, if x axis is descending
+  bool yinverted();        // True, if y axis is descending
+  bool isStereographic();  // True, if this is a stereographic projection
   double longitudeOfProjectionOrigin;
   NcVar *x_axis();                           // Find x-axis from predefined(known) set
   NcVar *y_axis();                           // Find y-axis from predefined(known) set
+  NcVar *z_axis();                           // Find z-axis
+  NcVar *t_axis();                           // Find time axis
   NcVar *axis(const std::string &axisname);  // Find generic axis by name
  private:
   std::shared_ptr<std::string> projectionName;
   NcVar *x;
   NcVar *y;
+  NcVar *z;
+  NcVar *t;
 };
 
 #if DEBUG_PRINT

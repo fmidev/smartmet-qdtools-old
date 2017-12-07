@@ -133,11 +133,14 @@ class NcFileExtended : public NcFile
                  size_t initialsize = 0,
                  FileFormat = Classic);
   std::string grid_mapping();
-  unsigned long xsize();
-  unsigned long ysize();
-  bool xinverted();        // True, if x axis is descending
-  bool yinverted();        // True, if y axis is descending
-  bool isStereographic();  // True, if this is a stereographic projection
+  unsigned long xsize();                 // Count of elements on x-axis
+  unsigned long ysize();                 // Count of elements on y-axis
+  unsigned long zsize();                 // Count of elements on z-axis
+  unsigned long tsize();                 // Count of elements on t-axis
+  unsigned long axis_size(NcVar *axis);  // Generic dimension of an axis(=count of elements)
+  bool xinverted();                      // True, if x axis is descending
+  bool yinverted();                      // True, if y axis is descending
+  bool isStereographic();                // True, if this is a stereographic projection
   double longitudeOfProjectionOrigin;
   NcVar *x_axis();                           // Find x-axis from predefined(known) set
   NcVar *y_axis();                           // Find y-axis from predefined(known) set

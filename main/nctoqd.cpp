@@ -75,78 +75,6 @@ void require_conventions(const NcFile& ncfile, const std::string& reference, int
 
 // ----------------------------------------------------------------------
 /*!
- * Find variable for the desired axis
- */
-// ----------------------------------------------------------------------
-
-NcVar* find_axis(const NcFile& ncfile, const std::string& axisname)
-{
-  std::string axis = boost::algorithm::to_lower_copy(axisname);
-
-  NcVar* var = 0;
-  for (int i = 0; i < ncfile.num_vars(); i++)
-  {
-    var = ncfile.get_var(i);
-    for (int j = 0; j < var->num_atts(); j++)
-    {
-      NcAtt* att = var->get_att(j);
-      if (att->type() == ncChar && att->num_vals() > 0)
-      {
-        std::string name = att->values()->as_string(0);
-        boost::algorithm::to_lower(name);
-        if (name == axis) return var;
-      }
-    }
-  }
-  return NULL;
-}
-
-// ----------------------------------------------------------------------
-/*!
- * Try various names to find x axis
- */
-// ----------------------------------------------------------------------
-NcVar* find_x_axis(const NcFile& ncfile)
-{
-  NcVar* x = find_axis(ncfile, "x");
-  if (x == 0) x = find_axis(ncfile, "degree_east");
-  if (x == 0) x = find_axis(ncfile, "degrees_east");
-  if (x == 0) x = find_axis(ncfile, "degree_E");
-  if (x == 0) x = find_axis(ncfile, "degrees_E");
-  if (x == 0) x = find_axis(ncfile, "degreeE");
-  if (x == 0) x = find_axis(ncfile, "degreesE");
-  if (x == 0) x = find_axis(ncfile, "100  km");
-  if (x == 0) x = find_axis(ncfile, "m");
-  if (x == 0) x = find_axis(ncfile, "projection_x_coordinate");
-  if (x == 0) throw SmartMet::Spine::Exception(BCP, "X-axis type unsupported");
-
-  return x;
-}
-
-// ----------------------------------------------------------------------
-/*!
- * Try various names to find x axis
- */
-// ----------------------------------------------------------------------
-NcVar* find_y_axis(const NcFile& ncfile)
-{
-  NcVar* y = find_axis(ncfile, "y");
-  if (y == 0) y = find_axis(ncfile, "degree_north");
-  if (y == 0) y = find_axis(ncfile, "degrees_north");
-  if (y == 0) y = find_axis(ncfile, "degree_N");
-  if (y == 0) y = find_axis(ncfile, "degrees_N");
-  if (y == 0) y = find_axis(ncfile, "degreeN");
-  if (y == 0) y = find_axis(ncfile, "degreesN");
-  if (y == 0) y = find_axis(ncfile, "100  km");
-  if (y == 0) y = find_axis(ncfile, "m");
-  if (y == 0) y = find_axis(ncfile, "projection_y_coordinate");
-  if (y == 0) throw SmartMet::Spine::Exception(BCP, "Y-axis type unsupported");
-
-  return y;
-}
-
-// ----------------------------------------------------------------------
-/*!
  * Find dimension of given axis
  */
 // ----------------------------------------------------------------------
@@ -640,15 +568,15 @@ int run(int argc, char* argv[])
       std::string grid_mapping(ncfile.grid_mapping());
       bool isStereographicProjection = (grid_mapping == POLAR_STEREOGRAPHIC);
 
-      NcVar* x = find_x_axis(ncfile);
-      NcVar* y = find_y_axis(ncfile);
+      NcVar* x = ncfile.x_axis();
+      NcVar* y = ncfile.y_axis();
 
-      NcVar* z = find_axis(ncfile, "z");
-      NcVar* t = (isStereographicProjection ? 0 : find_axis(ncfile, "T"));
+      NcVar* z = ncfile.axis("z");
+      NcVar* t = (isStereographicProjection ? nullptr : ncfile.axis("T"));
 
       // Alternate names
-      if (z == 0) z = find_axis(ncfile, "projection_z_coordinate");
-      if (t == 0) t = find_axis(ncfile, "time");
+      if (z == nullptr) z = ncfile.axis("projection_z_coordinate");
+      if (t == nullptr) t = ncfile.axis("time");
 
       if (x == 0) throw SmartMet::Spine::Exception(BCP, "Failed to find X-axis variable");
       if (y == 0) throw SmartMet::Spine::Exception(BCP, "Failed to find Y-axis variable");

@@ -138,9 +138,13 @@ class NcFileExtended : public NcFile
   bool xinverted();  // True, if x axis is descenging
   bool yinverted();  // True, if y axis is descending
   double longitudeOfProjectionOrigin;
-
+  NcVar *x_axis();                           // Find x-axis from predefined(known) set
+  NcVar *y_axis();                           // Find y-axis from predefined(known) set
+  NcVar *axis(const std::string &axisname);  // Find generic axis by name
  private:
   std::shared_ptr<std::string> projectionName;
+  NcVar *x;
+  NcVar *y;
 };
 
 #if DEBUG_PRINT

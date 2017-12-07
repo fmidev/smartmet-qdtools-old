@@ -135,7 +135,7 @@ class NcFileExtended : public NcFile
   std::string grid_mapping();
   unsigned long xsize();
   unsigned long ysize();
-  bool xinverted();  // True, if x axis is descenging
+  bool xinverted();  // True, if x axis is descending
   bool yinverted();  // True, if y axis is descending
   double longitudeOfProjectionOrigin;
   NcVar *x_axis();                           // Find x-axis from predefined(known) set

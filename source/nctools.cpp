@@ -790,6 +790,22 @@ NcVar *NcFileExtended::z_axis()
   return z;
 }
 
+// ----------------------------------------------------------------------
+/*!
+ * Try various names to find t axis
+ */
+// ----------------------------------------------------------------------
+NcVar *NcFileExtended::t_axis()
+{
+  if (t != nullptr) return t;
+  t = (isStereographic() ? nullptr : axis("T"));
+
+  // Alternate names
+  if (t == nullptr) t = axis("time");
+
+  return t;
+}
+
 bool NcFileExtended::isStereographic()
 {
   if (grid_mapping() == POLAR_STEREOGRAPHIC) return true;

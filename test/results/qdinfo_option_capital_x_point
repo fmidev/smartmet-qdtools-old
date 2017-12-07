@@ -1,0 +1,309 @@
+
+Information on the locations:
+
+2801	Enontekiö Kilpisjärvi		20.7833,69.05
+2805	Utsjoki				27.0333,69.75
+2807	Ivalo				27.4167,68.6167
+2823	Muonio				23.6833,67.9667
+2836	Sodankylä			26.65,67.3667
+2844	Pello				23.97,66.77
+2845	Rovaniemi lentoasema		25.8333,66.5667
+2849	Salla				28.68,66.83
+2862	Ajos				24.5,65.65
+2863	Kemi-1				24.1333,65.4167
+2867	Pudasjärvi			27.0167,65.3667
+2869	Kuusamo				29.1833,65.9667
+2873	Marjaniemi			24.5667,65.0333
+2874	Hailuoto Ojak.			24.8,65.0333
+2875	Oulu				25.3667,64.9333
+2897	Kajaani				27.6833,64.2833
+5903	Kruunupyy			23.14,63.71
+2755	Ylivieska			24.73,64.05
+2907	Ulkokalla			23.6,64.3333
+2910	Valassaaret			21.0667,63.4333
+2911	Vaasa				21.77,63.05
+2912	Vaasa Palos.			21.6,63.1
+2866	Pudasjärvi lentokenttä		26.97,65.4
+2913	Kauhava				23.0333,63.1
+2915	Viitasaari			25.8667,63.0833
+2917	Siilinjärvi			27.8,63.0167
+2939	Ilomantsi-Mekrijärvi		30.97,62.77
+2920	Kallan				22.5333,63.75
+2924	Ähtäri				24.2167,62.5333
+2929	Joensuun lentoas.		29.6333,62.6667
+2932	Krist. kaup.			21.3167,62.25
+2935	Jkl lentoas.			25.6833,62.4
+2942	Kankaanpää			22.4667,61.85
+2944	Tampere lentoas.		23.5833,61.4167
+2945	Kuorevesi			24.8,61.85
+2947	Mikkelin mlk			27.3,61.7333
+2948	Savonlinna lentoas.		28.95,61.95
+2952	Pori				21.8,61.4667
+2958	Lappeenranta			28.15,61.0833
+2963	Jokioinen			23.5,60.8167
+2964	Isokari				21.0167,60.7167
+2965	Lahti				25.6333,60.9667
+2966	Utti				26.9333,60.9
+2967	Haapasaari			27.1833,60.2833
+2971	Jomala				19.88,60.15
+2972	Turku lentoas.			22.2667,60.5167
+2973	Suomusjärvi			23.7667,60.4
+2974	Hki-Vantaa			24.9667,60.3167
+2976	Rankki				26.9667,60.3667
+2978	Hki Kaisaniemi			24.95,60.1667
+2979	Bogskär				20.35,59.5
+2980	Nyhamn				19.9667,59.9667
+2981	Utö				21.3833,59.7833
+2982	Russarö				22.95,59.7667
+2984	Bågaskär			24.0167,59.9333
+2988	Hki Isosaari			25.0667,60.1
+2790	Kumlinge kk			20.75,60.26
+2991	Emäsalo				25.6333,60.2167
+2992	Orrengrund			26.45,60.2667
+2993	Märket				19.1333,60.3
+5107	Inari Nellim			28.3,68.85
+5108	Inari Väylä			27.5,69.0667
+5109	Inari Nellim			28.3,68.85
+5802	Enontekiö			23.5,68.4
+5115	Kittilä Pokka			25.7667,68.1667
+5117	Sodankylä			27.75,67.8167
+5136	Rovaniemen mlk			26.0167,66.5833
+5143	Pyhäjärvi			25.7167,63.75
+5144	Ruukki				25.1,64.6833
+5146	Tyrnävä				25.5833,64.8
+5147	Taivalkoski			28.25,65.5667
+5156	Vaala				26.4667,64.5
+5158	Kuhmo				29.55,64.1167
+5166	Maaninka			27.3167,63.15
+5168	Lieksa				30.05,63.3167
+5172	Tampere				23.75,61.4667
+5174	Juupajoki			24.2833,61.85
+5175	Leivonmäki			26.1,61.8833
+5178	Joutseno			28.5,61.0333
+5182	Kokemäki			22.25,61.2667
+5196	Str.bådan			20.7436,62.9783
+5207	Nuorgam				27.9333,70.0833
+5227	Savukoski			28.1667,67.2833
+5236	Ranua				26.5167,65.9333
+5243	Nahkiainen			23.9,64.6117
+5725	Halsua Kanala			24.45,63.45
+5256	Vieremä				27.2167,63.8333
+5257	Rautavaara			28.6667,63.3833
+5261	Bredskäret			21.1833,62.9167
+5266	Vesanto				26.4,62.95
+5267	Vehmersalmi			27.9167,62.8
+5274	Pälkäne				24.2167,61.3333
+5280	Jomalby				19.9833,60.1833
+5285	Pulkkilanharju			25.5333,61.2667
+5286	Anjalankoski			26.8,60.7167
+5287	Asikkala			25.5,61.2167
+5289	Hyrynsalmi			28.2333,64.8333
+5295	Rajakari			22.0167,60.3833
+5353	Toholampi			24.1667,63.8167
+5354	Alajärvi			24.2667,63.0833
+5362	Ylistaro			22.5,62.9333
+5367	Ilomantsi			31.0667,63.0333
+5369	Sotkamo				28.3333,64.1167
+5371	Tornio				24.2667,65.8833
+5378	Punkaharju			29.3333,61.8
+5382	Vänö				22.2,59.8667
+5387	Tulliniemi			22.9,59.8
+5396	Jussarö				23.5833,59.8333
+5456	Pyhäntä				26.4167,63.9333
+5462	Kauhajoki			22.1833,62.4167
+5463	Juva				27.8833,61.9
+5468	Juuka				29.2167,63.2333
+5469	Liperi				29.6717,62.5458
+5473	Karvia				22.7,62.2
+5477	Taipalsaari			28.1833,61.3
+5484	Hyvinkää			24.8,60.6
+5486	Ruotsinpyhtää			26.3833,60.4167
+5487	Mäntsälä			25.5,60.5833
+5562	Kylmäpihlaja			21.3,61.15
+5573	Virrat				23.5333,62.3333
+5576	Rantasalmi			28.5692,62.0628
+5578	Savonlinna			28.8333,61.8333
+5579	Puumala				28.1833,61.5333
+5711	Vaasa				21.6,63.1
+5582	Mietoinen			21.8667,60.6333
+5583	Piikkiö				22.55,60.3833
+5584	Lohja				24.05,60.25
+5592	Jokioinen			23.5,60.8167
+5607	Saariselkä			27.45,68.35
+5668	Lieksa Hattus.			29.7,63.2333
+5684	Vihti				24.4,60.4167
+5685	Porvoo				25.6667,60.4333
+5723	Levi				24.8167,67.8
+5705	Pyhä				27.2167,67.0167
+5748	Varkaus la.			27.87,62.17
+5751	Tahkoluoto			21.3833,61.6333
+5752	K.K.maj.			21.1733,62.2033
+5753	Niinisalo			22.47,61.85
+2864	Kemi-Lentoasema			24.9,65.78
+5765	Judinsalo			25.5,61.7
+5575	Lammi				25.05,61.05
+5794	Mäkiluoto			24.35,59.9167
+5795	Harmaja				24.9833,60.1
+5808	Sevettijärvi			28.85,69.68
+5820	Laukukero			24.0333,68.0667
+5821	Sammaltunturi			24.1167,67.9667
+5822	Pallasjärvi			24.1667,68.0167
+5847	Rovaniemi asema			25.7006,66.4961
+5868	Ruka				29.15,66.1667
+5872	Raahe				24.4167,64.65
+5876	Oulu Vihreäsaari		25.4,65
+5895	Kajaani Lentoasema		27.6833,64.2833
+5943	Siilinkari			23.75,61.5167
+5950	Fagerholm			21.7,60.1167
+5977	Kotka				26.95,60.45
+5996	Rymättylä			21.33,60.55
+5674	Jämsä Himos			25.33,61.88
+5754	Hämeenlinna			24.5,61
+5670	Jyväskylä, Messukeskus		25.76,62.23
+2987	Kalbodagrund			25.6,59.9833
+26034	Prangli				24.95,59.65
+2496	Sv.Högarna			19.5,59.45
+2567	Landsort			17.8667,58.75
+2584	Gotska Sandön			19.2,58.4
+2488	Örskär				18.3833,60.5333
+2355	Kuggören			17.5333,61.7
+2269	Skagsudde			19.0167,63.1833
+2288	Holmögadd			20.7667,63.6
+5721	Tankar				22.85,63.95
+2296	Bjuröklubb			21.5833,64.4833
+26226	Kihnu				23.9667,58.1
+26324	Mersrags			23.1167,57.35
+26313	Kolka				22.6,57.75
+26215	Kuresaare			22.5,58.2333
+26314	Ventpils			21.5333,57.4
+26406	Liepaja				21.0167,56.4833
+2680	Hoburg				18.15,56.9167
+2590	Visby				18.35,57.6667
+2575	Ölands Norra			17.1,57.3667
+2586	Harstena			17,58.25
+2644	Ölands Södra			16.4,56.2
+12120	Leba				17.5333,54.75
+12115	Ustka				16.8667,54.5833
+26406	Leipaja				21.0167,56.4833
+6193	Hammerodde			14.7833,55.3
+2625	Skillinge			14.3167,55.4833
+10091	Arkona				13.4333,54.6833
+2616	Falsterbo			12.8167,55.3833
+10161	Boltenhagen			11.2,54
+6179	Mon				12.5333,54.95
+26214	Vilsandi			21.8167,58.3833
+26218	Sörve				22.05,57.9167
+2499	Almagrundet			19.1333,59.15
+2188	Rödkallen			22.3833,65.3167
+5155	Haapavesi kotitalousop.		25.4333,64.15
+5744	Tampere Hatanpää		23.77,61.48
+5720	Kittilän lentokenttä		24.85,67.7
+26046	Johvi				27.3833,59.3333
+26145	Tiirikoja			26.95,58.8667
+26144	Jugeva				26.4167,58.75
+26141	Vaike-Maarja			26.2333,59.1333
+26135	Turi				25.4167,58.8167
+26134	Kuusiku				24.7333,58.9667
+26038	Tallinna			24.5833,59.3833
+26029	Pakri				24.05,59.35
+26124	Nigula				23.8167,58.95
+26128	Virtsu				23.5167,58.5667
+26115	Ristna				22.0667,58.9167
+1098	VARDO				31.1,70.3667
+1089	KIRKENES			29.9,69.7333
+1075	RUSTEFJELBMA			28.2,70.4
+1095	Banak				24.98,70.07
+1049	ALTA LUFTHAVN			23.3667,69.9833
+1199	SIHCAJAVRI			23.5333,68.75
+1047	KAUTOKEINO			23.0333,69
+1034	FUGLOYKALVEN FYR		20.15,70.3167
+1033	TORSVAG FYR			19.5,70.25
+1035	OTEREN				19.8833,69.25
+1026	TROMSO				18.9333,69.65
+1025	TROMSO				18.9167,69.6833
+1023	BARDUFOSS			18.5333,69.0667
+1015	HEKKINGEN FYR			17.8333,69.6
+1010	ANDOYA				16.1333,69.3
+2493	SOEDERARM			19.4167,59.75
+2490	Svanberga			18.6333,59.8333
+2487	Stavsnas			18.7,59.3
+2488	Orskar				18.3833,60.5333
+2382	Lungo				18.1,62.65
+2254	Aasele				17.3167,64.1667
+2256	Ristraesk			17.4333,64.7167
+2260	VAESTMARKUM			18.25,63.1333
+2265	Hemling				18.55,63.65
+2263	Fredrika			18.3667,64.0833
+2128	Gunnarn				17.6833,65.0167
+2135	Buresjoen			17.8667,65.5667
+2284	Jarnasklubb			19.6833,63.4333
+2286	UMEA FLYGPLATS			20.2833,63.8
+2292	HOEKMARKSBERGET			21.3167,64.3833
+2282	PETISTRAESK			19.7,64.5667
+2262	Lycksele			18.65,64.58
+2147	MALAA-BRAENNAN			18.6,65.15
+2271	Norsjoe				19.3833,64.9333
+2176	PITE-RONNSKAR			21.5667,65.0333
+2186	LULEA-KALLAX			22.1333,65.55
+2191	Storoen				23.1,65.7
+2196	Haparanda			24.15,65.8333
+2171	Boden				21.7,65.8167
+2154	Vidsel				20.15,65.8833
+2124	Arjeplog			17.8333,66.05
+2141	Tjakaape			19.2167,66.3167
+2146	Vajmat				19.8333,66.5167
+2151	JOKKMOKK FPL			20.1667,66.4833
+2174	LAKATRAESK			21.1333,66.2833
+2181	Svartbyn			22.85,66.2667
+2199	YLINENJAERVI			23.4667,66.6167
+2184	Paharova			22.3333,66.8167
+2161	Nattavaara			20.9333,66.75
+2120	KVIKKJOKK-ARRENJARKA		18.0167,66.8833
+2049	Gallivare			20.65,67.15
+2038	Latnivaara			20.2667,67.25
+2064	Saittarova			22.2333,67.3333
+2096	Pajala				23.4,67.2167
+2072	Porkalompolo			22.8333,67.7333
+2080	Karesuando			22.45,68.45
+2055	Naimakka			21.5333,68.6833
+2054	Nedre Soppero			21.7667,68.05
+2044	Kiruna				20.3333,67.8167
+2031	Rensjoen			19.8333,68.0667
+2036	Nikkaluokta			19.0333,67.85
+2029	Tarfala				18.6,67.9167
+2020	Katterjakk			18.1667,68.4167
+2013	Ritsem				17.4667,67.7333
+2024	Stora Sjoefallet		18.3,67.5
+22028	Teriberka			35.1167,69.2
+22113	Murmansk			33.05,68.9667
+22106	PADUN				31.85,68.6
+22127	LOVOZERO			35.0333,68
+22212	Montshegorsk			32.8833,67.9667
+22235	Krasnoshtshelje			37.05,67.35
+22217	KANTALAHTI			32.35,67.15
+22324	Umba				34.35,66.6833
+22312	Kovda				32.8833,66.7
+22422	Gridino				34.7667,65.9
+22522	Kemi-Port			34.8,64.9833
+22408	Kalevala			31.1667,65.2167
+22525	Raznavolok			34.9167,64.5667
+22621	Segezha				34.2833,63.7667
+22602	Repola				30.8167,63.8333
+22721	Karhumaki			34.4333,62.9167
+22727	Kontupohja			34.3,62.1667
+5674	Petroskoi Besovets		25.33,61.88
+22820	Petroskoi			34.2667,61.8167
+22802	Sortavala			30.7167,61.7167
+22912	Aunus				32.9833,60.9833
+22913	Lodeinoje Pole			33.55,60.7167
+26094	Tihvina				33.55,59.65
+26179	Novgorod			31.25,58.5167
+2980	Peterburg FIR			19.9667,59.9667
+26069	Belogorka			30.1333,59.35
+26167	Nikolajevskoje			29.8,58.5667
+26059	Kingisepp			28.6,59.3667
+26157	Gdov				27.8333,58.7333
+94767	Sydney lento			151.167,-33.9333
+94768	Sydney keskusta			151.2,-33.85
+
+There are 304 locations in total

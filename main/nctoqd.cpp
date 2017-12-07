@@ -571,15 +571,15 @@ int run(int argc, char* argv[])
       NcVar* y = ncfile.y_axis();
 
       NcVar* z = ncfile.z_axis();
-      NcVar* t = (ncfile.isStereographic() ? nullptr : ncfile.axis("T"));
+      NcVar* t = ncfile.t_axis();
 
-      // Alternate names
-      if (t == nullptr) t = ncfile.axis("time");
-
-      if (x == nullptr) throw SmartMet::Spine::Exception(BCP, "Failed to find X-axis variable");
-      if (y == nullptr) throw SmartMet::Spine::Exception(BCP, "Failed to find Y-axis variable");
+      /* pernu 2017-12-07: These are not necessary - it is not possible for x/y fetching to return
+      NULL if (x == nullptr) throw SmartMet::Spine::Exception(BCP, "Failed to find X-axis
+      variable"); if (y == nullptr) throw SmartMet::Spine::Exception(BCP, "Failed to find Y-axis
+      variable");
+      */
       // if (z == 0) throw SmartMet::Spine::Exception(BCP,"Failed to find Z-axis variable");
-      if (!ncfile.isStereographic() && t == 0)
+      if (!ncfile.isStereographic() && t == nullptr)
         throw SmartMet::Spine::Exception(BCP, "Failed to find T-axis variable");
 
       if (x->num_vals() < 1) throw SmartMet::Spine::Exception(BCP, "X-axis has no values");

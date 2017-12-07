@@ -75,25 +75,6 @@ void require_conventions(const NcFile& ncfile, const std::string& reference, int
 
 // ----------------------------------------------------------------------
 /*!
- * Find dimension of given axis
- */
-// ----------------------------------------------------------------------
-
-int find_dimension(const NcFile& ncfile, const std::string& varname)
-{
-  std::string dimname = boost::algorithm::to_lower_copy(varname);
-  for (int i = 0; i < ncfile.num_dims(); i++)
-  {
-    NcDim* dim = ncfile.get_dim(i);
-    std::string name = dim->name();
-    boost::algorithm::to_lower(name);
-    if (name == dimname) return dim->size();
-  }
-  throw SmartMet::Spine::Exception(BCP, std::string("Could not find dimension of axis ") + varname);
-}
-
-// ----------------------------------------------------------------------
-/*!
  * Find axis bounds
  */
 // ----------------------------------------------------------------------
@@ -592,10 +573,10 @@ int run(int argc, char* argv[])
       check_xaxis_units(x);
       check_yaxis_units(y);
 
-      int nx = find_dimension(ncfile, x->name());
-      int ny = find_dimension(ncfile, y->name());
-      int nz = (z == NULL ? 1 : find_dimension(ncfile, z->name()));
-      int nt = (ncfile.isStereographic() ? 0 : find_dimension(ncfile, t->name()));
+      unsigned long nx = ncfile.xsize();
+      unsigned long ny = ncfile.ysize();
+      unsigned long nz = ncfile.zsize();
+      unsigned long nt = ncfile.tsize();
 
       if (nx == 0) throw SmartMet::Spine::Exception(BCP, "X-dimension is of size zero");
       if (ny == 0) throw SmartMet::Spine::Exception(BCP, "Y-dimension is of size zero");

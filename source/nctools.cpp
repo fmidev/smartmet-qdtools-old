@@ -812,6 +812,38 @@ bool NcFileExtended::isStereographic()
   return false;
 }
 
+// ----------------------------------------------------------------------
+/*!
+ * Find dimension of given axis
+ */
+// ----------------------------------------------------------------------
+
+unsigned long NcFileExtended::axis_size(NcVar *axis)
+{
+  if (axis == nullptr)
+    throw SmartMet::Spine::Exception(BCP,
+                                     std::string("Dimensions for axis null cannot be retrieved"));
+  std::string varname = axis->name();
+
+  std::string dimname = boost::algorithm::to_lower_copy(varname);
+  for (int i = 0; i < num_dims(); i++)
+  {
+    NcDim *dim = get_dim(i);
+    std::string name = dim->name();
+    boost::algorithm::to_lower(name);
+    if (name == dimname) return dim->size();
+  }
+  throw SmartMet::Spine::Exception(BCP, std::string("Could not find dimension of axis ") + varname);
+}
+
+unsigned long NcFileExtended::xsize() { return axis_size(x); }
+
+unsigned long NcFileExtended::ysize() { return axis_size(y); }
+
+unsigned long NcFileExtended::zsize() { return (z == nullptr ? 1 : axis_size(z)); }
+
+unsigned long NcFileExtended::tsize() { return (isStereographic() ? 0 : axis_size(t)); }
+
 // namespace nctools
 
 #if DEBUG_PRINT

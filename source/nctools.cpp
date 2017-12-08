@@ -652,7 +652,14 @@ NcFileExtended::NcFileExtended(
       x(nullptr),
       y(nullptr),
       z(nullptr),
-      t(nullptr)
+      t(nullptr),
+      minmaxfound(false),
+      _xmin(0),
+      _xmax(0),
+      _ymin(0),
+      _ymax(0),
+      _zmin(0),
+      _zmax(0)
 {
 }
 
@@ -843,6 +850,139 @@ unsigned long NcFileExtended::ysize() { return axis_size(y); }
 unsigned long NcFileExtended::zsize() { return (z == nullptr ? 1 : axis_size(z)); }
 
 unsigned long NcFileExtended::tsize() { return (isStereographic() ? 0 : axis_size(t)); }
+
+// ----------------------------------------------------------------------
+/*!
+ * Find axis bounds
+ */
+// ----------------------------------------------------------------------
+
+void NcFileExtended::find_axis_bounds(NcVar *var, int n, double *x1, double *x2, const char *name)
+{
+  if (var == NULL) return;
+
+  NcValues *values = var->values();
+  bool desc = false;  // Set to true if we detect decreasing instead of increasing values
+
+  // Verify monotonous coordinates
+  if (var->num_vals() >= 2 && values->as_double(1) < values->as_double(0)) desc = true;
+
+  for (int i = 1; i < var->num_vals(); i++)
+  {
+    if (desc == false && values->as_double(i) <= values->as_double(i - 1))
+      throw SmartMet::Spine::Exception(BCP,
+                                       std::string(name) + "-axis is not monotonously increasing");
+    if (desc == true && values->as_double(i) >= values->as_double(i - 1))
+      throw SmartMet::Spine::Exception(BCP,
+                                       std::string(name) + "-axis is not monotonously decreasing");
+  }
+
+  // Min&max is now easy
+  if (desc == false)
+  {
+    *x1 = values->as_double(0);
+    *x2 = values->as_double(var->num_vals() - 1);
+  }
+  else
+  {
+    *x2 = values->as_double(0);
+    *x1 = values->as_double(var->num_vals() - 1);
+  }
+
+  // Verify stepsize is even
+  if (n <= 2) return;
+
+  double step = ((*x2) - (*x1)) / (n - 1);
+  double tolerance = 1e-3;
+
+  for (int i = 1; i < var->num_vals(); i++)
+  {
+    double s;
+    if (desc == false)
+      s = values->as_double(i) - values->as_double(i - 1);
+    else
+      s = values->as_double(i - 1) - values->as_double(i);
+
+    if (std::abs(s - step) > tolerance * step)
+      throw SmartMet::Spine::Exception(
+          BCP, std::string(name) + "-axis is not regular with tolerance 1e-3");
+  }
+}
+
+void NcFileExtended::find_lonlat_bounds(double &lon1, double &lat1, double &lon2, double &lat2)
+{
+  for (int i = 0; i < num_vars(); i++)
+  {
+    NcVar *ncvar = get_var(i);
+
+    NcAtt *att = ncvar->get_att("standard_name");
+    if (att != 0)
+    {
+      std::string attributeStandardName(att->values()->as_string(0));
+      if (attributeStandardName == "longitude" || attributeStandardName == "latitude")
+      {
+        NcValues *ncvals = ncvar->values();
+        if (attributeStandardName == "longitude")
+        {
+          lon1 = ncvals->as_double(0);
+          lon2 = ncvals->as_double(ncvar->num_vals() - 1);
+        }
+        else
+        {
+          lat1 = ncvals->as_double(0);
+          lat2 = ncvals->as_double(ncvar->num_vals() - 1);
+        }
+        delete ncvals;
+      }
+    }
+  }
+}
+
+void NcFileExtended::find_bounds()
+{
+  if (isStereographic())
+  {
+    find_lonlat_bounds(_xmin, _ymin, _xmax, _ymax);
+  }
+  else
+  {
+    find_axis_bounds(x, xsize(), &_xmin, &_xmax, "x");
+    find_axis_bounds(y, ysize(), &_ymin, &_ymax, "y");
+  }
+  find_axis_bounds(z, zsize(), &_zmin, &_zmax, "z");
+  minmaxfound = true;
+}
+
+double NcFileExtended::xmin()
+{
+  if (minmaxfound == false) find_bounds();
+  return _xmin;
+}
+double NcFileExtended::xmax()
+{
+  if (minmaxfound == false) find_bounds();
+  return _xmax;
+}
+double NcFileExtended::ymin()
+{
+  if (minmaxfound == false) find_bounds();
+  return _ymin;
+}
+double NcFileExtended::ymax()
+{
+  if (minmaxfound == false) find_bounds();
+  return _ymax;
+}
+double NcFileExtended::zmin()
+{
+  if (minmaxfound == false) find_bounds();
+  return _zmin;
+}
+double NcFileExtended::zmax()
+{
+  if (minmaxfound == false) find_bounds();
+  return _zmax;
+}
 
 // namespace nctools
 

@@ -138,9 +138,15 @@ class NcFileExtended : public NcFile
   unsigned long zsize();                 // Count of elements on z-axis
   unsigned long tsize();                 // Count of elements on t-axis
   unsigned long axis_size(NcVar *axis);  // Generic dimension of an axis(=count of elements)
-  bool xinverted();                      // True, if x axis is descending
-  bool yinverted();                      // True, if y axis is descending
-  bool isStereographic();                // True, if this is a stereographic projection
+  double xmin();
+  double xmax();
+  double ymin();
+  double ymax();
+  double zmin();
+  double zmax();
+  bool xinverted();        // True, if x axis is descending
+  bool yinverted();        // True, if y axis is descending
+  bool isStereographic();  // True, if this is a stereographic projection
   double longitudeOfProjectionOrigin;
   NcVar *x_axis();                           // Find x-axis from predefined(known) set
   NcVar *y_axis();                           // Find y-axis from predefined(known) set
@@ -153,6 +159,11 @@ class NcFileExtended : public NcFile
   NcVar *y;
   NcVar *z;
   NcVar *t;
+  bool minmaxfound;
+  double _xmin, _xmax, _ymin, _ymax, _zmin, _zmax;
+  void find_axis_bounds(NcVar *, int n, double *x1, double *x2, const char *name);
+  void find_lonlat_bounds(double &lon1, double &lat1, double &lon2, double &lat2);
+  void find_bounds();
 };
 
 #if DEBUG_PRINT

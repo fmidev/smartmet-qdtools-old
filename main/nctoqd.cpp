@@ -72,97 +72,6 @@ void require_conventions(const NcFile& ncfile, const std::string& reference, int
   // We do not test the version numerically at all, since it is
   // possible the version will some day be of the form x.y.z
 }
-
-// ----------------------------------------------------------------------
-/*!
- * Find axis bounds
- */
-// ----------------------------------------------------------------------
-
-void find_axis_bounds(NcVar* var, int n, double* x1, double* x2, const char* name)
-{
-  if (var == NULL) return;
-
-  NcValues* values = var->values();
-  bool desc = false;  // Set to true if we detect decreasing instead of increasing values
-
-  // Verify monotonous coordinates
-  if (var->num_vals() >= 2 && values->as_double(1) < values->as_double(0)) desc = true;
-
-  for (int i = 1; i < var->num_vals(); i++)
-  {
-    if (desc == false && values->as_double(i) <= values->as_double(i - 1))
-      throw SmartMet::Spine::Exception(BCP,
-                                       std::string(name) + "-axis is not monotonously increasing");
-    if (desc == true && values->as_double(i) >= values->as_double(i - 1))
-      throw SmartMet::Spine::Exception(BCP,
-                                       std::string(name) + "-axis is not monotonously decreasing");
-  }
-
-  // Min&max is now easy
-  if (desc == false)
-  {
-    *x1 = values->as_double(0);
-    *x2 = values->as_double(var->num_vals() - 1);
-    if (options.debug) std::cerr << std::string(name) + "-axis is increasing\n";
-  }
-  else
-  {
-    *x2 = values->as_double(0);
-    *x1 = values->as_double(var->num_vals() - 1);
-    if (options.debug) std::cerr << std::string(name) + "-axis is decreasing\n";
-  }
-
-  // Verify stepsize is even
-  if (n <= 2) return;
-
-  double step = ((*x2) - (*x1)) / (n - 1);
-  double tolerance = 1e-3;
-
-  for (int i = 1; i < var->num_vals(); i++)
-  {
-    double s;
-    if (desc == false)
-      s = values->as_double(i) - values->as_double(i - 1);
-    else
-      s = values->as_double(i - 1) - values->as_double(i);
-
-    if (std::abs(s - step) > tolerance * step)
-      throw SmartMet::Spine::Exception(
-          BCP, std::string(name) + "-axis is not regular with tolerance 1e-3");
-  }
-}
-
-void find_lonlat_bounds(
-    const NcFile& ncfile, double& lon1, double& lat1, double& lon2, double& lat2)
-{
-  for (int i = 0; i < ncfile.num_vars(); i++)
-  {
-    NcVar* ncvar = ncfile.get_var(i);
-
-    NcAtt* att = ncvar->get_att("standard_name");
-    if (att != 0)
-    {
-      std::string attributeStandardName(att->values()->as_string(0));
-      if (attributeStandardName == "longitude" || attributeStandardName == "latitude")
-      {
-        NcValues* ncvals = ncvar->values();
-        if (attributeStandardName == "longitude")
-        {
-          lon1 = ncvals->as_double(0);
-          lon2 = ncvals->as_double(ncvar->num_vals() - 1);
-        }
-        else
-        {
-          lat1 = ncvals->as_double(0);
-          lat2 = ncvals->as_double(ncvar->num_vals() - 1);
-        }
-        delete ncvals;
-      }
-    }
-  }
-}
-
 // ----------------------------------------------------------------------
 /*!
  * Check X-axis units
@@ -588,17 +497,12 @@ int run(int argc, char* argv[])
         throw SmartMet::Spine::Exception(
             BCP, "Z-dimension <> 1 is not supported (yet), sample file is needed first");
 
-      double x1 = 0, x2 = 0, y1 = 0, y2 = 0, z1 = 0, z2 = 0;
-      if (ncfile.isStereographic())
-      {
-        find_lonlat_bounds(ncfile, x1, y1, x2, y2);
-      }
-      else
-      {
-        find_axis_bounds(x, nx, &x1, &x2, "x");
-        find_axis_bounds(y, ny, &y1, &y2, "y");
-      }
-      find_axis_bounds(z, nz, &z1, &z2, "z");
+      double x1 = ncfile.xmin(), x2 = ncfile.xmax(), y1 = ncfile.ymin(), y2 = ncfile.ymax(),
+             z1 = ncfile.zmin(), z2 = ncfile.zmax();
+      if (options.verbose)
+        std::cerr << infile << ": "
+                  << "xmin=" << x1 << " xmax=" << x2 << " ymin=" << y1 << " ymax=" << y2
+                  << " zmin=" << z1 << " zmax=" << z2 << std::endl;
 
       NFmiHPlaceDescriptor hdesc =
           create_hdesc(x1, y1, x2, y2, nx, ny, ncfile.longitudeOfProjectionOrigin, grid_mapping);

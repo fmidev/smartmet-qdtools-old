@@ -508,32 +508,44 @@ void NcFileExtended::copy_values(const Options &options, NcVar *var, NFmiFastQue
   float offset = get_offset(var);
 
   // NetCDF data ordering: time, level, rows from bottom row to top row, left-right order in row
+  // Except that is isn't if axises are inverted
   int timeindex = 0;
   for (info.ResetTime(); info.NextTime(); ++timeindex)
   {
     // must delete
     NcValues *vals = var->get_rec(timeindex);
-    // This block caused segfaults ...
-    // long total_elems = vals->num();
-    // long rows = var->get_dim(timeindex)->size(); // This value is not correct
-
-    /* if (options.debug)
-      std::cerr << "debug: " + std::string(var->name()) + " total_elems " +
-                       std::to_string(total_elems) + " rows " + std::to_string(rows) + "\n";
-*/
-
-    long counter = 0;
+    unsigned long x = 0;
+    unsigned long y = 0;
     for (info.ResetLevel(); info.NextLevel();)
     {
       for (info.ResetLocation(); info.NextLocation();)
       {
+        unsigned long counter;
+        if (this->xinverted() == false && this->yinverted() == false)
+          counter = x * ysize() + y;
+        else
+        {
+          if (this->xinverted())
+            counter = (xsize() - 1 - x) * ysize();
+          else
+            counter = x * ysize();
+          if (this->yinverted())
+            counter += (ysize() - 1 - y);
+          else
+            counter += y;
+        }
         float value = vals->as_float(counter);
         if (!IsMissingValue(value, missingvalue))
         {
           if (!ignoreUnitChange) value = normalize_units(scale * value + offset, units);
           info.FloatValue(value);
         }
-        ++counter;
+        y++;
+        if (y >= ysize())
+        {
+          x++;
+          y = 0;
+        }
       }
     }
     delete vals;
@@ -855,28 +867,29 @@ unsigned long NcFileExtended::tsize() { return (isStereographic() ? 0 : axis_siz
  */
 // ----------------------------------------------------------------------
 
-void NcFileExtended::find_axis_bounds(NcVar *var, int n, double *x1, double *x2, const char *name)
+void NcFileExtended::find_axis_bounds(
+    NcVar *var, int n, double *x1, double *x2, const char *name, bool *isdescending)
 {
   if (var == NULL) return;
 
   NcValues *values = var->values();
-  bool desc = false;  // Set to true if we detect decreasing instead of increasing values
+  *isdescending = false;  // Set to true if we detect decreasing instead of increasing values
 
   // Verify monotonous coordinates
-  if (var->num_vals() >= 2 && values->as_double(1) < values->as_double(0)) desc = true;
+  if (var->num_vals() >= 2 && values->as_double(1) < values->as_double(0)) *isdescending = true;
 
   for (int i = 1; i < var->num_vals(); i++)
   {
-    if (desc == false && values->as_double(i) <= values->as_double(i - 1))
+    if (*isdescending == false && values->as_double(i) <= values->as_double(i - 1))
       throw SmartMet::Spine::Exception(BCP,
                                        std::string(name) + "-axis is not monotonously increasing");
-    if (desc == true && values->as_double(i) >= values->as_double(i - 1))
+    if (*isdescending == true && values->as_double(i) >= values->as_double(i - 1))
       throw SmartMet::Spine::Exception(BCP,
                                        std::string(name) + "-axis is not monotonously decreasing");
   }
 
   // Min&max is now easy
-  if (desc == false)
+  if (*isdescending == false)
   {
     *x1 = values->as_double(0);
     *x2 = values->as_double(var->num_vals() - 1);
@@ -896,7 +909,7 @@ void NcFileExtended::find_axis_bounds(NcVar *var, int n, double *x1, double *x2,
   for (int i = 1; i < var->num_vals(); i++)
   {
     double s;
-    if (desc == false)
+    if (*isdescending == false)
       s = values->as_double(i) - values->as_double(i - 1);
     else
       s = values->as_double(i - 1) - values->as_double(i);
@@ -944,11 +957,24 @@ void NcFileExtended::find_bounds()
   }
   else
   {
-    find_axis_bounds(x, xsize(), &_xmin, &_xmax, "x");
-    find_axis_bounds(y, ysize(), &_ymin, &_ymax, "y");
+    find_axis_bounds(x, xsize(), &_xmin, &_xmax, "x", &_xinverted);
+    find_axis_bounds(y, ysize(), &_ymin, &_ymax, "y", &_yinverted);
   }
-  find_axis_bounds(z, zsize(), &_zmin, &_zmax, "z");
+  find_axis_bounds(z, zsize(), &_zmin, &_zmax, "z", &_zinverted);
+  if (_zinverted == true && _zmin != _zmax)
+    throw SmartMet::Spine::Exception(BCP, "z-axis is inverted: this is not supported(yet?)");
   minmaxfound = true;
+}
+
+bool NcFileExtended::xinverted()
+{
+  if (minmaxfound == false) find_bounds();
+  return _xinverted;
+}
+bool NcFileExtended::yinverted()
+{
+  if (minmaxfound == false) find_bounds();
+  return _yinverted;
 }
 
 double NcFileExtended::xmin()

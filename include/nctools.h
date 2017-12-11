@@ -136,7 +136,9 @@ class NcFileExtended : public NcFile
   NcVar *t;
   bool minmaxfound;
   double _xmin, _xmax, _ymin, _ymax, _zmin, _zmax;
-  void find_axis_bounds(NcVar *, int n, double *x1, double *x2, const char *name);
+  bool _xinverted, _yinverted, _zinverted;
+  void find_axis_bounds(
+      NcVar *, int n, double *x1, double *x2, const char *name, bool *isdescending);
   void find_lonlat_bounds(double &lon1, double &lat1, double &lon2, double &lat2);
   void find_bounds();
   void copy_values(NFmiFastQueryInfo &info,

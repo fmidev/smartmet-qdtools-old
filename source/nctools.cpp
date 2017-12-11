@@ -491,7 +491,7 @@ bool is_name_in_list(const std::list<std::string> &nameList, const std::string n
  */
 // ----------------------------------------------------------------------
 
-void copy_values(const Options &options, NcVar *var, NFmiFastQueryInfo &info)
+void NcFileExtended::copy_values(const Options &options, NcVar *var, NFmiFastQueryInfo &info)
 {
   std::string name = var->name();
   std::string units = "";
@@ -635,7 +635,7 @@ void NcFileExtended::copy_values(const Options &options,
       // and one calculated from X- and Y-components
 
       if (pinfo.isregular)
-        nctools::copy_values(options, var, info);
+        copy_values(options, var, info);
       else
         copy_values(info, pinfo, &options);
     }

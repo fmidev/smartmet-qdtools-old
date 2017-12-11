@@ -142,6 +142,7 @@ class NcFileExtended : public NcFile
   void copy_values(NFmiFastQueryInfo &info,
                    const ParamInfo &pinfo,
                    const nctools::Options *options);
+  void copy_values(const Options &options, NcVar *var, NFmiFastQueryInfo &info);
 };
 
 NFmiEnumConverter &get_enumconverter(void);
@@ -163,7 +164,6 @@ void report_units(NcVar *var,
                   bool ignoreUnitChange = false);
 bool parse_options(int argc, char *argv[], Options &options);
 ParamConversions read_netcdf_config(const Options &options);
-void copy_values(const Options &options, NcVar *var, NFmiFastQueryInfo &info);
 bool is_name_in_list(const std::list<std::string> &nameList, const std::string name);
 
 #if DEBUG_PRINT

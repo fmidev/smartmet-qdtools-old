@@ -6,8 +6,6 @@
  */
 // ======================================================================
 
-#include "nctools.h"
-
 #include <macgyver/CsvReader.h>
 #include <macgyver/StringConversion.h>
 #include <macgyver/TimeParser.h>
@@ -45,6 +43,8 @@
 #include <stdexcept>
 #include <string>
 #include <utility>
+
+#include "nctools.h"
 
 nctools::Options options;
 
@@ -525,7 +525,7 @@ int run(int argc, char* argv[])
 
       info.SetProducer(NFmiProducer(options.producernumber, options.producername));
 
-      nctools::copy_values(options, ncfile, info, paramconvs);
+      ncfile.copy_values(options, info, paramconvs);
 
       // TODO: Handle unit conversions too!
     }

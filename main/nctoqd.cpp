@@ -502,7 +502,8 @@ int run(int argc, char* argv[])
       if (options.verbose)
         std::cerr << infile << ": "
                   << "xmin=" << x1 << " xmax=" << x2 << " ymin=" << y1 << " ymax=" << y2
-                  << " zmin=" << z1 << " zmax=" << z2 << std::endl;
+                  << " zmin=" << z1 << " zmax=" << z2 << " xinverted=" << ncfile.xinverted()
+                  << " yinverted=" << ncfile.yinverted() << std::endl;
 
       NFmiHPlaceDescriptor hdesc =
           create_hdesc(x1, y1, x2, y2, nx, ny, ncfile.longitudeOfProjectionOrigin, grid_mapping);

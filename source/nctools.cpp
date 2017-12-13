@@ -514,40 +514,53 @@ void NcFileExtended::copy_values(const Options &options, NcVar *var, NFmiFastQue
   {
     // must delete
     NcValues *vals = var->get_rec(timeindex);
-    unsigned long x = 0;
-    unsigned long y = 0;
     for (info.ResetLevel(); info.NextLevel();)
     {
+      // Outer loop is just the level - multiple levels are not supported yet
+      unsigned long x = (this->xinverted() ? xsize() - 1 : 0);  // Current x-coordinate
+      unsigned long y = (this->yinverted() ? ysize() - 1 : 0);  // Current y-coordinate
+      unsigned long counter =
+          0;  // Target data(querydata) pos = y*xsize()+y if neither of the axises are inverted
+
+      if (options.debug)
+        std::cerr << "debug: before copy loop, x=" << x << " y=" << y << " counter=" << counter
+                  << std::endl;
+
+      // Inner loop contains all of the x,y values on this level
       for (info.ResetLocation(); info.NextLocation();)
       {
-        unsigned long counter;
-        if (this->xinverted() == false && this->yinverted() == false)
-          counter = x * ysize() + y;
-        else
-        {
-          if (this->xinverted())
-            counter = (xsize() - 1 - x) * ysize();
-          else
-            counter = x * ysize();
-          if (this->yinverted())
-            counter += (ysize() - 1 - y);
-          else
-            counter += y;
-        }
-        float value = vals->as_float(counter);
+        // float value = vals->as_float(counter);
+        float value = vals->as_float(y * xsize() + x);
         if (!IsMissingValue(value, missingvalue))
         {
           if (!ignoreUnitChange) value = normalize_units(scale * value + offset, units);
           info.FloatValue(value);
         }
-        y++;
-        if (y >= ysize())
+        counter++;
+        // Next row?
+        if (x == (this->xinverted() ? 0 : xsize() - 1))
         {
-          x++;
-          y = 0;
+          (this->yinverted() ? y-- : y++);
+          x = (this->xinverted() ? xsize() - 1 : 0);
+        }
+        else
+        {
+          (this->xinverted() ? x-- : x++);
         }
       }
+      if (options.debug)
+        std::cerr << "debug: after copy loop, x=" << x << " y=" << y << " counter=" << counter
+                  << std::endl;
+      if (counter != xsize() * ysize())
+      {
+        unsigned long realdim = xsize() * ysize();
+        throw SmartMet::Spine::Exception(
+            BCP,
+            "Value copying got wrong number of elements counter=" + std::to_string(counter) +
+                " but xsize*ysize=" + std::to_string(realdim));
+      }
     }
+
     delete vals;
   }
 }
@@ -669,7 +682,10 @@ NcFileExtended::NcFileExtended(
       _ymin(0),
       _ymax(0),
       _zmin(0),
-      _zmax(0)
+      _zmax(0),
+      _xinverted(false),
+      _yinverted(false),
+      _zinverted(false)
 {
 }
 

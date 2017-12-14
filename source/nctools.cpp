@@ -521,48 +521,41 @@ void NcFileExtended::copy_values(const Options &options, NcVar *var, NFmiFastQue
     for (info.ResetLevel(); info.NextLevel(); ++level)
     {
       // Outer loop is just the level - multiple levels are not supported yet
-      unsigned long x = (this->xinverted() ? xsize() - 1 : 0);  // Current x-coordinate
-      unsigned long y = (this->yinverted() ? ysize() - 1 : 0);  // Current y-coordinate
-      unsigned long counter =
-          0;  // Target data(querydata) pos = y*xsize()+y if neither of the axises are inverted
+      unsigned long xcounter = (this->xinverted() ? xsize() - 1 : 0);  // Current x-coordinate
+      // Calculating every point by multiplication is slow so saving the starting point of current
+      // row Further improvement when both axises are non-inverted does not improve performance
+      unsigned long ystart = (this->yinverted() ? (ysize() - 1) * xsize() : 0);
 
       if (options.debug)
         std::cerr << "debug: before copy loop, timeindex=" << timeindex << " level=" << level
-                  << " x=" << x << " y=" << y << " counter=" << counter << std::endl;
+                  << " xcounter=" << xcounter << " ystart=" << ystart << std::endl;
 
       // Inner loop contains all of the x,y values on this level
       for (info.ResetLocation(); info.NextLocation();)
       {
-        // float value = vals->as_float(counter);
-        float value = vals->as_float(y * xsize() + x);
+        float value = vals->as_float(ystart + xcounter);
         if (!IsMissingValue(value, missingvalue))
         {
           if (!ignoreUnitChange) value = normalize_units(scale * value + offset, units);
           info.FloatValue(value);
         }
-        counter++;
+
         // Next row?
-        if (x == (this->xinverted() ? 0 : xsize() - 1))
+        if (xcounter == (xinverted() ? 0 : xsize() - 1))
         {
-          (this->yinverted() ? y-- : y++);
-          x = (this->xinverted() ? xsize() - 1 : 0);
+          // Yes, increase the y counter and reset x
+          ystart += (yinverted() ? -xsize() : +xsize());
+          xcounter = (xinverted() ? xsize() - 1 : 0);
         }
         else
         {
-          (this->xinverted() ? x-- : x++);
+          // No, just increase x (or decrease if inverted )
+          (this->xinverted() ? xcounter-- : xcounter++);
         }
       }
       if (options.debug)
         std::cerr << "debug: after copy loop, timeindex=" << timeindex << " level=" << level
-                  << " x=" << x << " y=" << y << " counter=" << counter << std::endl;
-      if (counter != xsize() * ysize())
-      {
-        unsigned long realdim = xsize() * ysize();
-        throw SmartMet::Spine::Exception(
-            BCP,
-            "Value copying got wrong number of elements counter=" + std::to_string(counter) +
-                " but xsize*ysize=" + std::to_string(realdim));
-      }
+                  << " xcounter=" << xcounter << " ystart=" << ystart << std::endl;
     }
 
     delete vals;

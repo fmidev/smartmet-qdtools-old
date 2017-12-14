@@ -498,6 +498,8 @@ void NcFileExtended::copy_values(const Options &options, NcVar *var, NFmiFastQue
   NcAtt *att = var->get_att("units");
   if (att != 0) units = att->values()->as_string(0);
 
+  if (options.debug) std::cerr << "debug: starting copy for variable " << name << std::endl;
+
   // joskus metatiedot valehtelevat, t�ll�in ei saa muuttaa parametrin yksik�it�
   bool ignoreUnitChange = is_name_in_list(options.ignoreUnitChangeParams, name);
 
@@ -507,14 +509,16 @@ void NcFileExtended::copy_values(const Options &options, NcVar *var, NFmiFastQue
   float scale = get_scale(var);
   float offset = get_offset(var);
 
-  // NetCDF data ordering: time, level, rows from bottom row to top row, left-right order in row
-  // Except that is isn't if axises are inverted
+  // NetCDF data ordering: time, level, rows from bottom row to top row, left-right order in row, if
+  // none of the axises are inverted We have to calculate the actual position for inverted axises.
+  // They will be non-inverted in the result data.
   int timeindex = 0;
   for (info.ResetTime(); info.NextTime(); ++timeindex)
   {
+    unsigned long level = 0;
     // must delete
     NcValues *vals = var->get_rec(timeindex);
-    for (info.ResetLevel(); info.NextLevel();)
+    for (info.ResetLevel(); info.NextLevel(); ++level)
     {
       // Outer loop is just the level - multiple levels are not supported yet
       unsigned long x = (this->xinverted() ? xsize() - 1 : 0);  // Current x-coordinate
@@ -523,8 +527,8 @@ void NcFileExtended::copy_values(const Options &options, NcVar *var, NFmiFastQue
           0;  // Target data(querydata) pos = y*xsize()+y if neither of the axises are inverted
 
       if (options.debug)
-        std::cerr << "debug: before copy loop, x=" << x << " y=" << y << " counter=" << counter
-                  << std::endl;
+        std::cerr << "debug: before copy loop, timeindex=" << timeindex << " level=" << level
+                  << " x=" << x << " y=" << y << " counter=" << counter << std::endl;
 
       // Inner loop contains all of the x,y values on this level
       for (info.ResetLocation(); info.NextLocation();)
@@ -549,8 +553,8 @@ void NcFileExtended::copy_values(const Options &options, NcVar *var, NFmiFastQue
         }
       }
       if (options.debug)
-        std::cerr << "debug: after copy loop, x=" << x << " y=" << y << " counter=" << counter
-                  << std::endl;
+        std::cerr << "debug: after copy loop, timeindex=" << timeindex << " level=" << level
+                  << " x=" << x << " y=" << y << " counter=" << counter << std::endl;
       if (counter != xsize() * ysize())
       {
         unsigned long realdim = xsize() * ysize();
@@ -820,6 +824,8 @@ NcVar *NcFileExtended::z_axis()
   if (z != nullptr) return z;
   z = axis("z");
   if (z == nullptr) z = axis("projection_z_coordinate");
+
+  // It is okay for z-axis to be null: there might only be one level(=no z-axis)
   return z;
 }
 
@@ -836,6 +842,7 @@ NcVar *NcFileExtended::t_axis()
   // Alternate names
   if (t == nullptr) t = axis("time");
 
+  // It is okay for t-axis to be null: there might be only one time for the whole file
   return t;
 }
 

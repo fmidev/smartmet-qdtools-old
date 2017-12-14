@@ -131,15 +131,16 @@ void check_yaxis_units(NcVar* var)
  * Create horizontal descriptor
  */
 // ----------------------------------------------------------------------
-NFmiHPlaceDescriptor create_hdesc(double x1,
-                                  double y1,
-                                  double x2,
-                                  double y2,
-                                  int nx,
-                                  int ny,
-                                  double centralLongitude,
-                                  const std::string& grid_mapping)
+NFmiHPlaceDescriptor create_hdesc(nctools::NcFileExtended& ncfile)
 {
+  double x1 = ncfile.xmin();
+  double y1 = ncfile.ymin();
+  double x2 = ncfile.xmax();
+  double y2 = ncfile.ymax();
+  double nx = ncfile.xsize();
+  double ny = ncfile.ysize();
+  double centralLongitude = ncfile.longitudeOfProjectionOrigin;
+
   if (options.verbose)
   {
     std::cout << "x1 => " << x1 << std::endl;
@@ -148,28 +149,30 @@ NFmiHPlaceDescriptor create_hdesc(double x1,
     std::cout << "y2 => " << y2 << std::endl;
     std::cout << "nx => " << nx << std::endl;
     std::cout << "ny => " << ny << std::endl;
-    std::cout << "grid_mapping => " << grid_mapping << std::endl;
+    if (ncfile.xinverted()) std::cout << "x-axis is inverted" << std::endl;
+    if (ncfile.yinverted()) std::cout << "y-axis is inverted" << std::endl;
+    std::cout << "grid_mapping => " << ncfile.grid_mapping() << std::endl;
   }
 
   NFmiArea* area;
-  if (grid_mapping == POLAR_STEREOGRAPHIC)
+  if (ncfile.grid_mapping() == POLAR_STEREOGRAPHIC)
     area = new NFmiStereographicArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2), centralLongitude);
-  else if (grid_mapping == LAMBERT_CONFORMAL_CONIC)
+  else if (ncfile.grid_mapping() == LAMBERT_CONFORMAL_CONIC)
     throw SmartMet::Spine::Exception(BCP, "Lambert conformal conic projection not supported");
-  else if (grid_mapping == LAMBERT_AZIMUTHAL)
+  else if (ncfile.grid_mapping() == LAMBERT_AZIMUTHAL)
   {
     if (!options.experimental)
       throw SmartMet::Spine::Exception(
           BCP,
-          "Projection " + grid_mapping +
+          "Projection " + ncfile.grid_mapping() +
               " is buggy in newbase library.\nReally want it? Try with -x (experimental) flag\n");
     area = new NFmiLambertEqualArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2));
   }
-  else if (grid_mapping == LATITUDE_LONGITUDE || grid_mapping.length() == 0)
-    // Map zero length (no projection) to latlon as that's the default for NetCDF
+  else if (ncfile.grid_mapping() == LATITUDE_LONGITUDE)
     area = new NFmiLatLonArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2));
   else
-    throw SmartMet::Spine::Exception(BCP, "Projection " + grid_mapping + " is not supported");
+    throw SmartMet::Spine::Exception(BCP,
+                                     "Projection " + ncfile.grid_mapping() + " is not supported");
 
   NFmiGrid grid(area, nx, ny);
   NFmiHPlaceDescriptor hdesc(grid);
@@ -464,9 +467,9 @@ int run(int argc, char* argv[])
       NcVar* t = ncfile.t_axis();
 
       /* pernu 2017-12-07: These are not necessary - it is not possible for x/y fetching to return
-      NULL if (x == nullptr) throw SmartMet::Spine::Exception(BCP, "Failed to find X-axis
-      variable"); if (y == nullptr) throw SmartMet::Spine::Exception(BCP, "Failed to find Y-axis
-      variable");
+      NULL . That already causes exception to be thrown.
+      // if (x == nullptr) throw SmartMet::Spine::Exception(BCP, "Failed to find X-axis variable");
+      // if (y == nullptr) throw SmartMet::Spine::Exception(BCP, "Failed to find Y-axis variable");
       */
       // if (z == 0) throw SmartMet::Spine::Exception(BCP,"Failed to find Z-axis variable");
       if (!ncfile.isStereographic() && t == nullptr)
@@ -497,16 +500,8 @@ int run(int argc, char* argv[])
         throw SmartMet::Spine::Exception(
             BCP, "Z-dimension <> 1 is not supported (yet), sample file is needed first");
 
-      double x1 = ncfile.xmin(), x2 = ncfile.xmax(), y1 = ncfile.ymin(), y2 = ncfile.ymax(),
-             z1 = ncfile.zmin(), z2 = ncfile.zmax();
-      if (options.verbose)
-        std::cerr << infile << ": "
-                  << "xmin=" << x1 << " xmax=" << x2 << " ymin=" << y1 << " ymax=" << y2
-                  << " zmin=" << z1 << " zmax=" << z2 << " xinverted=" << ncfile.xinverted()
-                  << " yinverted=" << ncfile.yinverted() << std::endl;
-
-      NFmiHPlaceDescriptor hdesc =
-          create_hdesc(x1, y1, x2, y2, nx, ny, ncfile.longitudeOfProjectionOrigin, grid_mapping);
+      double z1 = ncfile.zmin(), z2 = ncfile.zmax();
+      NFmiHPlaceDescriptor hdesc = create_hdesc(ncfile);
       NFmiVPlaceDescriptor vdesc = create_vdesc(ncfile, z1, z2, nz);
       NFmiTimeDescriptor tdesc =
           (ncfile.isStereographic() ? create_tdesc(ncfile) : create_tdesc(ncfile, t));

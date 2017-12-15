@@ -668,6 +668,7 @@ NcFileExtended::NcFileExtended(
     const char *path, FileMode fm, size_t *bufrsizeptr, size_t initialsize, FileFormat ff)
     : NcFile(path, fm, bufrsizeptr, initialsize, ff),
       longitudeOfProjectionOrigin(0),
+      latitudeOfProjectionOrigin(0),
       projectionName(nullptr),
       x(nullptr),
       y(nullptr),
@@ -719,6 +720,8 @@ std::string NcFileExtended::grid_mapping()
 
         NcAtt *lon_att = var->get_att("longitude_of_projection_origin");
         if (lon_att != 0) longitudeOfProjectionOrigin = lon_att->values()->as_double(0);
+        NcAtt *lat_att = var->get_att("latitude_of_projection_origin");
+        if (lat_att != 0) latitudeOfProjectionOrigin = lat_att->values()->as_double(0);
         break;
       }
     }

@@ -117,6 +117,7 @@ class NcFileExtended : public NcFile
   bool yinverted();        // True, if y axis is descending
   bool isStereographic();  // True, if this is a stereographic projection
   double longitudeOfProjectionOrigin;
+  double latitudeOfProjectionOrigin;
   NcVar *x_axis();                           // Find x-axis from predefined(known) set
   NcVar *y_axis();                           // Find y-axis from predefined(known) set
   NcVar *z_axis();                           // Find z-axis

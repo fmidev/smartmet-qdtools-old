@@ -151,6 +151,8 @@ NFmiHPlaceDescriptor create_hdesc(nctools::NcFileExtended& ncfile)
     std::cout << "ny => " << ny << std::endl;
     if (ncfile.xinverted()) std::cout << "x-axis is inverted" << std::endl;
     if (ncfile.yinverted()) std::cout << "y-axis is inverted" << std::endl;
+    std::cout << "latitude_origin => " << ncfile.latitudeOfProjectionOrigin << std::endl;
+    std::cout << "longitude_origin => " << ncfile.longitudeOfProjectionOrigin << std::endl;
     std::cout << "grid_mapping => " << ncfile.grid_mapping() << std::endl;
   }
 
@@ -166,7 +168,20 @@ NFmiHPlaceDescriptor create_hdesc(nctools::NcFileExtended& ncfile)
           BCP,
           "Projection " + ncfile.grid_mapping() +
               " is buggy in newbase library.\nReally want it? Try with -x (experimental) flag\n");
-    area = new NFmiLambertEqualArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2));
+    NFmiLambertEqualArea tmp(NFmiPoint(-90, 0),
+                             NFmiPoint(90, 0),
+                             ncfile.longitudeOfProjectionOrigin,
+                             NFmiPoint(0, 0),
+                             NFmiPoint(1, 1),
+                             ncfile.latitudeOfProjectionOrigin);
+    NFmiPoint bottomleft = tmp.WorldXYToLatLon(NFmiPoint(x1, y1));
+    NFmiPoint topright = tmp.WorldXYToLatLon(NFmiPoint(x2, y2));
+    area = new NFmiLambertEqualArea(bottomleft,
+                                    topright,
+                                    ncfile.longitudeOfProjectionOrigin,
+                                    NFmiPoint(0, 0),
+                                    NFmiPoint(1, 1),
+                                    ncfile.latitudeOfProjectionOrigin);
   }
   else if (ncfile.grid_mapping() == LATITUDE_LONGITUDE)
     area = new NFmiLatLonArea(NFmiPoint(x1, y1), NFmiPoint(x2, y2));

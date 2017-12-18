@@ -1027,6 +1027,49 @@ double NcFileExtended::zmax()
   return _zmax;
 }
 
+std::shared_ptr<std::string> get_axis_units(NcVar *axis)
+{
+  // String presentation of a particular units on an axis
+  NcAtt *att = axis->get_att("units");
+  if (att == 0)
+    throw SmartMet::Spine::Exception(
+        BCP, (std::string)axis->name() + (std::string) "-axis has no units attribute");
+
+  std::shared_ptr<std::string> units = std::make_shared<std::string>(att->values()->as_string(0));
+
+  // Ref: CF conventions section 4.1 Latitude Coordinate
+  /*	  if (units == "degrees_north") return;
+            if (units == "degree_north") return;
+            if (units == "degree_N") return;
+            if (units == "degrees_N") return;
+            if (units == "degreeN") return;
+            if (units == "degreesN") return;
+            if (units == "100  km") return;
+            if (units == "m") return;
+            if (units == "km") return;
+  */
+  //	  throw SmartMet::Spine::Exception(BCP, "Y-axis has unknown units: " + units);
+  return units;
+}
+
+double get_axis_scale(NcVar *axis, std::string *target_units)
+{  // Get scaling multiplier for target
+   // units, default target being meters
+  std::shared_ptr<std::string> source_units = get_axis_units(axis);
+  if (target_units != nullptr && target_units->compare("m") != 0)
+    throw SmartMet::Spine::Exception(BCP,
+                                     "Sorry: do not know how to convert " + *source_units + " to " +
+                                         *target_units + " on axis " + axis->name());
+
+  if (*source_units == "100  km") return 100 * 1000;
+  if (*source_units == "m") return 1;
+  if (*source_units == "km") return 1000;
+
+  throw SmartMet::Spine::Exception(
+      BCP,
+      "Sorry: do not know how to convert " + *source_units + " to meters on axis " + axis->name());
+}
+
 // namespace nctools
 
 #if DEBUG_PRINT

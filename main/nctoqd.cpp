@@ -174,6 +174,8 @@ NFmiHPlaceDescriptor create_hdesc(nctools::NcFileExtended& ncfile)
                              NFmiPoint(0, 0),
                              NFmiPoint(1, 1),
                              ncfile.latitudeOfProjectionOrigin);
+    /*     NFmiPoint bottomleft = tmp.WorldXYToLatLon(NFmiPoint(1000 * x1, 1000 * y1));
+   NFmiPoint topright = tmp.WorldXYToLatLon(NFmiPoint(1000 * x2, 1000 * y2));     */
     NFmiPoint bottomleft = tmp.WorldXYToLatLon(NFmiPoint(x1, y1));
     NFmiPoint topright = tmp.WorldXYToLatLon(NFmiPoint(x2, y2));
     area = new NFmiLambertEqualArea(bottomleft,
@@ -533,12 +535,8 @@ int run(int argc, char* argv[])
       }
 
       NFmiFastQueryInfo info(data.get());
-
       info.SetProducer(NFmiProducer(options.producernumber, options.producername));
-
       ncfile.copy_values(options, info, paramconvs);
-
-      // TODO: Handle unit conversions too!
     }
     catch (...)
     {

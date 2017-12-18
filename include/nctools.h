@@ -107,6 +107,12 @@ class NcFileExtended : public NcFile
   unsigned long zsize();                 // Count of elements on z-axis
   unsigned long tsize();                 // Count of elements on t-axis
   unsigned long axis_size(NcVar *axis);  // Generic dimension of an axis(=count of elements)
+  std::shared_ptr<std::string> get_axis_units(
+      NcVar *axis);  // String presentation of a particular units on an axis
+  double get_axis_scale(NcVar *axis,
+                        std::string *target_units = nullptr);  // Get scaling multiplier to convert
+                                                               // axis to target units, default
+                                                               // target being meters
   double xmin();
   double xmax();
   double ymin();
@@ -118,6 +124,7 @@ class NcFileExtended : public NcFile
   bool isStereographic();  // True, if this is a stereographic projection
   double longitudeOfProjectionOrigin;
   double latitudeOfProjectionOrigin;
+
   NcVar *x_axis();                           // Find x-axis from predefined(known) set
   NcVar *y_axis();                           // Find y-axis from predefined(known) set
   NcVar *z_axis();                           // Find z-axis

@@ -530,7 +530,6 @@ int run(int argc, char* argv[])
       {
         data.reset(NFmiQueryDataUtil::CreateEmptyData(qi));
       }
-
       NFmiFastQueryInfo info(data.get());
       info.SetProducer(NFmiProducer(options.producernumber, options.producername));
       ncfile.copy_values(options, info, paramconvs);
@@ -549,7 +548,6 @@ int run(int argc, char* argv[])
   {
     throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
   }
-
   return 0;
 }
 

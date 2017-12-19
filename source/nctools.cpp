@@ -1034,6 +1034,7 @@ double NcFileExtended::zmax()
   if (minmaxfound == false) find_bounds();
   return _zmax;
 }
+
 /**
  * Handle axis units and scaling
  *

@@ -605,7 +605,9 @@ void NcFileExtended::copy_values(NFmiFastQueryInfo &info,
     for (info.ResetLevel(); info.NextLevel();)
       for (info.ResetLocation(); info.NextLocation();)
       {
-        // FIXME: Must get coordinates in reverse if they are reversed in NetCDF source
+        if (xinverted() || yinverted())
+          throw SmartMet::Spine::Exception(BCP,
+                                           std::string("Inverted axises not implemented here yet"));
         float x = xvals->as_float(counter);
         float y = yvals->as_float(counter);
         if (x != xmissingvalue && y != ymissingvalue)
@@ -683,7 +685,13 @@ NcFileExtended::NcFileExtended(
       _zmax(0),
       _xinverted(false),
       _yinverted(false),
-      _zinverted(false)
+      _zinverted(false),
+      x_units(nullptr),
+      y_units(nullptr),
+      z_units(nullptr),
+      xscale(0),
+      yscale(0),
+      zscale(0)
 {
 }
 
@@ -1026,8 +1034,12 @@ double NcFileExtended::zmax()
   if (minmaxfound == false) find_bounds();
   return _zmax;
 }
-
-std::shared_ptr<std::string> get_axis_units(NcVar *axis)
+/**
+ * Handle axis units and scaling
+ *
+ *
+ */
+std::shared_ptr<std::string> NcFileExtended::get_axis_units(NcVar *axis)
 {
   // String presentation of a particular units on an axis
   NcAtt *att = axis->get_att("units");
@@ -1052,22 +1064,57 @@ std::shared_ptr<std::string> get_axis_units(NcVar *axis)
   return units;
 }
 
-double get_axis_scale(NcVar *axis, std::string *target_units)
+double NcFileExtended::get_axis_scale(NcVar *axis,
+                                      std::shared_ptr<std::string> *source_units,
+                                      std::string *target_units)
 {  // Get scaling multiplier for target
    // units, default target being meters
-  std::shared_ptr<std::string> source_units = get_axis_units(axis);
+  *source_units = get_axis_units(axis);
   if (target_units != nullptr && target_units->compare("m") != 0)
     throw SmartMet::Spine::Exception(BCP,
-                                     "Sorry: do not know how to convert " + *source_units + " to " +
-                                         *target_units + " on axis " + axis->name());
+                                     "Sorry: do not know how to convert " + **source_units +
+                                         " to " + *target_units + " on axis " + axis->name());
 
-  if (*source_units == "100  km") return 100 * 1000;
-  if (*source_units == "m") return 1;
-  if (*source_units == "km") return 1000;
+  if (**source_units == "100  km") return 100 * 1000;
+  if (**source_units == "m") return 1;
+  if (**source_units == "km") return 1000;
 
   throw SmartMet::Spine::Exception(
       BCP,
-      "Sorry: do not know how to convert " + *source_units + " to meters on axis " + axis->name());
+      "Sorry: do not know how to convert " + **source_units + " to meters on axis " + axis->name());
+}
+
+double NcFileExtended::x_scale()
+{
+  if (x_units == nullptr)
+  {
+    std::shared_ptr<std::string> tmp = nullptr;
+    xscale = get_axis_scale(x_axis(), &tmp);
+    x_units = tmp;
+  }
+  return xscale;
+}
+
+double NcFileExtended::y_scale()
+{
+  if (y_units == nullptr)
+  {
+    std::shared_ptr<std::string> tmp = nullptr;
+    yscale = get_axis_scale(y_axis(), &tmp);
+    y_units = tmp;
+  }
+  return yscale;
+}
+
+double NcFileExtended::z_scale()
+{
+  if (z_units == nullptr)
+  {
+    std::shared_ptr<std::string> tmp = nullptr;
+    zscale = get_axis_scale(z_axis(), &tmp);
+    z_units = tmp;
+  }
+  return zscale;
 }
 
 // namespace nctools

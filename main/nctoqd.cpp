@@ -151,6 +151,8 @@ NFmiHPlaceDescriptor create_hdesc(nctools::NcFileExtended& ncfile)
     std::cout << "ny => " << ny << std::endl;
     if (ncfile.xinverted()) std::cout << "x-axis is inverted" << std::endl;
     if (ncfile.yinverted()) std::cout << "y-axis is inverted" << std::endl;
+    std::cout << "x-scaling multiplier to meters => " << ncfile.x_scale() << std::endl;
+    std::cout << "y-scaling multiplier to meters => " << ncfile.y_scale() << std::endl;
     std::cout << "latitude_origin => " << ncfile.latitudeOfProjectionOrigin << std::endl;
     std::cout << "longitude_origin => " << ncfile.longitudeOfProjectionOrigin << std::endl;
     std::cout << "grid_mapping => " << ncfile.grid_mapping() << std::endl;
@@ -169,10 +171,10 @@ NFmiHPlaceDescriptor create_hdesc(nctools::NcFileExtended& ncfile)
                              NFmiPoint(0, 0),
                              NFmiPoint(1, 1),
                              ncfile.latitudeOfProjectionOrigin);
-    /*     NFmiPoint bottomleft = tmp.WorldXYToLatLon(NFmiPoint(1000 * x1, 1000 * y1));
-   NFmiPoint topright = tmp.WorldXYToLatLon(NFmiPoint(1000 * x2, 1000 * y2));     */
-    NFmiPoint bottomleft = tmp.WorldXYToLatLon(NFmiPoint(x1, y1));
-    NFmiPoint topright = tmp.WorldXYToLatLon(NFmiPoint(x2, y2));
+    NFmiPoint bottomleft =
+        tmp.WorldXYToLatLon(NFmiPoint(ncfile.x_scale() * x1, ncfile.y_scale() * y1));
+    NFmiPoint topright =
+        tmp.WorldXYToLatLon(NFmiPoint(ncfile.x_scale() * x2, ncfile.y_scale() * y2));
     area = new NFmiLambertEqualArea(bottomleft,
                                     topright,
                                     ncfile.longitudeOfProjectionOrigin,

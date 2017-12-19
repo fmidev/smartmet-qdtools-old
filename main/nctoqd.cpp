@@ -163,11 +163,6 @@ NFmiHPlaceDescriptor create_hdesc(nctools::NcFileExtended& ncfile)
     throw SmartMet::Spine::Exception(BCP, "Lambert conformal conic projection not supported");
   else if (ncfile.grid_mapping() == LAMBERT_AZIMUTHAL)
   {
-    if (!options.experimental)
-      throw SmartMet::Spine::Exception(
-          BCP,
-          "Projection " + ncfile.grid_mapping() +
-              " is buggy in newbase library.\nReally want it? Try with -x (experimental) flag\n");
     NFmiLambertEqualArea tmp(NFmiPoint(-90, 0),
                              NFmiPoint(90, 0),
                              ncfile.longitudeOfProjectionOrigin,

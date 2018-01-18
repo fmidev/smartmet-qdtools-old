@@ -18,7 +18,7 @@ class NcFileExtended : public NcFile
   NcFileExtended(std::string path,
                  long timeshift,
                  FileMode = ReadOnly,
-                 size_t *bufrsizeptr = NULL,  // optional tuning parameters
+                 size_t *bufrsizeptr = nullptr,  // optional tuning parameters
                  size_t initialsize = 0,
                  FileFormat = Classic);
   std::string grid_mapping();

@@ -59,7 +59,7 @@ NcVar *NcFileExtended::find_variable(const std::string &name)
     if (var == nullptr) continue;
     if (get_name(var) == name) return var;
   }
-  return NULL;
+  return nullptr;
 }
 
 // ----------------------------------------------------------------------
@@ -306,7 +306,7 @@ void NcFileExtended::copy_values(NFmiFastQueryInfo &info,
   NcVar *xvar = find_variable(pinfo.x_component);
   NcVar *yvar = find_variable(pinfo.y_component);
 
-  if (xvar == NULL || yvar == NULL) return;
+  if (xvar == nullptr || yvar == nullptr) return;
 
   float xmissingvalue = get_missingvalue(xvar);
   float xscale = get_scale(xvar);
@@ -530,7 +530,7 @@ NcVar *NcFileExtended::axis(const std::string &axisname)
       }
     }
   }
-  return NULL;
+  return nullptr;
 }
 
 // ----------------------------------------------------------------------
@@ -819,7 +819,7 @@ NFmiMetTime tomettime(const boost::posix_time::ptime &t)
 void NcFileExtended::find_axis_bounds(
     NcVar *var, int n, double *x1, double *x2, const char *name, bool *isdescending)
 {
-  if (var == NULL) return;
+  if (var == nullptr) return;
 
   NcValues *values = var->values();
   *isdescending = false;  // Set to true if we detect decreasing instead of increasing values

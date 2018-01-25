@@ -326,7 +326,7 @@ int run(int argc, char* argv[])
 
         if (!ncfile->is_valid())
           throw SmartMet::Spine::Exception(
-              BCP, "File '" + infile + "' does not contain valid NetCDF", NULL);
+              BCP, "File '" + infile + "' does not contain valid NetCDF", nullptr);
 
         require_conventions(*ncfile, "CF-1.0", 3);
         std::string grid_mapping(ncfile->grid_mapping());
@@ -382,7 +382,7 @@ int run(int argc, char* argv[])
             {
               std::cerr << "  " << error << std::endl;
             }
-            throw SmartMet::Spine::Exception(BCP, "Files not joinable", NULL);
+            throw SmartMet::Spine::Exception(BCP, "Files not joinable", nullptr);
           }
 
           NFmiHPlaceDescriptor newhdesc = create_hdesc(*ncfile);
@@ -400,7 +400,7 @@ int run(int argc, char* argv[])
       }
       catch (...)
       {
-        throw SmartMet::Spine::Exception(BCP, "File check failed on input " + infile, NULL);
+        throw SmartMet::Spine::Exception(BCP, "File check failed on input " + infile, nullptr);
       }
       counter++;
     }
@@ -446,7 +446,7 @@ int run(int argc, char* argv[])
       }
       catch (...)
       {
-        throw SmartMet::Spine::Exception(BCP, "Operation failed on input " + infile, NULL);
+        throw SmartMet::Spine::Exception(BCP, "Operation failed on input " + infile, nullptr);
       }
       counter++;
     }
@@ -458,7 +458,7 @@ int run(int argc, char* argv[])
   }
   catch (...)
   {
-    throw SmartMet::Spine::Exception(BCP, "Operation failed!", NULL);
+    throw SmartMet::Spine::Exception(BCP, "Operation failed!", nullptr);
   }
   return 0;
 }
@@ -477,7 +477,7 @@ int main(int argc, char* argv[])
   }
   catch (...)
   {
-    SmartMet::Spine::Exception e(BCP, "Operation failed!", NULL);
+    SmartMet::Spine::Exception e(BCP, "Operation failed!", nullptr);
     e.printError();
     return 1;
   }

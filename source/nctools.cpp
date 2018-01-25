@@ -16,6 +16,8 @@
 #include <newbase/NFmiEnumConverter.h>
 #include <newbase/NFmiStringTools.h>
 
+int nctools::unknownParIdCounterBegin = 30000;
+
 namespace
 {
 // ----------------------------------------------------------------------
@@ -27,8 +29,9 @@ namespace
 NFmiEnumConverter converter;
 std::map<std::string, int>
     unknownParIdMap;  // jos sallitaan tuntemattomien parametrien k�ytt�, ne talletetaan t�h�n
-int unknownParIdCounter = 1200;  // jos tuntematon paramtri, aloitetaan niiden id:t t�st� ja
-                                 // kasvatetaan aina yhdell� kun tulee uusia
+int unknownParIdCounter = nctools::unknownParIdCounterBegin;  // jos tuntematon paramtri, aloitetaan
+                                                              // niiden id:t t�st� ja kasvatetaan
+                                                              // aina yhdell� kun tulee uusia
 }  // namespace
 
 namespace nctools
@@ -85,6 +88,10 @@ bool parse_options(int argc, char *argv[], Options &options)
 
   po::options_description desc("Allowed options");
   desc.add_options()("help,h", "print out help message")(
+      "autoids,U",
+      po::bool_switch(&options.autoid),
+      "generate ids automatically in result for unknown parameters")(
+
       "debug,d", po::bool_switch(&options.debug), "enable debugging output")(
       "verbose,v", po::bool_switch(&options.verbose), "set verbose mode on")(
       "version,V", "display version number")(

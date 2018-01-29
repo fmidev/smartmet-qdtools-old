@@ -15,6 +15,7 @@
 #include <macgyver/CsvReader.h>
 #include <newbase/NFmiEnumConverter.h>
 #include <newbase/NFmiStringTools.h>
+#include <spine/Exception.h>
 
 int nctools::unknownParIdCounterBegin = 30000;
 
@@ -83,7 +84,7 @@ bool parse_options(int argc, char *argv[], Options &options)
   std::string producerinfo;
 
   std::string msg1 =
-      "NetCDF CF standard name conversion table (default='" + options.configfile + "')";
+      "Replacement NetCDF CF standard name conversion table (default='" + options.configfile + "')";
   std::string tmpIgnoreUnitChangeParamsStr;
   std::string tmpExcludeParamsStr;
   std::string tmpCmdLineGlobalAttributesStr;
@@ -102,13 +103,16 @@ bool parse_options(int argc, char *argv[], Options &options)
       "outfile,o", po::value(&options.outfile), "output querydata file")(
       "mmap", po::bool_switch(&options.memorymap), "memory map output file to save RAM")(
       "config,c", po::value(&options.configfile), msg1.c_str())(
-      "timeshift,t", po::value(&options.timeshift), "additional time shift in minutes")(
+      "configs,C",
+      po::value(&options.configs),
+      "Extra NetCDF name conversions (take precedence over standard names)")(
       "parameter,m",
       po::value(&options.parameters),
-      "define parameter conversion(same format as in CSV)")(
+      "define parameter conversion(same format as in config)")(
       "producer,p", po::value(&producerinfo), "producer number,name")(
       "producernumber", po::value(&options.producernumber), "producer number")(
       "producername", po::value(&options.producername), "producer name")(
+      "timeshift,t", po::value(&options.timeshift), "additional time shift in minutes")(
       "fixstaggered,s",
       po::bool_switch(&options.fixstaggered),
       "modifies staggered data to base form")("ignoreunitchangeparams,u",
@@ -264,28 +268,62 @@ bool parse_options(int argc, char *argv[], Options &options)
  */
 // ----------------------------------------------------------------------
 
-ParamConversions read_netcdf_config(const Options &options)
+ParamConversions read_netcdf_configs(const Options &options)
 {
   CsvParams csv(options);
-  // Parameter list is read starting from beginning so put most important ones first
+  //  Parameter list is read starting from beginning so put most important ones first
+
+  // Command line
   if (options.parameters.size() > 0)
     for (auto line : options.parameters)
+      try
+      {
+        if (line.length() < 1)
+          throw SmartMet::Spine::Exception(BCP,
+                                           "A parameter given on command line is of zero length");
+        if (options.verbose) std::cout << "Adding parameter mapping " << line << std::endl;
+        std::vector<std::string> row;
+        std::size_t delimpos = line.find(',');
+        if (delimpos < 1 || delimpos >= line.length() - 1)
+          throw SmartMet::Spine::Exception(
+              BCP, "Parameter from command line is not of correct format: " + line);
+        row.push_back(line.substr(0, delimpos));
+        row.push_back(line.substr(delimpos + 1));
+        csv.paramconvs.push_back(row);
+      }
+      catch (...)
+      {
+        throw SmartMet::Spine::Exception(
+            BCP, "Adding parameter conversion " + line + " from command line failed", nullptr);
+      }
+
+  // Additional config files
+  if (options.configs.size() > 0)
+    for (auto file : options.configs)
+      try
+      {
+        if (options.verbose) std::cout << "Reading " << file << std::endl;
+
+        Fmi::CsvReader::read(file, boost::bind(&CsvParams::add, &csv, _1));
+      }
+      catch (...)
+      {
+        throw SmartMet::Spine::Exception(BCP, "Reading config file " + file + " failed", nullptr);
+      }
+
+  // Base config file
+  if (!options.configfile.empty()) try
     {
-      if (line.length() < 1)
-        throw std::runtime_error("One of parameters given on command line is of zero length");
-      std::vector<std::string> row;
-      std::size_t delimpos = line.find(',');
-      if (delimpos < 1 || delimpos >= line.length() - 1)
-        throw std::runtime_error("Parameter from command line is not of correct format: " + line);
-      row.push_back(line.substr(0, delimpos));
-      row.push_back(line.substr(delimpos + 1));
-      csv.paramconvs.push_back(row);
+      if (options.verbose) std::cout << "Reading " << options.configfile << std::endl;
+
+      Fmi::CsvReader::read(options.configfile, boost::bind(&CsvParams::add, &csv, _1));
     }
-  if (!options.configfile.empty())
-  {
-    if (options.verbose) std::cout << "Reading " << options.configfile << std::endl;
-    Fmi::CsvReader::read(options.configfile, boost::bind(&CsvParams::add, &csv, _1));
-  }
+    catch (...)
+    {
+      throw SmartMet::Spine::Exception(
+          BCP, "Reading base config file " + options.configfile + " failed", nullptr);
+    }
+
   return csv.paramconvs;
 }
 
@@ -296,13 +334,10 @@ void CsvParams::add(const Fmi::CsvReader::row_type &row)
   if (row[0].substr(0, 1) == "#") return;
 
   if (row.size() != 2 && row.size() != 4)
-  {
-    std::ostringstream msg;
-    msg << "Invalid row of size " << row.size() << " in '" << options.configfile << "':";
-    std::ostream_iterator<std::string> out_it(msg, ",");
-    std::copy(row.begin(), row.end(), out_it);
-    throw std::runtime_error(msg.str());
-  }
+    throw SmartMet::Spine::Exception(
+        BCP,
+        (std::string) "Invalid config row of size " + std::to_string(row.size()) + ": " + row[0]);
+
   paramconvs.push_back(row);
 }
 

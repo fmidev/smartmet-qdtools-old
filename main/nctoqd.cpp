@@ -302,7 +302,7 @@ int run(int argc, char* argv[])
     if (!parse_options(argc, argv, options)) return 0;
 
     // Parameter conversions
-    const nctools::ParamConversions paramconvs = nctools::read_netcdf_config(options);
+    const nctools::ParamConversions paramconvs = nctools::read_netcdf_configs(options);
 
     // Prepare empty target querydata
     std::unique_ptr<NFmiQueryData> data;

@@ -93,7 +93,8 @@ bool parse_options(int argc, char *argv[], Options &options)
   desc.add_options()("help,h", "print out help message")(
       "autoids,U",
       po::bool_switch(&options.autoid),
-      "generate ids automatically in result for unknown parameters")(
+      "generate ids automatically for unknown parameters starting from id " +
+          nctools::unknownParIdCounterBegin)(
 
       "debug,d", po::bool_switch(&options.debug), "enable debugging output")(
       "verbose,v", po::bool_switch(&options.verbose), "set verbose mode on")(

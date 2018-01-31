@@ -627,6 +627,8 @@ The list of parameters known by newbase is:
 10417	direction_of_sea_water_velocity
 13223	direction_of_swell_wave_velocity
 13224	direction_of_wind_wave_velocity
+1384	DirectNormalIrradiance
+1385	DirectNormalIrradianceAccumulation
 12993	dissipation_in_atmosphere_boundary_layer
 10418	distance_from_geocenter
 10419	distance_from_sun
@@ -1090,7 +1092,7 @@ The list of parameters known by newbase is:
 279	LargeScaleSnow
 379	LargeScaleSnowFallRate
 321	LatentHeatFlux
-10645	Latitude
+404	Latitude
 68	LCL
 10646	leaf_area_index
 10647	leaf_carbon_content
@@ -1107,7 +1109,7 @@ The list of parameters known by newbase is:
 290	LocationId
 10656	log10_size_interval_based_number_size_distribution_of_cloud_condensation_nuclei_at_stp_in_air
 145	LogNatOfPressure
-10657	Longitude
+405	Longitude
 12875	longwave_radiance
 10658	low_type_cloud_area_fraction
 273	LowCloudCover
@@ -2217,6 +2219,7 @@ The list of parameters known by newbase is:
 57	PrecipitationForm
 1205	PrecipitationForm2
 1206	PrecipitationForm3
+1386	PrecipitationForm4
 1167	PrecipitationGraupel
 1173	PrecipitationInstantGraupel
 1172	PrecipitationInstantSnow
@@ -2806,6 +2809,7 @@ The list of parameters known by newbase is:
 4801	SkinReservoirContent
 235	SkinTemperature
 11662	slow_soil_pool_carbon_content
+1383	SmartSymbol
 195	SmogIndex
 335	SmogSymbol
 1158	Snow1h
@@ -4500,6 +4504,7 @@ The list of parameters known by newbase is:
 171	WavePeriod
 168	WaveSpread
 326	WeatherAndCloudiness
+1382	WeatherNumber
 350	WeatherSymbol
 336	WeatherSymbol1
 337	WeatherSymbol2
@@ -4594,4 +4599,4 @@ The list of parameters known by newbase is:
 12874	zenith_angle
 125	ZResolution
 
-There are 4593 known parameters in total
+There are 4598 known parameters in total

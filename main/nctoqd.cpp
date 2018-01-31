@@ -260,7 +260,9 @@ int add_to_pbag(const NcFile& ncfile,
 
     // Here we need to know only the id
     nctools::ParamInfo pinfo = nctools::parse_parameter(var, paramconvs, options.autoid);
-    if (pinfo.id == kFmiBadParameter && pinfo.id < nctools::unknownParIdCounterBegin)
+    if (pinfo.id < 1)
+    /*   	== kFmiBadParameter && pinfo.id < nctools::unknownParIdCounterBegin &&
+           pinfo.id < 1) */
     {
       if (options.verbose)
         std::cout << "  Skipping unknown variable '" << nctools::get_name(var) << "'" << std::endl;
@@ -268,7 +270,7 @@ int add_to_pbag(const NcFile& ncfile,
     }
     else if (options.verbose)
       std::cout << "  Variable " << nctools::get_name(var) << " has id " << pinfo.id << " and name "
-                << (pinfo.id >= nctools::unknownParIdCounterBegin
+                << (nctools::get_enumconverter().ToString(pinfo.id).empty()
                         ? "undefined"
                         : nctools::get_enumconverter().ToString(pinfo.id))
                 << std::endl;

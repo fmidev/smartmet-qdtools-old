@@ -1,24 +1,24 @@
 
 The parameters stored in the querydata are:
 
-Number	Name					Description			Interpolation	Precision
-======	====					===========			=============	=========
-4	Temperature				Lämpötila			NearestPoint	%.1f
-79	TotalCloudCover				Pilvisyys			NearestPoint	%.1f
-408	PresentWeather				Sää				NearestPoint	%.1f
-21	WindSpeedMS				Tuulen nopeus			NearestPoint	%.1f
-20	WindDirection				Tuulen suunta			NearestPoint	%.1f
-50	PrecipitationAmount			Sade				NearestPoint	%.1f
-415	PrecipitationPeriod			Sadejakso			NearestPoint	%.1f
-353	Precipitation1h				Tunnin sade			NearestPoint	%.1f
-51	SnowDepth				Lumen syvyys			NearestPoint	%.1f
-13	Humidity				Suhteellinen kosteus		NearestPoint	%.1f
-416	MaximumWind				Tuulen maksimi			NearestPoint	%.1f
-407	Visibility				Näkyvyys			NearestPoint	%.1f
-1	Pressure				Pintapaine			NearestPoint	%.1f
-294	Hour					Hour				NearestPoint	%.1f
-295	Minute					Minute				NearestPoint	%.1f
-288	GroundTemperature			Lämpötila T0m			NearestPoint	%.1f
-61	TemperatureSea				Meri Lämpötila T0m		NearestPoint	%.1f
+Number  Name                                    Description                     Interpolation   Precision  Lolimit  Hilimit
+======  ====                                    ===========                     =============   =========  =======  =======
+4       Temperature                             Lämpötila                       NearestPoint         %.1f    32700    32700
+79      TotalCloudCover                         Pilvisyys                       NearestPoint         %.1f    32700    32700
+408     PresentWeather                          Sää                             NearestPoint         %.1f    32700    32700
+21      WindSpeedMS                             Tuulen nopeus                   NearestPoint         %.1f    32700    32700
+20      WindDirection                           Tuulen suunta                   NearestPoint         %.1f    32700    32700
+50      PrecipitationAmount                     Sade                            NearestPoint         %.1f    32700    32700
+415     PrecipitationPeriod                     Sadejakso                       NearestPoint         %.1f    32700    32700
+353     Precipitation1h                         Tunnin sade                     NearestPoint         %.1f    32700    32700
+51      SnowDepth                               Lumen syvyys                    NearestPoint         %.1f    32700    32700
+13      Humidity                                Suhteellinen kosteus            NearestPoint         %.1f    32700    32700
+416     MaximumWind                             Tuulen maksimi                  NearestPoint         %.1f    32700    32700
+407     Visibility                              Näkyvyys                        NearestPoint         %.1f    32700    32700
+1       Pressure                                Pintapaine                      NearestPoint         %.1f    32700    32700
+294     Hour                                    Hour                            NearestPoint         %.1f    32700    32700
+295     Minute                                  Minute                          NearestPoint         %.1f    32700    32700
+288     GroundTemperature                       Lämpötila T0m                   NearestPoint         %.1f    32700    32700
+61      TemperatureSea                          Meri Lämpötila T0m              NearestPoint         %.1f    32700    32700
 
 There are 17 stored parameters in total

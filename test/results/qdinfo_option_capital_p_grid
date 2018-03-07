@@ -1,24 +1,24 @@
 
 The parameters stored in the querydata are:
 
-Number  Name                                    Description                     Interpolation   Precision  Lolimit  Hilimit
-======  ====                                    ===========                     =============   =========  =======  =======
-4       Temperature                             Lämpötila                       Linear              %6.1f      -60       50
-10      DewPoint                                Kastepiste                      Linear               %.1f      -50       50
-21      -WindSpeedMS                            Tuulen nopeus                   Linear               %.1f        0      500
-20      -WindDirection                          Tuulen suunta                   Linear               %.1f        0      360
-22      -WindVectorMS                           Tuulivektori                    None                 %.1f    32700    32700
-79      -TotalCloudCover                        Kokonaispilvisyys               Linear               %.1f        0      100
-273     -LowCloudCover                          Alapilvien määrä                Linear               %.1f        0      100
-274     -MediumCloudCover                       Keskipilvien määrä              Linear               %.1f        0      100
-275     -HighCloudCover                         Yläpilvien määrä                Linear               %.1f        0      100
-271     -MiddleAndLowCloudCover                 Ala- ja keskipilvien määrä      Linear               %.1f        0      100
-353     -Precipitation1h                        Sateen intensiteetti mm/h       Linear               %.1f        0       98
-57      -PrecipitationForm                      Sateen olomuoto                 ByCombinedParam      %.1f        0        4
-56      -PrecipitationType                      Sateen tyyppi                   NearestPoint         %.1f        0        1
-260     -ProbabilityThunderstorm                Ukkosen todennäköisyys          Linear               %.1f        0      100
-327     -FogIntensity                           Sumun tiheys                    NearestPoint         %.1f        0        2
-338     -WeatherSymbol3                         Hessaa                          ByCombinedParam      %.1f        1       63
-336     -WeatherSymbol1                         Hsade                           None                 %.1f        1       63
+Number  Name                                    Description                             Interpolation      Precision  Lolimit  Hilimit
+======  ====                                    ===========                             =============      =========  =======  =======
+4       Temperature                             Lämpötila                               Linear                 %6.1f      -60       50
+10      DewPoint                                Kastepiste                              Linear                  %.1f      -50       50
+21      -WindSpeedMS                            Tuulen nopeus                           Linear                  %.1f        0      500
+20      -WindDirection                          Tuulen suunta                           Linear                  %.1f        0      360
+22      -WindVectorMS                           Tuulivektori                            None                    %.1f    32700    32700
+79      -TotalCloudCover                        Kokonaispilvisyys                       Linear                  %.1f        0      100
+273     -LowCloudCover                          Alapilvien määrä                        Linear                  %.1f        0      100
+274     -MediumCloudCover                       Keskipilvien määrä                      Linear                  %.1f        0      100
+275     -HighCloudCover                         Yläpilvien määrä                        Linear                  %.1f        0      100
+271     -MiddleAndLowCloudCover                 Ala- ja keskipilvien määrä              Linear                  %.1f        0      100
+353     -Precipitation1h                        Sateen intensiteetti mm/h               Linear                  %.1f        0       98
+57      -PrecipitationForm                      Sateen olomuoto                         ByCombinedParam         %.1f        0        4
+56      -PrecipitationType                      Sateen tyyppi                           NearestPoint            %.1f        0        1
+260     -ProbabilityThunderstorm                Ukkosen todennäköisyys                  Linear                  %.1f        0      100
+327     -FogIntensity                           Sumun tiheys                            NearestPoint            %.1f        0        2
+338     -WeatherSymbol3                         Hessaa                                  ByCombinedParam         %.1f        1       63
+336     -WeatherSymbol1                         Hsade                                   None                    %.1f        1       63
 
 There are 17 stored parameters in total

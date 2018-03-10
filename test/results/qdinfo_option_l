@@ -755,6 +755,7 @@ The list of parameters known by newbase is:
 832	Evaporation18
 910	ExceptionalPrecipitation
 10514	fast_soil_pool_carbon_content
+236	FeelsLike
 536	FieldGroundHumidity
 10515	final_air_pressure_of_lifted_parcel
 10516	fire_area
@@ -4599,4 +4600,4 @@ The list of parameters known by newbase is:
 12874	zenith_angle
 125	ZResolution
 
-There are 4598 known parameters in total
+There are 4599 known parameters in total

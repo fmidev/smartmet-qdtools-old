@@ -1,0 +1,2033 @@
+@$°£QINFO@$°£ VER 7
+21 NFmiQueryInfo
+0 0 0 0 
+0
+0
+34 NFmiParamDescriptor
+0 0 0 0 
+2
+4
+11 Temperature
+-300 1000 1 32700 32700 4 %.1f
+1001
+5 SYNOP
+1 1 1 1 1 0 0 0 
+0
+21
+11 WindSpeedMS
+0 1000 1 32700 32700 4 %.1f
+1001
+5 SYNOP
+1 1 1 1 1 0 0 0 
+0
+1 1 
+1 0 0 0
+31 NFmiLocationBag
+495
+38
+10001
+13 vt8_Kristiina
+21.5322 62.0712
+32700 1
+10002
+12 vt8_NÃ¤rpiÃ¶
+21.4394 62.4845
+32700 1
+10003
+9 vt8_Vaasa
+21.7654 63.1393
+32700 1
+10004
+13 vt8_Oravainen
+22.2834 63.2536
+32700 1
+10005
+16 kt68_Pietarsaari
+22.8291 63.637
+32700 1
+10006
+11 vt8_Kokkola
+23.2796 63.8608
+32700 1
+10007
+15 vt3_JalasjÃ¤rvi
+22.7978 62.3883
+32700 1
+10008
+12 vt3_Ilmajoki
+22.2798 62.787
+32700 1
+10009
+11 kt66_Alavus
+23.6255 62.4458
+32700 1
+1001
+10 vt1_Nupuri
+24.5964 60.228
+32700 1
+10010
+10 vt19_Lapua
+23.0366 62.9379
+32700 1
+10011
+10 vt3_Laihia
+21.893 63.0018
+32700 1
+10012
+15 vt8_PirttikylÃ¤
+21.6451 62.7462
+32700 1
+10013
+14 vt16_AlajÃ¤rvi
+23.6665 63.0162
+32700 1
+10014
+15 kt67_SeinÃ¤joki
+22.7722 62.7951
+32700 1
+10015
+14 vt13_Kaustinen
+23.4732 63.5998
+32700 1
+10016
+16 kt44_Kauhajoki_E
+22.2479 62.1188
+32700 1
+10017
+16 kt67_Kauhajoki_P
+22.2821 62.4818
+32700 1
+10018
+12 vt18_TÃ¶ysÃ¤
+23.8973 62.6102
+32700 1
+10019
+14 kt68_EvijÃ¤rvi
+23.5159 63.3332
+32700 1
+1002
+19 kt51_Hki_Lapinlahti
+24.8909 60.1661
+32700 1
+10020
+17 st749_Eugmo_Luoto
+22.7847 63.8067
+32700 1
+10021
+11 vt19_Voltti
+22.7992 63.286
+32700 1
+10022
+19 st724_Raippaluoto_R
+21.4945 63.2046
+32700 1
+10023
+19 vt8_Uusikaarlepyy_R
+22.5928 63.4604
+32700 1
+10024
+13 vt8_Himanka_R
+23.6387 64.042
+32700 1
+10025
+15 vt16_Ylistaro_R
+22.6369 62.9729
+32700 1
+10026
+18 vt8_LapvÃ¤Ã¤rtti_R
+21.4652 62.2744
+32700 1
+10027
+13 vt8_Riimala_R
+21.7632 62.9542
+32700 1
+10028
+15 vt8_Kruunupyy_R
+22.9491 63.6896
+32700 1
+10029
+13 st673_Rangsby
+21.2224 62.6106
+32700 1
+1003
+14 vt1_Myllylampi
+24.2365 60.3121
+32700 1
+10030
+19 st724_Raippaluoto_O
+21.4945 63.2046
+32700 1
+10031
+13 kt63_Ullava_R
+24.0093 63.6557
+32700 1
+10032
+12 kt67_Teuva_R
+21.8055 62.4963
+32700 1
+10033
+13 vt8_Vaasa_Opt
+21.7654 63.1393
+32700 1
+10034
+18 kt67_Koskenkorva_R
+22.4859 62.686
+32700 1
+10035
+18 vt18_KuivaskylÃ¤_R
+23.4676 62.5923
+32700 1
+10036
+18 vt19_LuopajÃ¤rvi_R
+22.753 62.5877
+32700 1
+1004
+13 vt4_JakomÃ¤ki
+25.0645 60.2516
+32700 1
+1005
+10 vt4_Kerava
+25.1237 60.4264
+32700 1
+1006
+15 vt7_KoskenkylÃ¤
+25.9136 60.4904
+32700 1
+1007
+11 vt2_Salkola
+23.8925 60.6388
+32700 1
+1009
+10 vt4_Ohkola
+25.187 60.5556
+32700 1
+1010
+11 vt4_Levanto
+25.448 60.7359
+32700 1
+1011
+15 vt7_Sipoonlahti
+25.3253 60.2814
+32700 1
+1012
+15 kt51_Kivenlahti
+24.6674 60.1534
+32700 1
+1013
+10 kt51_Inkoo
+24.0758 60.0606
+32700 1
+1014
+10 vt25_Hanko
+23.0219 59.8564
+32700 1
+1015
+11 vt25_Karjaa
+23.7258 60.0808
+32700 1
+1016
+13 vt25_Virkkala
+24.0193 60.2037
+32700 1
+1017
+11 vt25_Haimoo
+24.5278 60.4588
+32700 1
+1018
+15 vt25_HyvinkÃ¤Ã¤
+24.8324 60.5805
+32700 1
+1019
+10 vt7_Porvoo
+25.5937 60.379
+32700 1
+1020
+15 vt3_Karhunkorpi
+24.852 60.4964
+32700 1
+1021
+16 kt55_MonninkylÃ¤
+25.5382 60.5052
+32700 1
+1022
+13 vt7_Loviisa_R
+26.1934 60.461
+32700 1
+1023
+14 vt1_Saukkola_R
+23.969 60.3813
+32700 1
+1025
+14 vt1_Koikkala_R
+24.1999 60.3352
+32700 1
+1027
+17 vt1_Hiidenkansi_R
+24.1683 60.3624
+32700 1
+1029
+21 vt1_HyrsylÃ¤n_suora_R
+24.0428 60.3886
+32700 1
+1030
+21 vt1_HyrsylÃ¤n_mutka_R
+24.0327 60.3898
+32700 1
+1031
+16 vt1_SysimetsÃ¤_R
+23.9503 60.3817
+32700 1
+1032
+12 vt1_Oinola_R
+23.905 60.3859
+32700 1
+1033
+17 vt1_LeppÃ¤korpi_R
+23.8116 60.39
+32700 1
+1034
+14 vt3_Pirkkola_R
+24.905 60.2294
+32700 1
+1035
+14 kt50_Askisto_R
+24.7702 60.2708
+32700 1
+1036
+12 kt45_Ilola_R
+24.9976 60.3207
+32700 1
+1037
+17 vt6_LapinjÃ¤rvi_R
+26.1848 60.6173
+32700 1
+1038
+17 vt1_LeppÃ¤korpi_O
+23.8116 60.39
+32700 1
+1039
+12 vt1_Oinola_O
+23.905 60.3859
+32700 1
+1040
+21 vt1_HyrsylÃ¤n_mutka_O
+24.0327 60.3898
+32700 1
+1041
+15 vt3_Keimola_2_R
+24.826 60.3264
+32700 1
+1042
+12 kt45_Raala_R
+24.946 60.4644
+32700 1
+1043
+16 vt1_PalojÃ¤rvi_R
+24.3191 60.2933
+32700 1
+1044
+16 vt1_PalojÃ¤rvi_O
+24.3191 60.2933
+32700 1
+1045
+17 kt51_Vaskisalmi_R
+24.8525 60.1641
+32700 1
+1046
+17 kt51_Vaskisalmi_O
+24.8525 60.1641
+32700 1
+1047
+17 kt51_Karhusaari_R
+24.8231 60.169
+32700 1
+1048
+17 kt51_Karhusaari_O
+24.8231 60.169
+32700 1
+1049
+16 Vantaa_Hakkila_R
+25.08 60.2822
+32700 1
+1050
+15 vt3_Keimola_2_O
+24.826 60.3264
+32700 1
+1051
+18 kt51_Kirkkonummi_R
+24.3956 60.1113
+32700 1
+1052
+14 vt2_Karkkila_R
+24.2273 60.5393
+32700 1
+1053
+17 vt25_Tammisaari_R
+23.3994 59.9798
+32700 1
+1054
+20 vt25_KeravanjÃ¤rvi_R
+25.0923 60.6172
+32700 1
+1055
+14 st101_Turvesuo
+24.8076 60.1849
+32700 1
+1056
+14 vt3_Pirkkola_O
+24.905 60.2294
+32700 1
+1057
+14 kt50_Askisto_O
+24.7702 60.2708
+32700 1
+1058
+12 kt45_Ilola_O
+24.9976 60.3207
+32700 1
+1059
+15 st167_Hallila_R
+25.8632 60.6207
+32700 1
+1060
+14 vt1_Nupuri_Opt
+24.5964 60.228
+32700 1
+1061
+16 vt3_Pirkkola_Opt
+24.905 60.2294
+32700 1
+1062
+19 kt51_Vaskisalmi_Opt
+24.8525 60.1641
+32700 1
+1063
+17 vt3_Keimola_2_Opt
+24.826 60.3264
+32700 1
+1064
+19 kt51_Kivenlahti_Opt
+24.6674 60.1534
+32700 1
+1065
+14 vt1_Kolmiranta
+24.5001 60.2578
+32700 1
+1066
+14 pt1186_Lempola
+24.2315 60.3008
+32700 1
+1067
+17 vt4_JakomÃ¤ki_Opt
+25.0645 60.2516
+32700 1
+1068
+15 vt4_Levanto_Opt
+25.448 60.7359
+32700 1
+1069
+19 vt25_HyvinkÃ¤Ã¤_Opt
+24.8324 60.5805
+32700 1
+11001
+12 vt8_Kalajoki
+23.9586 64.3372
+32700 1
+11002
+11 vt28_Kannus
+23.8797 63.9018
+32700 1
+11003
+14 vt27_Ylivieska
+24.7442 64.0029
+32700 1
+11004
+13 kt86_Oulainen
+24.9116 64.3095
+32700 1
+11005
+15 vt4_PyhÃ¤jÃ¤rvi
+25.9175 63.7114
+32700 1
+11006
+16 kt58_LestijÃ¤rvi
+24.6756 63.5184
+32700 1
+11007
+11 vt13_Veteli
+23.9175 63.4269
+32700 1
+12001
+16 vt4_Ouluntulli_R
+25.5321 64.9474
+32700 1
+12002
+13 vt8_Pattijoki
+24.5616 64.6863
+32700 1
+12003
+12 vt4_Pulkkila
+25.8757 64.2816
+32700 1
+12004
+14 vt4_Kuivaniemi
+25.2418 65.5473
+32700 1
+12005
+16 vt20_Ylikiiminki
+26.1914 65.1893
+32700 1
+12006
+12 vt20_Pintamo
+27.6232 65.4493
+32700 1
+12007
+11 vt20_Kuolio
+28.8159 65.8261
+32700 1
+12008
+9 vt5_Kitka
+28.8989 66.3053
+32700 1
+12009
+14 kt88_PyhÃ¤ntÃ¤
+26.5522 63.9892
+32700 1
+12010
+14 vt22_UtajÃ¤rvi
+26.2674 64.7812
+32700 1
+12011
+15 kt78_KokkokylÃ¤
+26.6765 65.6904
+32700 1
+12012
+14 vt4_Haukipudas
+25.425 65.1745
+32700 1
+12013
+12 kt86_Paavola
+25.2098 64.6057
+32700 1
+12014
+10 vt4_Temmes
+25.616 64.6573
+32700 1
+12015
+10 vt4_Olhava
+25.3854 65.4124
+32700 1
+12016
+18 vt4_KÃ¤rsÃ¤mÃ¤ki_R
+25.7557 64.0064
+32700 1
+12017
+13 vt8_Liminka_R
+25.3584 64.7848
+32700 1
+12018
+14 vt8_Parhalahti
+24.3253 64.4898
+32700 1
+12019
+17 vt4_Oulu_IntiÃ¶_R
+25.5061 65.0206
+32700 1
+12020
+13 vt27_Oksava_R
+25.2372 63.8133
+32700 1
+12021
+17 vt4_Oulu_IntiÃ¶_O
+25.5061 65.0206
+32700 1
+12022
+17 vt4_Haaransilta_R
+25.4863 64.8157
+32700 1
+12023
+17 vt4_Haaransilta_O
+25.4863 64.8157
+32700 1
+12024
+16 vt4_Ouluntulli_O
+25.5321 64.9474
+32700 1
+12025
+16 st816_Hailuoto_R
+24.7761 65.0343
+32700 1
+12026
+20 vt4_Kontinkangas_Opt
+25.5075 65.0045
+32700 1
+12027
+14 vt4_Temmes_Opt
+25.616 64.6573
+32700 1
+13001
+17 vt6_KorholanmÃ¤ki
+27.9971 64.1423
+32700 1
+13002
+13 vt5_Roukajoki
+28.4037 64.5764
+32700 1
+13003
+14 vt22_Liminpuro
+27.2412 64.5336
+32700 1
+13004
+13 vt5_Palovaara
+28.9395 65.1468
+32700 1
+13005
+15 kt78_Paasikoski
+27.7017 65.0336
+32700 1
+13006
+15 kt76_Tervasalmi
+29.1048 64.0849
+32700 1
+13007
+14 vt5_IllunmÃ¤ki
+27.4054 63.9957
+32700 1
+13008
+18 vt4_KuivasjÃ¤rvi_R
+25.44 65.0782
+32700 1
+13009
+15 vt5_Rytivaara_R
+28.0386 64.3158
+32700 1
+13010
+17 vt5_Suomussalmi_R
+28.8436 64.7867
+32700 1
+13011
+18 vt20_PudasjÃ¤rvi_R
+26.8473 65.2756
+32700 1
+13012
+20 kt89_KuusamonkylÃ¤_R
+29.3345 64.4335
+32700 1
+14001
+13 st921_Kaakamo
+24.4578 65.8079
+32700 1
+14002
+11 vt4_Jaatila
+25.3388 66.2523
+32700 1
+14003
+15 vt4_SaariselkÃ¤
+27.4251 68.4566
+32700 1
+14004
+13 vt4_VuojÃ¤rvi
+26.5454 67.0694
+32700 1
+14005
+17 vt21_Kattilakoski
+23.7901 66.5108
+32700 1
+14006
+9 vt5_Suomu
+28.106 66.5523
+32700 1
+14007
+15 vt4_Porttipahta
+26.8883 67.99
+32700 1
+14008
+12 vt4_Paakkola
+24.6898 66.0009
+32700 1
+14009
+13 vt4_Napapiiri
+25.8459 66.5475
+32700 1
+14010
+12 vt21_Kukkola
+24.059 65.9668
+32700 1
+14011
+17 vt21_SieppijÃ¤rvi
+24.0489 67.0032
+32700 1
+14012
+17 kt78_Saukkokangas
+26.2472 66.1572
+32700 1
+14013
+16 kt82_Kalliosalmi
+26.6454 66.676
+32700 1
+14014
+16 kt83_RaanujÃ¤rvi
+24.8469 66.6446
+32700 1
+14015
+13 kt79_Lohiniva
+24.9269 67.2001
+32700 1
+14016
+12 vt4_Petsikko
+27.2405 69.4448
+32700 1
+14017
+11 vt5_Kairala
+27.4374 67.1923
+32700 1
+14018
+15 vt21_TapojÃ¤rvi
+23.6289 67.5317
+32700 1
+14019
+15 vt21_Saarikoski
+21.2533 68.8054
+32700 1
+14020
+14 vt4_Isohaara_R
+24.5322 65.7894
+32700 1
+14021
+21 vt29_Luukkaankangas_R
+24.4083 65.8254
+32700 1
+14022
+21 vt29_Luukkaankangas_O
+24.4083 65.8254
+32700 1
+14023
+16 vt29_KylÃ¤joki_R
+24.2625 65.8356
+32700 1
+14025
+15 vt29_Isohaara_O
+24.5279 65.7906
+32700 1
+14026
+15 st863_SirniÃ¶_R
+28.0867 65.8339
+32700 1
+14027
+15 st970_Nuorgam_R
+27.9412 70.0884
+32700 1
+14028
+24 st9401_YllÃ¤s_maisematie
+24.1783 67.5639
+32700 1
+14029
+18 vt29_KylÃ¤joki_Opt
+24.2625 65.8356
+32700 1
+14030
+13 vt5_Suomu_Opt
+28.106 66.5523
+32700 1
+19906
+10 Ivalo_LA04
+27.387 68.602
+32700 1
+19907
+10 Ivalo_LA22
+27.4203 68.6133
+32700 1
+19908
+12 Joensuu_LA10
+29.6025 62.6656
+32700 1
+19909
+12 Joensuu_LA28
+29.6371 62.6568
+32700 1
+19910
+16 JyvÃ¤skylÃ¤_LA12
+25.6621 62.4052
+32700 1
+19911
+16 JyvÃ¤skylÃ¤_LA30
+25.6902 62.3927
+32700 1
+19912
+17 JyvÃ¤skylÃ¤_LaMid
+25.676 62.399
+32700 1
+19913
+9 Kemi_LA18
+24.5822 65.7895
+32700 1
+19914
+9 Kemi_LA36
+24.5794 65.7795
+32700 1
+19915
+12 Kajaani_LA07
+27.6734 64.2827
+32700 1
+19916
+12 Kajaani_LA25
+27.7113 64.2882
+32700 1
+19917
+14 Kruunupyy_LA01
+23.1363 63.7106
+32700 1
+19918
+14 Kruunupyy_LA19
+23.1436 63.727
+32700 1
+19919
+12 Kuusamo_LA12
+29.2231 65.9923
+32700 1
+19920
+12 Kuusamo_LA30
+29.2548 65.9831
+32700 1
+19921
+11 Kuopio_LA15
+27.7923 63.0154
+32700 1
+19922
+11 Kuopio_LA33
+27.808 62.9984
+32700 1
+19923
+12 Kuopio_LaMid
+27.804 63.0027
+32700 1
+19924
+17 Lappeenranta_LA06
+28.1284 61.0424
+32700 1
+19925
+17 Lappeenranta_LA24
+28.1595 61.0492
+32700 1
+19926
+18 Maarianhamina_LA03
+19.895 60.1166
+32700 1
+19927
+18 Maarianhamina_LA21
+19.9009 60.1276
+32700 1
+19928
+9 Oulu_LA12
+25.3363 64.9337
+32700 1
+19929
+9 Oulu_LA30
+25.3696 64.9252
+32700 1
+19930
+10 Oulu_LaMid
+25.3517 64.9297
+32700 1
+19931
+9 Pori_LA12
+21.7903 61.4663
+32700 1
+19932
+9 Pori_LA30
+21.8058 61.4585
+32700 1
+19933
+14 Rovaniemi_LA03
+25.8178 66.5564
+32700 1
+19934
+14 Rovaniemi_LA21
+25.8442 66.5738
+32700 1
+19935
+15 Rovaniemi_LaMid
+25.8323 66.5641
+32700 1
+19936
+17 Tre_Pirkkala_LA06
+23.5859 61.4109
+32700 1
+19937
+17 Tre_Pirkkala_LA24
+23.6191 61.4186
+32700 1
+19938
+18 Tre_Pirkkala_LaMid
+23.6031 61.4148
+32700 1
+19939
+10 Turku_LA08
+22.2491 60.5143
+32700 1
+19940
+10 Turku_LA26
+22.2786 60.5156
+32700 1
+19941
+11 Turku_LaMid
+22.2654 60.515
+32700 1
+19942
+10 Vaasa_LA16
+21.7586 63.0595
+32700 1
+19943
+10 Vaasa_LA34
+21.7653 63.0424
+32700 1
+19944
+11 Vaasa_LaMid
+21.7598 63.0513
+32700 1
+19945
+13 KittilÃ¤_LA16
+24.8435 67.7092
+32700 1
+19946
+13 KittilÃ¤_LA34
+24.85 67.6933
+32700 1
+19947
+15 Savonlinna_LA12
+28.9322 61.9467
+32700 1
+19948
+15 Savonlinna_LA30
+28.9572 61.9383
+32700 1
+19949
+12 Kauhava_LA17
+23.0528 63.136
+32700 1
+19950
+12 Kauhava_LA35
+23.0543 63.1177
+32700 1
+2002
+9 vt8_Ihode
+21.5943 60.9555
+32700 1
+2003
+12 vt8_Eurajoki
+21.6938 61.2783
+32700 1
+2004
+14 st110_Tupuri_R
+23.2353 60.3827
+32700 1
+2005
+15 vt1_HintanmÃ¤ki
+23.6315 60.3725
+32700 1
+2006
+18 vt2_SeppÃ¤lÃ¤nahde
+22.4496 61.2069
+32700 1
+2007
+13 vt3_Ikaalinen
+22.9958 61.7885
+32700 1
+2008
+16 vt8_MynÃ¤motelli
+21.9265 60.738
+32700 1
+2009
+12 vt8_Ahlainen
+21.7596 61.6498
+32700 1
+2010
+15 vt3_Lamminkoski
+23.0094 62.1158
+32700 1
+2011
+12 vt9_MellilÃ¤
+22.8796 60.7822
+32700 1
+2012
+10 vt10_Koski
+23.1294 60.6917
+32700 1
+2013
+17 vt11_SÃ¤Ã¤kskoski
+22.3498 61.466
+32700 1
+2014
+10 vt23_Hapua
+22.2839 61.8009
+32700 1
+2015
+16 kt40_Auranlaakso
+22.3116 60.492
+32700 1
+2016
+13 kt41_Jokisivu
+22.653 61.1103
+32700 1
+2017
+16 vt12_KÃ¤rppÃ¤lÃ¤
+23.1172 61.3679
+32700 1
+2018
+12 kt52_PerniÃ¶
+23.1474 60.1728
+32700 1
+2019
+14 st180_Parainen
+22.3435 60.3205
+32700 1
+2020
+14 vt2_KÃ¤hkÃ¶nen
+21.6318 61.5313
+32700 1
+2021
+9 vt8_Masku
+22.1381 60.5309
+32700 1
+2022
+17 st192_Vehmassalmi
+21.7431 60.6255
+32700 1
+2023
+18 st183_Taalintehdas
+22.4852 60.0431
+32700 1
+2025
+12 kt43_Kalanti
+21.579 60.8252
+32700 1
+2026
+15 vt8_Kuvaskangas
+21.5721 62.0003
+32700 1
+2027
+8 vt9_Aura
+22.5106 60.6157
+32700 1
+2028
+14 vt10_Yliskulma
+22.6227 60.5428
+32700 1
+2029
+9 vt12_Eura
+22.1804 61.1392
+32700 1
+2030
+19 kt40_KÃ¤rsÃ¤mÃ¤ki_R
+22.2843 60.4978
+32700 1
+2031
+18 vt9_KÃ¤rsÃ¤mÃ¤ki_O
+22.2843 60.4979
+32700 1
+2032
+19 st110_KorvenpÃ¤Ã¤_R
+22.9344 60.3782
+32700 1
+2033
+14 st110_Kevola_R
+22.7692 60.4171
+32700 1
+2034
+11 st180_Nauvo
+21.796 60.1699
+32700 1
+2035
+14 vt1_Kupittaa_R
+22.3047 60.4467
+32700 1
+2036
+14 vt1_Kupittaa_O
+22.3047 60.4467
+32700 1
+2037
+13 vt1_Kaarina_R
+22.4023 60.424
+32700 1
+2038
+13 vt1_Kaarina_O
+22.4023 60.424
+32700 1
+2039
+14 vt1_PiikkiÃ¶_R
+22.5348 60.4458
+32700 1
+2040
+14 vt1_PiikkiÃ¶_O
+22.5348 60.4458
+32700 1
+2041
+12 vt1_Paimio_R
+22.683 60.4237
+32700 1
+2042
+12 vt1_Paimio_O
+22.683 60.4237
+32700 1
+2043
+18 vt1_PitkÃ¤porras_R
+22.8402 60.4284
+32700 1
+2044
+18 vt1_PitkÃ¤porras_O
+22.8402 60.4284
+32700 1
+2045
+12 vt1_Hajala_R
+22.9691 60.4352
+32700 1
+2046
+12 vt1_Hajala_O
+22.9691 60.4352
+32700 1
+2047
+13 vt1_Halikko_R
+23.1063 60.4173
+32700 1
+2048
+13 vt1_Halikko_O
+23.1063 60.4173
+32700 1
+2049
+14 vt1_Haukkala_R
+23.2112 60.4074
+32700 1
+2050
+14 vt1_Haukkala_O
+23.2112 60.4074
+32700 1
+2052
+13 Ã…land_Eckero
+19.5665 60.2055
+32700 1
+2054
+11 Ã…land_Ã…va
+21.0728 60.4425
+32700 1
+2055
+23 vt1_IsokylÃ¤n_Tunneli_R
+23.157 60.4185
+32700 1
+2056
+23 vt1_IsokylÃ¤n_Tunneli_O
+23.157 60.4185
+32700 1
+2057
+24 vt1_IsokylÃ¤n_Tunneli_O2
+23.157 60.4185
+32700 1
+2058
+24 vt1_IsokylÃ¤n_Tunneli_O3
+23.157 60.4185
+32700 1
+2059
+12 vt1_Muurla_R
+23.2112 60.4074
+32700 1
+2060
+12 vt1_Muurla_O
+23.2919 60.3887
+32700 1
+2061
+19 vt1_KettulanmÃ¤ki_R
+23.7487 60.3804
+32700 1
+2062
+15 vt1_KolmperÃ¤_R
+23.6641 60.372
+32700 1
+2063
+18 vt1_AneriojÃ¤rvi_R
+23.5757 60.3809
+32700 1
+2064
+11 vt1_Rusko_R
+23.4773 60.373
+32700 1
+2065
+10 vt1_Saha_R
+23.4118 60.3692
+32700 1
+2066
+19 vt1_VÃ¤hÃ¤-RytkÃ¶_R
+23.3576 60.3674
+32700 1
+2072
+12 vt1_Kitula_O
+23.597 60.3774
+32700 1
+2082
+24 vt1_IsokylÃ¤n_Tunneli_O4
+23.1483 60.4189
+32700 1
+2083
+24 vt1_IsokylÃ¤n_Tunneli_O5
+23.1483 60.4189
+32700 1
+2084
+24 vt1_IsokylÃ¤n_Tunneli_O6
+23.1483 60.4189
+32700 1
+2085
+13 vt1_Paimio_O2
+22.683 60.4237
+32700 1
+2086
+20 vt1_IsokylÃ¤n_Tun_O7
+23.1483 60.4189
+32700 1
+2087
+12 vt10_Lieto_R
+22.4252 60.4986
+32700 1
+2529
+9 vt1_Jaani
+22.3187 60.4375
+32700 1
+2530
+11 vt1_Huhkola
+22.3267 60.4291
+32700 1
+2531
+11 vt1_Kurkela
+22.3488 60.4222
+32700 1
+2532
+11 vt1_VÃ¤ntsi
+22.3795 60.4238
+32700 1
+2533
+12 vt1_Raadelma
+22.445 60.4298
+32700 1
+2534
+14 vt1_KirismÃ¤ki
+22.4907 60.4432
+32700 1
+2535
+14 vt1_Tammisilta
+22.5941 60.4425
+32700 1
+2536
+11 vt1_Valkoja
+22.6719 60.4247
+32700 1
+2537
+9 vt1_Vista
+22.7233 60.4279
+32700 1
+2538
+10 vt1_Hajala
+22.9274 60.4326
+32700 1
+2539
+11 vt1_Halikko
+23.0465 60.4269
+32700 1
+2540
+11 vt1_Pappila
+23.1348 60.4181
+32700 1
+3001
+16 vt7_Karhunkangas
+26.9863 60.5448
+32700 1
+3002
+9 vt7_Summa
+27.0753 60.5694
+32700 1
+3003
+12 kt62_Puumala
+28.2546 61.4912
+32700 1
+3004
+13 vt5_Mikkeli_R
+27.2529 61.6775
+32700 1
+3005
+16 vt14_Kulennoinen
+29.2175 61.829
+32700 1
+3006
+12 vt7_Sutela_R
+26.8559 60.4975
+32700 1
+3007
+11 vt7_Mokra_R
+26.8063 60.4956
+32700 1
+3008
+14 vt7_PKarhula_R
+26.931 60.516
+32700 1
+3009
+24 vt7_LeppÃ¤saaren_silta_R
+26.8559 60.4975
+32700 1
+3010
+14 vt7_EKarhula_R
+26.931 60.516
+32700 1
+3011
+15 vt15_Tuohikotti
+27.0591 61.0743
+32700 1
+3012
+19 vt13_KarhusjÃ¤rvi_R
+28.3635 61.0384
+32700 1
+3013
+15 vt26_Ruissalo_R
+27.1445 60.5763
+32700 1
+3014
+18 vt15_Kotkansaari_R
+26.9177 60.4636
+32700 1
+3015
+18 vt1_Kotkansaari_O1
+26.9177 60.4636
+32700 1
+3016
+18 vt1_Kotkansaari_O2
+26.9177 60.4636
+32700 1
+3017
+17 vt6_SelkÃ¤harju_R
+28.0628 61.0283
+32700 1
+3018
+17 vt6_SelkÃ¤harju_O
+28.0452 61.0321
+32700 1
+3019
+18 vt6_SelkÃ¤harju_O2
+28.0452 61.0321
+32700 1
+3020
+13 vt6_Utti_MAWS
+26.8127 60.8866
+32700 1
+3021
+15 vt6_Utti_MAWS_O
+26.8127 60.8866
+32700 1
+3022
+13 vt5_Kuortti_R
+26.3864 61.3994
+32700 1
+3023
+18 vt7_Karhunkangas_O
+26.9863 60.5448
+32700 1
+3024
+11 vt7_Summa_O
+27.0753 60.5694
+32700 1
+3025
+19 vt13_SelkÃ¤harju_O3
+28.0452 61.0321
+32700 1
+3026
+13 vt7_Mokra_Opt
+26.8063 60.4956
+32700 1
+3027
+17 vt26_Ruissalo_Opt
+27.1379 60.5816
+32700 1
+3028
+19 vt6_SelkÃ¤harju_Opt
+28.0452 61.0321
+32700 1
+3029
+21 vt7_Karhunkangas_Opt1
+26.9863 60.5448
+32700 1
+3030
+21 vt7_Karhunkangas_Opt2
+26.9863 60.5448
+32700 1
+3031
+20 st408_Saimaanharju_K
+28.0874 61.138
+32700 1
+3032
+14 kt62_Anttola_K
+27.622 61.5883
+32700 1
+3033
+25 vt14_KyrÃ¶nsalmen_silta_K
+28.9077 61.8699
+32700 1
+4001
+9 vt4_Lahti
+25.6087 60.9064
+32700 1
+4002
+13 vt24_Asikkala
+25.3545 61.2206
+32700 1
+4003
+12 vt2_Humppila
+23.3241 60.9442
+32700 1
+4004
+16 vt3_HÃ¤meenlinna
+24.4791 60.9642
+32700 1
+4005
+10 vt11_Nokia
+23.4252 61.5016
+32700 1
+4006
+21 vt3_LempÃ¤Ã¤lÃ¤_Kulju
+23.765 61.4084
+32700 1
+4007
+18 st130_SÃ¤Ã¤ksmÃ¤ki
+24.0571 61.163
+32700 1
+4008
+12 vt10_Tammela
+24 60.8263
+32700 1
+4009
+14 vt3_RiihimÃ¤ki
+24.7373 60.7061
+32700 1
+4010
+17 vt12_HÃ¤meenkoski
+25.2219 61.0096
+32700 1
+4011
+10 vt12_Hauho
+24.6818 61.1595
+32700 1
+4012
+14 vt12_PÃ¤lkÃ¤ne
+24.291 61.3111
+32700 1
+4013
+13 vt9_Orivesi_R
+24.2193 61.6451
+32700 1
+4015
+12 kt66_Ruovesi
+24.0167 62.021
+32700 1
+4016
+11 vt23_Virrat
+23.8025 62.2408
+32700 1
+4017
+12 vt12_Tampere
+23.8979 61.4975
+32700 1
+4020
+22 vt12_Tre_Paasikiventie
+23.6995 61.5077
+32700 1
+4021
+15 vt9_KylmÃ¤koski
+23.6386 61.1141
+32700 1
+4022
+15 kt54_HausjÃ¤rvi
+25.0487 60.8187
+32700 1
+4023
+13 kt58_MÃ¤nttÃ¤
+24.6132 61.9698
+32700 1
+4024
+14 vt3_YlÃ¶jÃ¤rvi
+23.4755 61.5771
+32700 1
+4025
+10 vt12_Lahti
+25.6116 60.9783
+32700 1
+4026
+17 Lahti_Ahtialantie
+25.759 60.9887
+32700 1
+4027
+23 vt3_LempÃ¤Ã¤lÃ¤_Lippo_R
+23.8361 61.2553
+32700 1
+4028
+15 vt3_Jutikkala_R
+24.0664 61.14
+32700 1
+4029
+14 vt3_Pirkkala_R
+24.0664 61.14
+32700 1
+4030
+13 vt9_Suinula_R
+24.0717 61.5498
+32700 1
+4031
+18 vt9_LeppÃ¤hammas_R
+24.4759 61.7088
+32700 1
+4032
+14 vt9_Solttila_R
+24.7092 61.7314
+32700 1
+4033
+14 vt9_Solttila_O
+24.7092 61.7314
+32700 1
+4034
+15 vt9_Suinula_Opt
+24.0717 61.5498
+32700 1
+4035
+15 vt9_Orivesi_Opt
+24.2193 61.6451
+32700 1
+4036
+17 vt24_Asikkala_Opt
+25.3545 61.2206
+32700 1
+4037
+20 vt3_HÃ¤meenlinna_Opt
+24.4791 60.9642
+32700 1
+4038
+18 vt3_RiihimÃ¤ki_Opt
+24.7373 60.7061
+32700 1
+4039
+19 kt54_HausjÃ¤rvi_Opt
+25.0487 60.8187
+32700 1
+4040
+18 vt3_YlÃ¶jÃ¤rvi_Opt
+23.4755 61.5771
+32700 1
+4041
+14 vt12_Lahti_Opt
+25.6116 60.9783
+32700 1
+4042
+16 vt9_Solttila_Opt
+24.7092 61.7314
+32700 1
+4043
+17 vt3_Ikaalinen_Opt
+22.9958 61.7885
+32700 1
+4044
+20 vt12_KÃ¤rppÃ¤lÃ¤_Opt
+23.1172 61.3679
+32700 1
+4045
+18 vt4_VierumÃ¤ki_Opt
+25.9033 61.0887
+32700 1
+4046
+17 vt4_Onkiniemi_Opt
+26.0458 61.4038
+32700 1
+4047
+16 vt2_Humppila_Opt
+23.3241 60.9442
+32700 1
+4048
+17 vt3_Jutikkala_Opt
+24.0664 61.14
+32700 1
+4049
+25 vt3_LempÃ¤Ã¤lÃ¤_Lippo_Opt
+23.8361 61.2553
+32700 1
+4050
+25 vt3_LempÃ¤Ã¤lÃ¤_Kulju_Opt
+23.765 61.4084
+32700 1
+4051
+19 vt3_Lamminkoski_Opt
+23.0094 62.1158
+32700 1
+4052
+13 vt4_Lahti_Opt
+25.6087 60.9064
+32700 1
+4053
+19 vt9_KylmÃ¤koski_Opt
+23.6386 61.1141
+32700 1
+4055
+16 vt10_Tammela_Opt
+24 60.8263
+32700 1
+4056
+14 vt11_Nokia_Opt
+23.4252 61.5016
+32700 1
+4057
+26 vt12_Tre_Paasikiventie_Opt
+23.6995 61.5077
+32700 1
+4058
+16 vt12_Tampere_Opt
+23.8979 61.4975
+32700 1
+4059
+18 vt12_PÃ¤lkÃ¤ne_Opt
+24.291 61.3111
+32700 1
+4060
+14 vt12_Hauho_Opt
+24.6818 61.1595
+32700 1
+4061
+21 vt12_HÃ¤meenkoski_Opt
+25.2219 61.0096
+32700 1
+4062
+16 kt66_Ruovesi_Opt
+24.0167 62.021
+32700 1
+5001
+12 vt6_ElimÃ¤ki
+26.4928 60.7852
+32700 1
+5002
+8 vt6_Utti
+26.8127 60.8866
+32700 1
+5004
+10 vt6_Imatra
+28.867 61.239
+32700 1
+5005
+13 vt6_Parikkala
+29.5865 61.6484
+32700 1
+5006
+17 vt13_Kauriansalmi
+27.3934 61.3079
+32700 1
+5007
+12 vt6_Taavetti
+27.6797 60.9377
+32700 1
+5008
+16 vt6_Lappeenranta
+28.3282 61.0773
+32700 1
+5009
+12 vt12_Kausala
+26.1859 60.9112
+32700 1
+5010
+16 vt7_PyhtÃ¤Ã¤n_Kk
+26.6513 60.4879
+32700 1
+5011
+12 vt7_Virojoki
+27.7248 60.5868
+32700 1
+5012
+11 vt15_Anjala
+26.9215 60.625
+32700 1
+5013
+14 vt26_PyhÃ¤ltÃ¶
+27.35 60.7774
+32700 1
+5014
+13 st387_YlÃ¤maa
+28.0394 60.801
+32700 1
+5015
+16 vt13_Savitaipale
+27.7409 61.1718
+32700 1
+5016
+10 vt6_Utti_R
+26.8588 60.8866
+32700 1
+5018
+10 vt6_Utti_O
+26.8588 60.8866
+32700 1
+5019
+11 vt6_Utti_O2
+26.8588 60.8866
+32700 1
+5020
+14 vt6_Imatra_Opt
+28.867 61.239
+32700 1
+5021
+16 vt6_Taavetti_Opt
+27.6797 60.9377
+32700 1
+5022
+21 vt13_Kauriansalmi_Opt
+27.3934 61.3079
+32700 1
+5023
+15 vt15_Anjala_Opt
+26.9215 60.625
+32700 1
+5024
+20 vt13_Savitaipale_Opt
+27.7409 61.1718
+32700 1
+6001
+14 vt4_VierumÃ¤ki
+25.9033 61.0887
+32700 1
+6002
+11 vt5_Toivola
+26.6993 61.4499
+32700 1
+6003
+17 vt5_NuutilanmÃ¤ki
+27.6284 61.8187
+32700 1
+6004
+13 vt4_Onkiniemi
+26.0458 61.4038
+32700 1
+6005
+12 vt5_Puunkolo
+27.81 62.0593
+32700 1
+6006
+15 vt14_ParkumÃ¤ki
+28.528 61.9402
+32700 1
+6007
+12 vt15_Tommola
+27.1647 61.2815
+32700 1
+6008
+14 vt23_SuurmÃ¤ki
+28.92 62.5336
+32700 1
+6009
+15 vt23_SiikamÃ¤ki
+27.3986 62.2908
+32700 1
+6010
+17 vt13_LÃ¤sÃ¤nkoski
+26.9587 61.8846
+32700 1
+7001
+13 vt6_Joensuu_R
+29.7835 62.6447
+32700 1
+7002
+14 vt6_KesÃ¤lahti
+29.7312 61.7973
+32700 1
+7003
+11 vt17_Liperi
+29.1488 62.6622
+32700 1
+7004
+11 kt73_Lieksa
+30.1471 63.1876
+32700 1
+7005
+15 vt6_TohmajÃ¤rvi
+30.104 62.2384
+32700 1
+7006
+9 vt6_Juuka
+29.3021 63.2166
+32700 1
+7007
+12 vt6_Nurmes_R
+28.9108 63.6286
+32700 1
+7008
+14 kt74_Ilomantsi
+30.7029 62.583
+32700 1
+7009
+16 vt17_YlÃ¤mylly_R
+29.6043 62.6305
+32700 1
+7010
+17 st502_YlÃ¤mylly_O
+29.6036 62.6327
+32700 1
+7011
+17 kt70_VÃ¤rtsilÃ¤_R
+30.5256 62.1787
+32700 1
+7012
+16 vt17_KÃ¤sÃ¤mÃ¤_R
+29.3409 62.6325
+32700 1
+7013
+16 vt17_KÃ¤sÃ¤mÃ¤_O
+29.3409 62.6325
+32700 1
+7014
+13 vt6_Tikkala_R
+30.0902 62.4008
+32700 1
+7015
+15 kt73_Louhioja_R
+30.1001 62.7971
+32700 1
+7016
+18 st522_Hattuvaara_K
+31.278 62.93
+32700 1
+7017
+20 kt71_VÃ¤Ã¤rÃ¤mÃ¤ki_K
+29.6112 62.0542
+32700 1
+7018
+13 vt6_Joensuu_R
+29.7809 62.6142
+32700 1
+7019
+17 kt75_MujejÃ¤rvi_R
+29.4574 63.8241
+32700 1
+7020
+15 vt6_Tikkala_Opt
+30.0902 62.4008
+32700 1
+7021
+13 vt6_Lehmo_Opt
+29.7835 62.6447
+32700 1
+8001
+12 vt5_Kuopio_E
+27.6069 62.8412
+32700 1
+8002
+15 vt5_LeppÃ¤virta
+27.8085 62.3829
+32700 1
+8003
+14 vt5_Lapinlahti
+27.4514 63.3095
+32700 1
+8004
+11 vt5_Iisalmi
+27.2853 63.6661
+32700 1
+8005
+16 vt5_SiilinjÃ¤rvi
+27.6651 63.0629
+32700 1
+8006
+14 vt17_Tuusniemi
+28.3444 62.8678
+32700 1
+8007
+14 kt77_Pielavesi
+26.9489 63.2322
+32700 1
+8008
+12 kt75_NilsiÃ¤
+28.0562 63.1574
+32700 1
+8009
+14 vt9_Suonenjoki
+27.0492 62.5853
+32700 1
+8010
+14 vt27_Kiuruvesi
+26.8433 63.6143
+32700 1
+8011
+15 vt17_Vartiala_R
+28.0428 62.9316
+32700 1
+8012
+18 vt17_JÃ¤nnevirta_R
+27.8617 62.9582
+32700 1
+8013
+12 vt5_Kuopio_P
+27.666 62.9425
+32700 1
+8014
+17 vt9_VehmasmÃ¤ki_R
+27.5538 62.7276
+32700 1
+8015
+15 vt17_Vartiala_O
+28.0428 62.9316
+32700 1
+8016
+18 vt17_JÃ¤nnevirta_O
+27.8617 62.9582
+32700 1
+8017
+15 kt88_IsomÃ¤ki_K
+26.7295 63.9115
+32700 1
+8018
+17 kt87_Koirakoski_K
+27.8007 63.6067
+32700 1
+8019
+15 st551_Vesanto_K
+26.3891 62.9272
+32700 1
+8020
+16 vt5_Siikalahti_R
+27.6367 62.8851
+32700 1
+8021
+18 vt5_Siikalahti_O_S
+27.6367 62.8851
+32700 1
+8022
+16 vt5_Kuopio_P_Opt
+27.666 62.9425
+32700 1
+8023
+16 vt5_Oravikoski_R
+27.605 62.5896
+32700 1
+8024
+19 vt9_VehmasmÃ¤ki_Opt
+27.5538 62.7276
+32700 1
+8025
+18 vt5_Siikalahti_Opt
+27.6367 62.8851
+32700 1
+8026
+17 vt5_Kuopio_P_Opt2
+27.666 62.9425
+32700 1
+8027
+17 vt5_Kuopio_P_Opt3
+27.666 62.9425
+32700 1
+8028
+17 vt5_Kuopio_P_Opt4
+27.666 62.9425
+32700 1
+9001
+12 vt4_Toivakka
+26.0486 62.0329
+32700 1
+9002
+14 vt9_Korpilahti
+25.5004 61.9994
+32700 1
+9003
+17 vt18_PetÃ¤jÃ¤vesi
+25.3937 62.2716
+32700 1
+9004
+16 vt4_Konginkangas
+25.8102 62.8777
+32700 1
+9005
+14 vt24_Kuhmoinen
+25.2954 61.6319
+32700 1
+9006
+14 vt4_Tikkakoski
+25.6938 62.42
+32700 1
+9007
+15 vt9_Lievestuore
+26.1401 62.2462
+32700 1
+9008
+14 vt4_Viitasaari
+25.6633 63.2244
+32700 1
+9009
+16 vt13_SaarijÃ¤rvi
+25.0986 62.7783
+32700 1
+9010
+14 vt13_KyyjÃ¤rvi
+24.6973 63.0004
+32700 1
+9011
+14 vt9_Hankasalmi
+26.5905 62.3775
+32700 1
+9012
+11 vt23_Keuruu
+24.5621 62.2455
+32700 1
+9013
+10 vt4_Joutsa
+26.0837 61.7225
+32700 1
+9014
+15 vt9_JyvÃ¤skylÃ¤
+25.7688 62.2462
+32700 1
+9015
+18 vt13_Ã„Ã¤nekoski_R
+25.652 62.5733
+32700 1
+9016
+13 vt9_JÃ¤msÃ¤_R
+25.3284 61.9137
+32700 1
+9017
+23 vt9_JÃ¤msÃ¤_Partalanm_R
+25.0626 61.8253
+32700 1
+9018
+15 vt4_PetomÃ¤ki_R
+25.3284 61.9137
+32700 1
+9019
+14 vt4_Puuppola_R
+25.3284 61.9137
+32700 1
+9020
+20 vt9_Hankasalmia_as_R
+25.0626 61.8253
+32700 1
+9021
+18 vt9_Keljonkangas_R
+25.6815 62.1797
+32700 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+0 NFmiArea
+0 NFmiGrid
+1
+5000
+4 None
+0
+1
+1 NFmiTimeDescriptor
+7
+2008 12 30 7 0 0
+2008 12 30 8 0 0
+2008 12 30 9 0 0
+2008 12 30 10 0 0
+2008 12 30 11 0 0
+2008 12 30 12 0 0
+2008 12 30 13 0 0
+2018 3 16 10 0 0
+2018 3 16 10 0 0
+0 0 0 0 0 0 0
+0 0 0 1 0 0 0
+1 1 1 1 1 1 1 
+6
+1
+27720
+ xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿFfff¿ÍÌŒ¿33³¿š™Ù¿ffæ¿š™Ù¿  À¿ xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿFÍÌŒ¿š™™¿33³¿ÍÌÀ33ó¿ffæ¿š™Ù¿ xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿFÍÌÀš™ÀÍÌ,ÀÍÌ,ÀÍÌ,À333À xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿFfff¿ÍÌŒ¿ÍÌŒ¿ff¦¿  À¿33³¿ xÿFfff¿ÍÌŒ¿  €¿š™™¿ff¦¿š™™¿ xÿFš™™?š™?  €?  €?  €?š™? xÿF33³¿š™Ù¿š™Ù¿33ó¿33ó¿   À xÿFÍÌŒ¿š™™¿ff¦¿ff¦¿33³¿  À¿ xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF33ó?š™@š™Ù?33³?ff@  @@ff@ xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF33ƒ@33ƒ@ff†@33³@š™™@ff¦@š™™@ xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF333?ÍÌL?   ?333?ÍÌÌ>ÍÌL? xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿFff¦?š™Ù?ff¦?ff¦?ÍÌÌ?ÍÌÌ? xÿFš™?  €?  €?fff?ÍÌŒ?fff? xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿFff¦?33³?  €?š™™?  À?ff@ xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF xÿF

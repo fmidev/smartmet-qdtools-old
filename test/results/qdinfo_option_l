@@ -890,6 +890,7 @@ The list of parameters known by newbase is:
 393	GroundFrost
 540	GroundHumidityForest
 288	GroundTemperature
+1387	GrowingDegreeDays
 10554	growth_limitation_of_calcareous_phytoplankton_due_to_solar_irradiance
 10555	growth_limitation_of_diatoms_due_to_solar_irradiance
 10556	growth_limitation_of_diazotrophs_due_to_solar_irradiance
@@ -2943,6 +2944,7 @@ The list of parameters known by newbase is:
 4751	SoundingLiftedIndex
 4783	SoundingLPLHeightMostUnstable
 4782	SoundingLPLPressureMostUnstable
+4788	SoundingMixingRatio500m
 4750	SoundingShowalterIndex
 4773	SoundingStormRelativeHelicity1km
 4772	SoundingStormRelativeHelicity3km
@@ -4600,4 +4602,4 @@ The list of parameters known by newbase is:
 12874	zenith_angle
 125	ZResolution
 
-There are 4599 known parameters in total
+There are 4601 known parameters in total

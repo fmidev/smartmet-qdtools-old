@@ -461,6 +461,7 @@ The list of parameters known by newbase is:
 4550	CAPEF95
 4549	CAPEF97.5
 4548	CAPEF99
+1392	CAPEShear
 113	CAPPIHeight
 10349	carbon_content_of_forestry_and_agricultural_products
 13221	carbon_content_of_products_of_anthropogenic_land_use_change
@@ -1008,6 +1009,7 @@ The list of parameters known by newbase is:
 4820	IcingRate
 1198	IcingWarningIndex
 1166	InCloudTurbulence
+1391	InstantaneousWindGust
 10582	institution
 10583	integral_of_air_temperature_deficit_wrt_time
 10584	integral_of_air_temperature_excess_wrt_time
@@ -2297,10 +2299,12 @@ The list of parameters known by newbase is:
 1249	ProbabilityOfConvectivePrecipitationLimit6
 1361	ProbabilityOfFreezingPrecForm
 583	ProbabilityOfGustLimit1
+1388	ProbabilityOfGustLimit1Aggregation1
 584	ProbabilityOfGustLimit2
 585	ProbabilityOfGustLimit3
 586	ProbabilityOfGustLimit4
 587	ProbabilityOfGustLimit5
+1390	ProbabilityOfHailLimit1Aggregation1
 1041	ProbabilityOfHeatLimit1
 1042	ProbabilityOfHeatLimit2
 1043	ProbabilityOfHeatLimit3
@@ -2375,6 +2379,7 @@ The list of parameters known by newbase is:
 958	ProbabilityOfPrecipitation3h9mm
 571	ProbabilityOfPrecLimit1
 588	ProbabilityOfPrecLimit10
+1389	ProbabilityOfPrecLimit1Aggregation1
 572	ProbabilityOfPrecLimit2
 573	ProbabilityOfPrecLimit3
 574	ProbabilityOfPrecLimit4
@@ -2480,6 +2485,7 @@ The list of parameters known by newbase is:
 115	RadarLayer
 111	RadarLevelType
 110	RadarParameter
+107	RadarPrecipitation1d
 109	RadarProducer
 114	RadarRadius
 11484	radial_sea_water_velocity_away_from_instrument
@@ -4495,6 +4501,7 @@ The list of parameters known by newbase is:
 266	WaterEquivalentOfSnow
 1156	WaterLevelIndex
 639	WaterStorage
+102	WaterTemperature
 365	WaterVapourBrightnessTemperature
 366	WaterVapourBrightnessTemperatureIncludingCloudCorrection
 12855	wave_frequency
@@ -4602,4 +4609,4 @@ The list of parameters known by newbase is:
 12874	zenith_angle
 125	ZResolution
 
-There are 4601 known parameters in total
+There are 4608 known parameters in total

@@ -2497,6 +2497,13 @@ The list of parameters known by newbase is:
 1163	RadiationDiffuseAccumulation
 317	RadiationGlobal
 1159	RadiationGlobalAccumulation
+4672	RadiationGlobalF0
+4673	RadiationGlobalF10
+4678	RadiationGlobalF100
+4674	RadiationGlobalF25
+4675	RadiationGlobalF50
+4676	RadiationGlobalF75
+4677	RadiationGlobalF90
 54	RadiationInSW
 154	RadiationInSW2
 315	RadiationLW
@@ -4609,4 +4616,4 @@ The list of parameters known by newbase is:
 12874	zenith_angle
 125	ZResolution
 
-There are 4608 known parameters in total
+There are 4615 known parameters in total

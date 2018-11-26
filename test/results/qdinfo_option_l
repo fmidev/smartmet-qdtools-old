@@ -891,6 +891,8 @@ The list of parameters known by newbase is:
 393	GroundFrost
 540	GroundHumidityForest
 288	GroundTemperature
+396	GroundWaterLevel
+397	GroundWaterLevelIndex
 1387	GrowingDegreeDays
 10554	growth_limitation_of_calcareous_phytoplankton_due_to_solar_irradiance
 10555	growth_limitation_of_diatoms_due_to_solar_irradiance
@@ -2863,6 +2865,7 @@ The list of parameters known by newbase is:
 4572	SnowDepthF95
 4571	SnowDepthF97.5
 4570	SnowDepthF99
+1393	SnowDriftIndex
 11664	snowfall_amount
 11665	snowfall_flux
 264	SnowfallRate
@@ -4616,4 +4619,4 @@ The list of parameters known by newbase is:
 12874	zenith_angle
 125	ZResolution
 
-There are 4615 known parameters in total
+There are 4618 known parameters in total

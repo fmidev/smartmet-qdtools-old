@@ -823,6 +823,7 @@ The list of parameters known by newbase is:
 10527	forecast_reference_time
 400	ForecasterCode
 297	ForecastPeriod
+539	ForestFireIndex
 538	ForestFireWarning
 282	ForestFraction
 535	ForestGroundHumidity
@@ -830,6 +831,7 @@ The list of parameters known by newbase is:
 10528	fractional_saturation_of_oxygen_in_sea_water
 10530	freezing_level_altitude
 10531	freezing_temperature_of_sea_water
+1394	FreezingDegreeDays
 270	FreezingLevel
 83	FreezingPoint1
 84	FreezingPoint2
@@ -871,6 +873,7 @@ The list of parameters known by newbase is:
 10544	global_average_steric_sea_level_change
 10545	global_average_thermosteric_sea_level_change
 58	GolfIndex
+531	GrassFireIndex
 608	GrassPollenAvailable
 607	GrassPollenConcentration
 609	GrassPollenRemainingRatio
@@ -947,6 +950,7 @@ The list of parameters known by newbase is:
 10573	heterotrophic_respiration_carbon_flux
 10574	high_type_cloud_area_fraction
 275	HighCloudCover
+1398	HighCloudCover2
 331	HighCloudSymbol
 413	HighCloudType
 4800	HighVegetationCover
@@ -1119,6 +1123,7 @@ The list of parameters known by newbase is:
 12875	longwave_radiance
 10658	low_type_cloud_area_fraction
 273	LowCloudCover
+1396	LowCloudCover2
 329	LowCloudSymbol
 411	LowCloudType
 1379	LowestBKNHeight
@@ -1530,6 +1535,7 @@ The list of parameters known by newbase is:
 10989	medium_soil_pool_carbon_content
 10990	medium_type_cloud_area_fraction
 274	MediumCloudCover
+1397	MediumCloudCover2
 330	MediumCloudSymbol
 840	MetarObservationType
 271	MiddleAndLowCloudCover
@@ -2870,6 +2876,13 @@ The list of parameters known by newbase is:
 11665	snowfall_flux
 264	SnowfallRate
 850	SnowLoad
+4679	SnowLoadF0
+4680	SnowLoadF10
+4685	SnowLoadF100
+4681	SnowLoadF25
+4682	SnowLoadF50
+4683	SnowLoadF75
+4684	SnowLoadF90
 856	SnowLoadType
 1200	SnowMixingRatio
 489	SnowPercentage
@@ -4276,6 +4289,7 @@ The list of parameters known by newbase is:
 592	TopoRelativeHeight
 590	TopoSlope
 79	TotalCloudCover
+1395	TotalCloudCover2
 887	TotalCloudCoverF0
 4515	TotalCloudCoverF1
 886	TotalCloudCoverF10
@@ -4619,4 +4633,4 @@ The list of parameters known by newbase is:
 12874	zenith_angle
 125	ZResolution
 
-There are 4618 known parameters in total
+There are 4632 known parameters in total

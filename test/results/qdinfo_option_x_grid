@@ -1,13 +1,13 @@
 
 Information on the querydata area:
 
-projection		= NFmiArea
-top left lonlat		= 14.5017,71.329
-top right lonlat	= 40,70.9998
-bottom left lonlat	= 19,57.9998
-bottom right lonlat	= 33.6415,57.8191
-center lonlat		= 26.7131,64.8054
-bbox			= [-358379.093 518203.228 -3409749.3 -1933960.77]
+projection		= kNFmiStereographicArea
+top left lonlat		= 14.4949,71.4448
+top right lonlat	= 40,71.1179
+bottom left lonlat	= 19,58.1725
+bottom right lonlat	= 33.6359,57.9931
+center lonlat		= 26.7099,64.9498
+bbox			= [-356345.4 514923.746 -3390400.01 -1921721.58]
 
 projstr	= +proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +a=6371220 +b=6371220 +units=m +wktext +towgs84=0,0,0 +no_defs
 wkt	= PROJCS["unnamed",GEOGCS["unnamed ellipse",DATUM["unknown",SPHEROID["unnamed",6371220,0],TOWGS84[0,0,0,0,0,0,0]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433]],PROJECTION["Polar_Stereographic"],PARAMETER["latitude_of_origin",60],PARAMETER["central_meridian",25],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["Meter",1],EXTENSION["PROJ4","+proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +a=6371220 +b=6371220 +units=m +wktext +towgs84=0,0,0 +no_defs"]]
@@ -68,9 +68,9 @@ bottom	= 1
 
 xnumber		= 30
 ynumber		= 70
-dx		= 29.21941067 km
-dy		= 21.08269321 km
+dx		= 29.04230487 km
+dy		= 20.98112039 km
 
-xywidth		= 876.5823201 km
-xyheight	= 1475.788525 km
-aspectratio	= 0.5939755631
+xywidth		= 871.2691462 km
+xyheight	= 1468.678427 km
+aspectratio	= 0.5932334335

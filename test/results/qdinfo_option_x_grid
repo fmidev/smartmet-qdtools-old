@@ -9,8 +9,8 @@ bottom right lonlat	= 33.6359,57.9931
 center lonlat		= 26.7099,64.9498
 bbox			= [-356345.4 514923.746 -3390400.01 -1921721.58]
 
-projstr	= +proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +a=6371220 +b=6371220 +units=m +wktext +towgs84=0,0,0 +no_defs
-wkt	= PROJCS["unnamed",GEOGCS["unnamed ellipse",DATUM["unknown",SPHEROID["unnamed",6371220,0],TOWGS84[0,0,0,0,0,0,0]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433]],PROJECTION["Polar_Stereographic"],PARAMETER["latitude_of_origin",60],PARAMETER["central_meridian",25],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["Meter",1],EXTENSION["PROJ4","+proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +a=6371220 +b=6371220 +units=m +wktext +towgs84=0,0,0 +no_defs"]]
+projstr	= +proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +R=6371220 +units=m +wktext +towgs84=0,0,0 +no_defs
+wkt	= PROJCS["unnamed",GEOGCS["unnamed ellipse",DATUM["unknown",SPHEROID["unnamed",6371220,0],TOWGS84[0,0,0,0,0,0,0]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433]],PROJECTION["Polar_Stereographic"],PARAMETER["latitude_of_origin",60],PARAMETER["central_meridian",25],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["Meter",1],EXTENSION["PROJ4","+proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +R=6371220 +units=m +wktext +towgs84=0,0,0 +no_defs"]]
 
 prettywkt =
 PROJCS["unnamed",
@@ -27,7 +27,7 @@ PROJCS["unnamed",
     PARAMETER["false_easting",0],
     PARAMETER["false_northing",0],
     UNIT["Meter",1],
-    EXTENSION["PROJ4","+proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +a=6371220 +b=6371220 +units=m +wktext +towgs84=0,0,0 +no_defs"]]
+    EXTENSION["PROJ4","+proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +R=6371220 +units=m +wktext +towgs84=0,0,0 +no_defs"]]
 
 EPSGTreatsAsLatLong		= 0
 EPSGTreatsAsNorthingEasting	= 0
@@ -50,8 +50,7 @@ false_easting	= 0
 false_northing	= 0
 
 proj options:
-+a = 6371220
-+b = 6371220
++R = 6371220
 +lat_0 = 90
 +lat_ts = 60
 +lon_0 = 25

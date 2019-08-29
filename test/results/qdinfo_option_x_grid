@@ -2,11 +2,17 @@
 Information on the querydata area:
 
 projection		= kNFmiStereographicArea
-top left lonlat		= 14.4949,71.4448
-top right lonlat	= 40,71.1179
-bottom left lonlat	= 19,58.1725
-bottom right lonlat	= 33.6359,57.9931
-center lonlat		= 26.7099,64.9498
+top left lonlat		= 14.4949,71.3286
+top right lonlat	= 40,71
+bottom left lonlat	= 19,58
+bottom right lonlat	= 33.6359,57.8201
+
+top left WGS84		= 14.4949,71.3286
+top right WGS84		= 40,71
+bottom left WGS84	= 19,58
+bottom right WGS84	= 33.6359,57.8201
+center WGS84		= 26.7099,64.8021
+
 bbox			= [-356345.4 514923.746 -3390400.01 -1921721.58]
 
 projstr	= +proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +R=6371220 +units=m +wktext +towgs84=0,0,0 +no_defs

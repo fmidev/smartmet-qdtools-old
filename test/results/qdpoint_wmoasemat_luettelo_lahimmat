@@ -3,7 +3,7 @@
 # StationDist	02978	0.366956
 # StationName	05795	Harmaja
 # StationLoc	05795	24.9833	60.1
-# StationDist	05795	7.99933
+# StationDist	05795	7.99934
 # StationName	02988	Hki Isosaari
 # StationLoc	02988	25.0667	60.1
 # StationDist	02988	10.1166
@@ -12,22 +12,22 @@
 # StationDist	02974	16.3389
 # StationName	02991	Em‰salo
 # StationLoc	02991	25.6333	60.2167
-# StationDist	02991	38.1239
+# StationDist	02991	38.124
 # StationName	05684	Vihti
 # StationLoc	05684	24.4	60.4167
 # StationDist	05684	40.8793
 # StationName	02987	Kalbodagrund
 # StationLoc	02987	25.6	59.9833
-# StationDist	02987	41.6054
+# StationDist	02987	41.6055
 # StationName	05794	M‰kiluoto
 # StationLoc	05794	24.35	59.9167
-# StationDist	05794	43.6266
+# StationDist	05794	43.6267
 # StationName	05484	Hyvink‰‰
 # StationLoc	05484	24.8	60.6
-# StationDist	05484	48.5207
+# StationDist	05484	48.5208
 # StationName	05685	Porvoo
 # StationLoc	05685	25.6667	60.4333
-# StationDist	05685	49.1548
+# StationDist	05685	49.1549
 02978 200210081100 2.4 - 100.0 4.8 38.0 - - 0.0 - 69.0 8.9 47590.0 1021.6 - - - -
 02978 200210081200 3.1 8.0 3.0 6.0 40.0 - - 0.0 - 61.0 6.0 45000.0 1021.4 - - - -
 02978 200210081300 3.0 - 100.0 5.6 50.0 - - 0.0 - 59.0 9.1 44640.0 1021.3 - - - -

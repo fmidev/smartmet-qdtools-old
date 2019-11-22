@@ -5,7 +5,7 @@ Number  Name                                    Description                     
 ======  ====                                    ===========                             =============      =========  =======  =======
 4       Temperature                             Lämpötila                               Linear                 %6.1f      -60       50
 10      DewPoint                                Kastepiste                              Linear                  %.1f      -50       50
-19      +TotalWindMS                            Tuuli                                   NearestPoint            %.1f    32700    32700
-326     +WeatherAndCloudiness                   Sää                                     ByCombinedParam         %.1f    32700    32700
+19      +TotalWindMS                            Tuuli                                   NearestPoint            %.1f        -        -
+326     +WeatherAndCloudiness                   Sää                                     ByCombinedParam         %.1f        -        -
 
 There are 4 stored parameters in total

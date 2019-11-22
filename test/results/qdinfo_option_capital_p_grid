@@ -7,7 +7,7 @@ Number  Name                                    Description                     
 10      DewPoint                                Kastepiste                              Linear                  %.1f      -50       50
 21      -WindSpeedMS                            Tuulen nopeus                           Linear                  %.1f        0      500
 20      -WindDirection                          Tuulen suunta                           Linear                  %.1f        0      360
-22      -WindVectorMS                           Tuulivektori                            None                    %.1f    32700    32700
+22      -WindVectorMS                           Tuulivektori                            None                    %.1f        -        -
 79      -TotalCloudCover                        Kokonaispilvisyys                       Linear                  %.1f        0      100
 273     -LowCloudCover                          Alapilvien m‰‰r‰                        Linear                  %.1f        0      100
 274     -MediumCloudCover                       Keskipilvien m‰‰r‰                      Linear                  %.1f        0      100

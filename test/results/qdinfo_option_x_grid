@@ -2,27 +2,28 @@
 Information on the querydata area:
 
 projection		= kNFmiStereographicArea
-top left lonlat		= 14.4949,71.3286
-top right lonlat	= 40,71
-bottom left lonlat	= 19,58
-bottom right lonlat	= 33.6359,57.8201
+top left lonlat		= 14.5017,71.2122
+top right lonlat	= 40,70.8812
+bottom left lonlat	= 19,57.8268
+bottom right lonlat	= 33.6415,57.6456
 
-top left WGS84		= 14.4949,71.4448
-top right WGS84		= 40,71.1179
-bottom left WGS84	= 19,58.1725
-bottom right WGS84	= 33.6359,57.9931
-center WGS84		= 26.7099,64.9498
+top left WGS84		= 14.5017,71.329
+top right WGS84		= 40,70.9998
+bottom left WGS84	= 19,57.9998
+bottom right WGS84	= 33.6415,57.8191
+center WGS84		= 26.7131,64.8054
 
-bbox			= [-356345.904 514924.473 -3390404.8 -1921724.3]
+bbox			= [-358379.599 518203.96 -3409754.12 -1933963.51]
 
-projstr	= +proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +x_0=0 +y_0=0 +R=6371229 +units=m +no_defs
-wkt	= PROJCS["unknown",GEOGCS["unknown",DATUM["unknown",SPHEROID["unknown",6371229,0]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]]],PROJECTION["Polar_Stereographic"],PARAMETER["latitude_of_origin",60],PARAMETER["central_meridian",25],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",SOUTH],AXIS["Northing",SOUTH]]
+projstr	= +proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +x_0=0 +y_0=0 +R=6371229 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
+wkt	= PROJCS["unknown",GEOGCS["unknown",DATUM["unknown",SPHEROID["unknown",6371229,0],TOWGS84[0,0,0,0,0,0,0]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]]],PROJECTION["Polar_Stereographic"],PARAMETER["latitude_of_origin",60],PARAMETER["central_meridian",25],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",SOUTH],AXIS["Northing",SOUTH]]
 
 prettywkt =
 PROJCS["unknown",
     GEOGCS["unknown",
         DATUM["unknown",
-            SPHEROID["unknown",6371229,0]],
+            SPHEROID["unknown",6371229,0],
+            TOWGS84[0,0,0,0,0,0,0]],
         PRIMEM["Greenwich",0,
             AUTHORITY["EPSG","8901"]],
         UNIT["degree",0.0174532925199433,
@@ -64,6 +65,7 @@ proj options:
 +x_0 = 0
 +y_0 = 0
 +proj = "stere"
++towgs84 = "0,0,0,0,0,0,0"
 +units = "m"
 +no_defs
 
@@ -74,9 +76,9 @@ bottom	= 1
 
 xnumber		= 30
 ynumber		= 70
-dx		= 29.0423459 km
-dy		= 20.98115003 km
+dx		= 29.21945194 km
+dy		= 21.082723 km
 
-xywidth		= 871.2703769 km
-xyheight	= 1468.680502 km
-aspectratio	= 0.5932334335
+xywidth		= 876.5835583 km
+xyheight	= 1475.79061 km
+aspectratio	= 0.5939755631

@@ -11,7 +11,7 @@ top left WGS84		= 14.5017,71.329
 top right WGS84		= 40,70.9998
 bottom left WGS84	= 19,57.9998
 bottom right WGS84	= 33.6415,57.8191
-center WGS84		= 26.7131,64.8054
+center WGS84		= 26.7131,64.805
 
 bbox			= [-358379.599 518203.96 -3409754.12 -1933963.51]
 

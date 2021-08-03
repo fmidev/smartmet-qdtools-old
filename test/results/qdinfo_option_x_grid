@@ -15,7 +15,7 @@ center WGS84		= 26.7131,64.805
 
 bbox			= [-358379.599 518203.96 -3409754.12 -1933963.51]
 
-projstr	= +proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +x_0=0 +y_0=0 +R=6371229 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
+projstr	= +type=crs +proj=stere +lat_0=90 +lat_ts=60 +lon_0=25 +R=6371229 +units=m +wktext +towgs84=0,0,0 +no_defs
 wkt	= PROJCS["unknown",GEOGCS["unknown",DATUM["unknown",SPHEROID["unknown",6371229,0],TOWGS84[0,0,0,0,0,0,0]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]]],PROJECTION["Polar_Stereographic"],PARAMETER["latitude_of_origin",60],PARAMETER["central_meridian",25],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",SOUTH],AXIS["Northing",SOUTH]]
 
 prettywkt =
@@ -62,12 +62,12 @@ proj options:
 +lat_0 = 90
 +lat_ts = 60
 +lon_0 = 25
-+x_0 = 0
-+y_0 = 0
 +proj = "stere"
-+towgs84 = "0,0,0,0,0,0,0"
++towgs84 = "0,0,0"
++type = "crs"
 +units = "m"
 +no_defs
++wktext
 
 top	= 0
 left	= 0

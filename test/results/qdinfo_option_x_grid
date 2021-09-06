@@ -1,7 +1,7 @@
 
 Information on the querydata area:
 
-projection		= NFmiProjArea
+projection		= kNFmiStereographicArea
 top left lonlat		= 14.5017,71.3292
 top right lonlat	= 40,71
 bottom left lonlat	= 19,58
